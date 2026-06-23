@@ -29,7 +29,7 @@ export default function ContactPage() {
             </div>
             <div className="relative aspect-[1.67] w-full shadow-md">
               <Image
-                src="/bhakti-card.jpg"
+                src="/bhakti-card-new.jpg"
                 alt="Bhakti Industries Business Card"
                 fill
                 className="object-contain"
