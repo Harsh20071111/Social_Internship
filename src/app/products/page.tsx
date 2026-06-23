@@ -1,15 +1,75 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Products | B2B Manufacturing Company",
-  description: "Browse our extensive catalog of manufactured products.",
-};
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Factory, Leaf, Waves } from "lucide-react";
+import { motion } from "framer-motion";
+import { PuckPage } from "@/components/layout/PuckPage";
+import { productCategories } from "@/lib/puck-content";
+
+const applicationIcons = [Factory, Leaf, Waves];
 
 export default function ProductsPage() {
   return (
-    <div className="container mx-auto py-10">
-      <h1 className="text-4xl font-bold tracking-tight">Our Products</h1>
-      <p className="mt-4 text-muted-foreground">Content coming soon...</p>
-    </div>
+    <PuckPage hero="Categories">
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px] space-y-6 px-5">
+          {productCategories.map((category, index) => (
+            <motion.article
+              key={category.slug}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Link
+                href={`/products/${category.slug}`}
+                className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
+              >
+                <div className="relative min-h-[220px] bg-white">
+                  <Image
+                    src={index === 0 ? "/images/puck-product-collage.png" : category.image}
+                    alt={category.title}
+                    fill
+                    className={index === 0 ? "object-contain p-5" : "object-cover"}
+                    sizes="(max-width: 768px) 100vw, 230px"
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-7 py-8 md:px-10">
+                  <h2 className="text-2xl font-black tracking-tight md:text-[28px]">
+                    {category.title}
+                  </h2>
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-black/55">
+                    {category.summary}
+                  </p>
+                  <div className="mt-6 flex gap-5">
+                    {category.applications.map((item, itemIndex) => {
+                      const Icon = applicationIcons[itemIndex % applicationIcons.length];
+                      return (
+                        <span
+                          key={item}
+                          className="flex items-center gap-2 text-xs font-bold text-[#318bc1]"
+                        >
+                          <Icon className="h-4 w-4" />
+                          {item}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="flex items-center border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
+                  <ul className="space-y-2 text-sm leading-5 text-black/70">
+                    {category.specs.map((spec) => (
+                      <li key={spec}>• {spec}</li>
+                    ))}
+                  </ul>
+                  <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[#318bc1] transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+    </PuckPage>
   );
 }

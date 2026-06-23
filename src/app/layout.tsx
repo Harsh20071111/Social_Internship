@@ -1,22 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "B2B Manufacturing Company",
-  description: "Premium manufacturing solutions for your business needs.",
+  title: {
+    default: "Bhakti Industries | Integrated Manufacturing",
+    template: "%s | Bhakti Industries",
+  },
+  description:
+    "Placeholder website for an integrated industrial manufacturing company.",
+  keywords: [
+    "industrial manufacturing",
+    "integrated manufacturing",
+    "industrial products",
+    "engineering",
+    "B2B manufacturing",
+  ],
 };
 
 export default function RootLayout({
@@ -28,12 +41,12 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${geistMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
