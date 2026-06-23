@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X, ArrowRight } from "lucide-react";
@@ -31,9 +32,16 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="text-[17px] font-bold tracking-[-0.02em] text-[#001836] sm:text-xl"
+          className="flex items-center"
         >
-          BHAKTI INDUSTRIES
+          <Image 
+            src="/images/logo.png" 
+            alt="Bhakti Industries Logo" 
+            width={48} 
+            height={48} 
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
