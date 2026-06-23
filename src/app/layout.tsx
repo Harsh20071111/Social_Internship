@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <Toaster />
+          <WhatsAppFloat />
         </ThemeProvider>
       </body>
     </html>

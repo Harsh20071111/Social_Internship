@@ -74,11 +74,11 @@ function Navbar() {
 
         <div className="hidden items-center gap-4 lg:flex">
           <a
-            href="tel:+919876543210"
+            href="tel:+919427806585"
             className="flex items-center gap-1.5 text-xs font-medium text-[#5c5f60] transition-colors hover:text-[#001836]"
           >
             <Phone className="h-3.5 w-3.5" />
-            +91 98765 43210
+            +91 94278 06585
           </a>
           <Button
             render={<Link href="/inquiry" />}
