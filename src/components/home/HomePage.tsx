@@ -270,9 +270,9 @@ export function HomePage() {
         />
         <FeaturePanel
           eyebrow="Heavy Duty Assembly"
-          title="The Ambular Series"
-          description="Robust. Reliable. Ready for scale. The Ambular series sets the standard for high-capacity structural components built for demanding operational environments."
-          cta="Explore Ambular"
+          title="The Impeller Series"
+          description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
+          cta="Explore Impeller"
           href="/products"
           image="https://lh3.googleusercontent.com/aida-public/AB6AXuARJjGqeII7uT_I8n2GcLlStbxdtpYIfN_1yMN_BEVewBAPrr9GqgFRphdfY6mS9CBi2HvRPEPxGbGA0FYYpJSIFN_X9FApjooZlMRXedgpQ3PW1qPfzRslQdISSdlVZIVQc-jIfMuOPcvs6o89DQQrQu8pcIjybkIe9jN6uYJaIJ4SOJABtfeE19Uvgclc_v2ADoh7PA3TgQUgeAXteX3yW8cjtuKNOq6UH4_SyfL_mordKWGTsPyUI0PaYLhLyhNhqL1ke2aEc-M"
           imagePosition="58% center"

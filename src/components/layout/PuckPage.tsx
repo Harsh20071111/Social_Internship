@@ -23,7 +23,7 @@ export function PuckPage({
     <div className="min-h-screen bg-white text-[#111]">
       {!imageHero && <PuckHeader />}
       <section
-        className={`relative flex min-h-[300px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[380px] ${
+        className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[180px] ${
           imageHero ? "pt-24" : "bg-[#3e94cc]"
         }`}
       >
