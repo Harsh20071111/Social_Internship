@@ -37,9 +37,17 @@ export function PuckFooter() {
       <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <PuckBrandMark inverse />
-          <p className="mt-7 max-w-sm text-sm leading-7 text-white/75">
-            Placeholder company address, industrial estate, city, state, postal
-            code, country.
+          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-white/55">
+            ADDRESS
+          </p>
+          <p className="mt-3 text-sm leading-7 text-white/75">
+            7, Kumar Estate, B/S Bank Of Baroda,
+            <br />
+            Nr. Shayona Estate,
+            <br />
+            Naroda Road,
+            <br />
+            Ahmedabad - 380025.
           </p>
         </div>
         <div>
@@ -47,9 +55,7 @@ export function PuckFooter() {
             Contact
           </p>
           <p className="mt-5 text-sm leading-8">
-            +00 00000 00000
-            <br />
-            hello@placeholder.com
+            +91 94278 06585
           </p>
         </div>
         <div>

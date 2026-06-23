@@ -9,13 +9,7 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
-
-const footerLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Factory Safety", href: "#" },
-  { label: "Global Logistics", href: "#" },
-];
+import { PuckFooter } from "@/components/layout/PuckChrome";
 
 type FeaturePanelProps = {
   eyebrow: string;
@@ -121,33 +115,6 @@ function FeaturePanel({
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-[#d9dce3] bg-white">
-      <div className="mx-auto grid max-w-[1600px] gap-7 px-5 py-8 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-10">
-        <div>
-          <p className="text-lg font-bold tracking-tight text-[#001836]">
-            BHAKTI INDUSTRIES
-          </p>
-          <p className="mt-2 text-xs leading-5 text-[#5c5f60]">
-            © 2026 Bhakti Industries. All rights reserved. ISO 9001:2015 Certified.
-          </p>
-        </div>
-        <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Footer navigation">
-          {footerLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm text-[#43474f] transition-colors hover:text-[#001836]"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </footer>
-  );
-}
 
 export function HomePage() {
   return (
@@ -182,7 +149,7 @@ export function HomePage() {
         />
       </main>
       <div className="snap-start">
-        <Footer />
+        <PuckFooter />
       </div>
     </div>
   );
