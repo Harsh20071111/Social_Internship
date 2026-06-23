@@ -50,7 +50,7 @@ export function PuckPage({
               {subtitle}
             </p>
           )}
-        </div>
+        </motion.div>
       </section>
       <main>{children}</main>
       <PuckFooter />
