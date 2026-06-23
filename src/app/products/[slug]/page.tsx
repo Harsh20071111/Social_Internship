@@ -114,7 +114,7 @@ export default async function ProductDetailPage({
     <PuckPage hero={product.title} subtitle={product.summary}>
       <section className="bg-[#f3f3f3] py-16 md:py-24">
         <div className="mx-auto max-w-[1160px] px-5">
-          <Link href="/products" className="inline-flex items-center gap-2 text-sm font-black text-[#318bc1]">
+          <Link href="/products" className="inline-flex items-center gap-2 text-sm font-black text-[#001836]">
             <ArrowLeft className="h-4 w-4" /> Back to Categories
           </Link>
           <div className="mt-8 grid gap-10 bg-white p-6 md:p-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -127,18 +127,18 @@ export default async function ProductDetailPage({
               />
             </div>
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#318bc1]">Product Family</p>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]">Product Family</p>
               <h2 className="mt-3 text-4xl font-black">{product.title}</h2>
               <p className="mt-5 text-base leading-7 text-black/60">{product.summary}</p>
               <div className="mt-8 grid gap-3">
                 {product.specs.map((spec) => (
                   <div key={spec} className="flex items-center gap-3 border-b border-black/10 py-3 text-sm font-bold">
-                    <CheckCircle2 className="h-5 w-5 text-[#318bc1]" /> {spec}
+                    <CheckCircle2 className="h-5 w-5 text-[#001836]" /> {spec}
                   </div>
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/inquiry" className="inline-flex h-12 items-center gap-2 bg-[#318bc1] px-6 text-sm font-black text-white">
+                <Link href="/inquiry" className="inline-flex h-12 items-center gap-2 bg-[#001836] px-6 text-sm font-black text-white">
                   Request Quote <ArrowRight className="h-4 w-4" />
                 </Link>
                 <button className="inline-flex h-12 items-center gap-2 border border-black/15 px-6 text-sm font-black">
@@ -160,7 +160,7 @@ export default async function ProductDetailPage({
                   {label}
                 </div>
                 <h3 className="mt-6 text-2xl font-black">{label}</h3>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#318bc1]">
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#001836]">
                   {type}
                 </p>
                 <p className="mt-4 text-sm leading-6 text-black/55">

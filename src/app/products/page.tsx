@@ -48,7 +48,7 @@ export default function ProductsPage() {
                       return (
                         <span
                           key={item}
-                          className="flex items-center gap-2 text-xs font-bold text-[#318bc1]"
+                          className="flex items-center gap-2 text-xs font-bold text-[#001836]"
                         >
                           <Icon className="h-4 w-4" />
                           {item}
@@ -63,7 +63,7 @@ export default function ProductsPage() {
                       <li key={spec}>• {spec}</li>
                     ))}
                   </ul>
-                  <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[#318bc1] transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </motion.article>

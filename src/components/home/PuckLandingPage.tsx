@@ -86,7 +86,7 @@ function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-1 text-[14px] font-bold text-[#111] transition-colors hover:text-[#318bc1]"
+              className="flex items-center gap-1 text-[14px] font-bold text-[#111] transition-colors hover:text-[#001836]"
             >
               {item.label}
               {item.dropdown && <ChevronDown className="h-3.5 w-3.5" strokeWidth={2.5} />}
@@ -176,7 +176,7 @@ function Hero() {
                   <span key={item} className="flex items-center">
                     {item}
                     {index < list.length - 1 && (
-                      <span className="mx-2 h-5 w-[2px] bg-[#318bc1]" />
+                      <span className="mx-2 h-5 w-[2px] bg-[#001836]" />
                     )}
                   </span>
                 )
@@ -264,7 +264,7 @@ function About() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#318bc1]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#001836]">
             About Bhakti Industries
           </p>
           <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight md:text-6xl">
@@ -288,7 +288,7 @@ function About() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#318bc1]"
+            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#001836]"
           >
             Know More
             <ArrowRight className="h-4 w-4" />
@@ -309,7 +309,7 @@ function Applications() {
           viewport={{ once: true, amount: 0.4 }}
           variants={reveal}
         >
-          <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">
+          <h2 className="text-4xl font-black text-[#001836] md:text-6xl">
             Applications
           </h2>
           <div className="mt-3 h-[5px] w-[60px] bg-black" />
@@ -363,7 +363,7 @@ function Media() {
       <div className="mx-auto max-w-[1160px] px-5">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">Media</h2>
+            <h2 className="text-4xl font-black text-[#001836] md:text-6xl">Media</h2>
             <div className="mt-3 h-[5px] w-[60px] bg-black" />
           </div>
           <Link
@@ -396,7 +396,7 @@ function Media() {
             {["Events & Exhibitions", "Case Study"].map((title) => (
               <article
                 key={title}
-                className="flex min-h-[228px] flex-col justify-end bg-[#318bc1] p-7 text-white transition-colors hover:bg-[#1f7eae]"
+                className="flex min-h-[228px] flex-col justify-end bg-[#001836] p-7 text-white transition-colors hover:bg-[#1f7eae]"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">
                   Placeholder

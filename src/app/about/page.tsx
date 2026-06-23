@@ -48,9 +48,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="border-t-4 border-[#318bc1] pt-5"
+                className="border-t-4 border-[#001836] pt-5"
               >
-                <item.icon className="h-7 w-7 text-[#318bc1]" />
+                <item.icon className="h-7 w-7 text-[#001836]" />
                 <h3 className="mt-4 text-xl font-black">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-black/60">{item.text}</p>
               </motion.article>
@@ -77,7 +77,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-9 grid grid-cols-3 gap-5 border-t border-black/15 pt-7">
               {["00+ Years", "00 Markets", "000+ Products"].map((stat) => (
-                <p key={stat} className="text-lg font-black text-[#318bc1]">{stat}</p>
+                <p key={stat} className="text-lg font-black text-[#001836]">{stat}</p>
               ))}
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               "Responsible manufacturing",
               "Customer-first execution",
             ].map((title, index) => (
-              <div key={title} className="min-h-[260px] bg-[#318bc1] p-8 text-white">
+              <div key={title} className="min-h-[260px] bg-[#001836] p-8 text-white">
                 <span className="text-6xl font-black text-white/20">0{index + 1}</span>
                 <h3 className="mt-12 text-2xl font-black">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/70">Placeholder culture description.</p>
@@ -108,8 +108,8 @@ export default function AboutPage() {
           <PuckSectionTitle>History</PuckSectionTitle>
           <div className="mt-14 grid gap-8 md:grid-cols-4">
             {timeline.map((year, index) => (
-              <div key={`${year}-${index}`} className="relative border-l-2 border-[#318bc1] pl-6">
-                <p className="text-3xl font-black text-[#318bc1]">{year}</p>
+              <div key={`${year}-${index}`} className="relative border-l-2 border-[#001836] pl-6">
+                <p className="text-3xl font-black text-[#001836]">{year}</p>
                 <h3 className="mt-4 font-black">Placeholder milestone</h3>
                 <p className="mt-2 text-sm leading-6 text-black/55">Add the verified event for this year.</p>
               </div>

@@ -20,34 +20,32 @@ export function PuckPage({
   const imageHero = Boolean(heroImage);
 
   return (
-    <div className="min-h-screen bg-white text-[#111]">
+    <div className="min-h-screen bg-[#fcf8f9] text-[#1b1b1c] antialiased">
       <section
-        className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[180px] ${
-          imageHero ? "pt-24" : "bg-[#3e94cc]"
+        className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center md:min-h-[180px] ${
+          imageHero ? "pt-24 text-white" : "bg-[#fcf8f9] border-b border-[#d9dce3] text-[#001836]"
         }`}
       >
         {imageHero && (
           <>
             <Image src={heroImage!} alt="" fill priority className="object-cover" />
-            <div className="absolute inset-0 bg-[#167fbd]/70" />
+            <div className="absolute inset-0 bg-[#001836]/70" />
           </>
         )}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10"
+          transition={{ duration: 0.6 }}
+          className="relative z-10 mx-auto max-w-[800px]"
         >
           {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-80">
               {eyebrow}
             </p>
           )}
-          <h1 className="mt-3 text-4xl font-black uppercase tracking-[-0.02em] md:text-6xl">
-            {hero}
-          </h1>
+          <h1 className="text-3xl font-black md:text-5xl">{hero}</h1>
           {subtitle && (
-            <p className="mx-auto mt-5 max-w-2xl text-base font-medium text-white/90 md:text-xl">
+            <p className={`mt-4 text-base font-medium md:text-lg ${imageHero ? "text-white/80" : "text-[#5c5f60]"}`}>
               {subtitle}
             </p>
           )}
@@ -68,7 +66,7 @@ export function PuckSectionTitle({
 }) {
   return (
     <div className={center ? "text-center" : ""}>
-      <h2 className="text-3xl font-black tracking-tight text-[#318bc1] md:text-5xl">
+      <h2 className="text-3xl font-black tracking-tight text-[#001836] md:text-5xl">
         {children}
       </h2>
       <div className={`mt-3 h-[5px] w-[60px] bg-black ${center ? "mx-auto" : ""}`} />
