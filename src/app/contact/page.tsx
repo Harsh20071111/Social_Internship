@@ -24,7 +24,7 @@ export default function ContactPage() {
               </address>
               <div className="mt-8 space-y-5">
                 <ContactRow icon={Phone} label="Phone" value="+91 94278 06585" href="tel:+919427806585" />
-                <ContactRow icon={MapPin} label="Working Hours" value="Mon–Sat, 9:00 AM – 6:00 PM" />
+                <ContactRow icon={MapPin} label="Working Hours" value="Tue–Sun, 9:00 AM – 6:00 PM" />
               </div>
             </div>
             <div className="relative aspect-[1.67] w-full shadow-md">
