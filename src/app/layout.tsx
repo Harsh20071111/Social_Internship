@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { Navbar } from "@/components/layout/Navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +41,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen w-full">
+          <div className="flex flex-col min-h-screen w-full pt-16">
+            <Navbar />
             <main className="flex-1 flex flex-col">
               {children}
             </main>

@@ -4,10 +4,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
   Factory,
-  Menu,
-  Phone,
   Utensils,
-  X,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -33,6 +30,7 @@ type FeaturePanelProps = {
   headingLevel: "h1" | "h2";
   align?: "left" | "right";
 };
+
 
 function FeaturePanel({
   eyebrow,

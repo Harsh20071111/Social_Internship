@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { PuckFooter } from "@/components/layout/PuckChrome";
 import { Navbar } from "@/components/layout/Navbar";
+import { motion } from "framer-motion";
+
 
 export function PuckPage({
   children,

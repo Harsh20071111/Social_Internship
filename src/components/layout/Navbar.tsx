@@ -16,7 +16,7 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
 
   // Helper to determine if a link is active based on current path
   const isActive = (href: string) => {

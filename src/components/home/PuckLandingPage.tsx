@@ -52,26 +52,12 @@ const applications = [
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
-      <div
-        className={`relative flex h-[52px] w-[104px] items-center justify-center border-2 px-3 ${
-          inverse
-            ? "border-white text-white"
-            : "border-[#4396c8] text-[#318bc1]"
-        }`}
-      >
-        <span className="puck-logo-word text-[25px] font-black italic tracking-[-0.08em]">
-          BHAKTI
-        </span>
-        <span
-          className={`absolute -bottom-[7px] right-2 bg-white px-1 text-[7px] font-bold uppercase tracking-[0.18em] ${
-            inverse ? "bg-[#0876b7] text-white" : "text-[#111]"
-          }`}
-        >
-          Industries
-        </span>
-      </div>
-      <div className="hidden h-[44px] w-[44px] items-center justify-center rounded-full border border-[#f0a13a] text-[#e87d24] sm:flex">
-        <Sparkles className="h-5 w-5" />
+      <div className={`relative flex items-center gap-2 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
+        <img
+          src="/images/logo.png"
+          alt="Bhakti Industries Logo"
+          className="h-11 w-auto object-contain"
+        />
       </div>
     </Link>
   );
