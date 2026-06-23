@@ -33,17 +33,17 @@ export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
 
 export function PuckFooter() {
   return (
-    <footer className="bg-[#0876b7] text-white">
+    <footer className="bg-[#fcf8f9] text-[#001836] border-t border-black/10">
       <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <PuckBrandMark inverse />
-          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <PuckBrandMark />
+          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-[#001836]/55">
             ADDRESS
           </p>
-          <p className="mt-3 text-sm leading-7 text-white/75">
-            7, Kumar Estate, B/S Bank Of Baroda,
+          <p className="mt-3 text-sm leading-7 text-[#001836]/75">
+            7, Kumar Estate,
             <br />
-            Nr. Shayona Estate,
+            B/S Bank of Baroda, nr. Shayona Estate,
             <br />
             Naroda Road,
             <br />
@@ -51,7 +51,7 @@ export function PuckFooter() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Contact
           </p>
           <p className="mt-5 text-sm leading-8">
@@ -59,20 +59,20 @@ export function PuckFooter() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
             {navItems.slice(0, 6).map((item) => (
-              <Link key={item.label} href={item.href}>
+              <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className="border-t border-white/15">
-        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-white/65 sm:flex-row">
+      <div className="border-t border-black/10">
+        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-[#001836]/65 sm:flex-row">
           <p>© 20XX Bhakti Industries. Placeholder rights statement.</p>
           <p>Terms of Use &nbsp; | &nbsp; Privacy Policy</p>
         </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
@@ -49,6 +50,11 @@ const applications = [
   },
 ];
 
+const reveal = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+};
+
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
@@ -76,7 +82,7 @@ function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-1 text-[14px] font-bold text-[#111] hover:text-[#318bc1]"
+              className="flex items-center gap-1 text-[14px] font-bold text-[#111] transition-colors hover:text-[#001836]"
             >
               {item.label}
               {item.dropdown && <ChevronDown className="h-3.5 w-3.5" strokeWidth={2.5} />}
@@ -152,7 +158,7 @@ function Hero() {
                   <span key={item} className="flex items-center">
                     {item}
                     {index < list.length - 1 && (
-                      <span className="mx-2 h-5 w-[2px] bg-[#318bc1]" />
+                      <span className="mx-2 h-5 w-[2px] bg-[#001836]" />
                     )}
                   </span>
                 )
@@ -223,8 +229,13 @@ function About() {
         Industry
       </div>
       <div className="mx-auto grid max-w-[1160px] gap-14 px-5 lg:grid-cols-2 lg:items-center">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#318bc1]">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#001836]">
             About Bhakti Industries
           </p>
           <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight md:text-6xl">
@@ -233,7 +244,7 @@ function About() {
             Every industrial need.
           </h2>
           <div className="mt-7 h-[5px] w-[60px] bg-black" />
-        </div>
+        </motion.div>
         <div className="relative z-10">
           <p className="text-lg leading-8 text-black/65">
             This is placeholder copy for the company story. Replace it with your
@@ -242,7 +253,7 @@ function About() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#318bc1]"
+            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#001836]"
           >
             Know More
             <ArrowRight className="h-4 w-4" />
@@ -257,12 +268,17 @@ function Applications() {
   return (
     <section id="applications" className="relative overflow-hidden bg-white pb-28 pt-20 md:pb-40">
       <div className="mx-auto max-w-[1160px] px-5">
-        <div>
-          <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={reveal}
+        >
+          <h2 className="text-4xl font-black text-[#001836] md:text-6xl">
             Applications
           </h2>
           <div className="mt-3 h-[5px] w-[60px] bg-black" />
-        </div>
+        </motion.div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {applications.map((application) => {
@@ -308,7 +324,7 @@ function Media() {
       <div className="mx-auto max-w-[1160px] px-5">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">Media</h2>
+            <h2 className="text-4xl font-black text-[#001836] md:text-6xl">Media</h2>
             <div className="mt-3 h-[5px] w-[60px] bg-black" />
           </div>
           <Link
@@ -341,7 +357,7 @@ function Media() {
             {["Events & Exhibitions", "Case Study"].map((title) => (
               <article
                 key={title}
-                className="flex min-h-[228px] flex-col justify-end bg-[#318bc1] p-7 text-white hover:bg-[#1f7eae]"
+                className="flex min-h-[228px] flex-col justify-end bg-[#001836] p-7 text-white transition-colors hover:bg-[#1f7eae]"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">
                   Placeholder
@@ -359,17 +375,17 @@ function Media() {
 
 function Footer() {
   return (
-    <footer className="bg-[#0876b7] text-white">
+    <footer className="bg-[#fcf8f9] text-[#001836] border-t border-black/10">
       <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <BrandMark inverse />
-          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <BrandMark />
+          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-[#001836]/55">
             ADDRESS
           </p>
-          <p className="mt-3 text-sm leading-7 text-white/75">
-            7, Kumar Estate, B/S Bank Of Baroda,
+          <p className="mt-3 text-sm leading-7 text-[#001836]/75">
+            7, Kumar Estate,
             <br />
-            Nr. Shayona Estate,
+            B/S Bank of Baroda, nr. Shayona Estate,
             <br />
             Naroda Road,
             <br />
@@ -377,7 +393,7 @@ function Footer() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Contact
           </p>
           <p className="mt-5 text-sm leading-8">
@@ -385,20 +401,20 @@ function Footer() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
             {navItems.slice(0, 6).map((item) => (
-              <Link key={item.label} href={item.href}>
+              <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className="border-t border-white/15">
-        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-white/65 sm:flex-row">
+      <div className="border-t border-black/10">
+        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-[#001836]/65 sm:flex-row">
           <p>© 20XX Bhakti Industries. Placeholder rights statement.</p>
           <p>Terms of Use &nbsp; | &nbsp; Privacy Policy</p>
         </div>

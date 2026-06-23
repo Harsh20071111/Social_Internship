@@ -10,7 +10,7 @@ const steps = [
 ];
 
 const control =
-  "h-12 w-full border border-black/15 bg-white px-4 text-sm outline-none focus:border-[#318bc1]";
+  "h-12 w-full border border-black/15 bg-white px-4 text-sm outline-none focus:border-[#001836]";
 
 export default function InquiryPage() {
   return (
@@ -25,7 +25,7 @@ export default function InquiryPage() {
             {steps.map((step) => (
               <div key={step.number} className="relative border border-black/10 p-7">
                 <span className="absolute right-5 top-3 text-6xl font-black text-[#eef7fc]">{step.number}</span>
-                <step.icon className="relative h-8 w-8 text-[#318bc1]" />
+                <step.icon className="relative h-8 w-8 text-[#001836]" />
                 <h2 className="relative mt-8 text-xl font-black">{step.title}</h2>
                 <p className="relative mt-3 text-sm leading-6 text-black/55">
                   Placeholder description for this inquiry stage.
@@ -62,7 +62,7 @@ export default function InquiryPage() {
                 <textarea className={`${control} h-40 resize-none py-3`} placeholder="Specifications, materials, quantities, and timeline..." />
               </InputBlock>
             </div>
-            <button type="button" className="mt-7 inline-flex h-12 items-center gap-2 bg-[#318bc1] px-8 text-sm font-black uppercase tracking-[0.08em] text-white">
+            <button type="button" className="mt-7 inline-flex h-12 items-center gap-2 bg-[#001836] px-8 text-sm font-black uppercase tracking-[0.08em] text-white">
               Submit Inquiry <Send className="h-4 w-4" />
             </button>
           </form>

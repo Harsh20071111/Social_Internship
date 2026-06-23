@@ -14,7 +14,7 @@ export default function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
               <p className="text-sm font-bold text-black/45">Industry</p>
-              <h2 className="mt-2 text-3xl font-black text-[#318bc1]">BHAKTI INDUSTRIES</h2>
+              <h2 className="mt-2 text-3xl font-black text-[#001836]">BHAKTI INDUSTRIES</h2>
               <address className="mt-6 not-italic text-base leading-7 text-black/60">
                 7, Kumar Estate
                 <br />
@@ -49,7 +49,7 @@ function ContactRow({ icon: Icon, label, value, href }: { icon: typeof Phone; la
       <Icon className="mt-1 h-6 w-6 text-black/35" />
       <div>
         <p className="text-sm font-bold text-black/45">{label}</p>
-        <p className="mt-1 font-black text-[#318bc1]">{value}</p>
+        <p className="mt-1 font-black text-[#001836]">{value}</p>
       </div>
     </div>
   );
