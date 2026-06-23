@@ -94,7 +94,7 @@ export default function MachineryPage() {
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2">
-                      <Icon className="h-4 w-4 text-[#318bc1]" />
+                      <Icon className="h-4 w-4 text-[#001836]" />
                       <h3 className="text-base font-black">{machine.name}</h3>
                     </div>
                     <p className="mt-2 text-sm leading-6 text-black/55">
