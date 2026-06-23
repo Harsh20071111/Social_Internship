@@ -10,7 +10,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/layout/Navbar";
 import { PuckFooter } from "@/components/layout/PuckChrome";
 
 type FeaturePanelProps = {
@@ -25,7 +24,6 @@ type FeaturePanelProps = {
   tone: "light" | "dark";
   headingLevel: "h1" | "h2";
   align?: "left" | "right";
-  fullHeight?: boolean;
 };
 
 
@@ -42,16 +40,15 @@ function FeaturePanel({
   tone,
   headingLevel,
   align = "left",
-  fullHeight = false,
 }: FeaturePanelProps) {
   const isDark = tone === "dark";
   const Heading = headingLevel;
   const isRightAligned = align === "right";
 
   return (
-    <article className={`group relative ${fullHeight ? "min-h-screen" : "min-h-[calc(100svh-4rem)]"} overflow-hidden border-b border-white/15`}>
+    <article className="snap-start group relative min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/15">
       <div
-        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat transition-transform duration-700 ease-out"
         style={{
           backgroundImage: `url('${image}')`,
           backgroundPosition: imagePosition,
@@ -68,7 +65,7 @@ function FeaturePanel({
       />
 
       <div
-        className={`relative z-10 flex ${fullHeight ? "min-h-screen" : "min-h-[calc(100svh-4rem)]"} items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
+        className={`relative z-10 flex min-h-[calc(100svh-4rem)] items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
           }`}
       >
         <div
@@ -117,10 +114,8 @@ function FeaturePanel({
 
 export function HomePage() {
   return (
-    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-pt-16 bg-[#fcf8f9] pt-16 text-[#1b1b1c] antialiased">
-      <Navbar />
-      <main className="flex flex-col">
-        <FeaturePanel
+    <div className="h-[calc(100svh-4rem)] w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
+      <FeaturePanel
           eyebrow="Precision Cutlery"
           title="The Spoon Collection"
           description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
@@ -134,11 +129,10 @@ export function HomePage() {
           align="left"
         />
         <FeaturePanel
-          fullHeight
           eyebrow="Heavy Duty Assembly"
-          title="The Impeller Series"
-          description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
-          cta="Explore Impeller"
+          title="The Ambular Series"
+          description="Robust. Reliable. Ready for scale. The Ambular series sets the standard for high-capacity structural components built for demanding operational environments."
+          cta="Explore Ambular"
           href="/products"
           image="https://lh3.googleusercontent.com/aida-public/AB6AXuARJjGqeII7uT_I8n2GcLlStbxdtpYIfN_1yMN_BEVewBAPrr9GqgFRphdfY6mS9CBi2HvRPEPxGbGA0FYYpJSIFN_X9FApjooZlMRXedgpQ3PW1qPfzRslQdISSdlVZIVQc-jIfMuOPcvs6o89DQQrQu8pcIjybkIe9jN6uYJaIJ4SOJABtfeE19Uvgclc_v2ADoh7PA3TgQUgeAXteX3yW8cjtuKNOq6UH4_SyfL_mordKWGTsPyUI0PaYLhLyhNhqL1ke2aEc-M"
           imagePosition="58% center"
@@ -147,8 +141,7 @@ export function HomePage() {
           headingLevel="h2"
           align="right"
         />
-      </main>
-      <div className="snap-start min-h-screen">
+      <div className="snap-start">
         <PuckFooter />
       </div>
     </div>
