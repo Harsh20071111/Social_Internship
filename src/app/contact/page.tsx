@@ -16,11 +16,11 @@ export default function ContactPage() {
               <p className="text-sm font-bold text-black/45">Industry</p>
               <h2 className="mt-2 text-3xl font-black text-[#318bc1]">BHAKTI INDUSTRIES</h2>
               <address className="mt-6 not-italic text-base leading-7 text-black/60">
-                Placeholder Corporate Campus
+                7, Kumar Estate
                 <br />
-                Industrial Road, Placeholder District
+                B/S Bank of Baroda, nr. Shayona Estate
                 <br />
-                City 000000, Country
+                Naroda Road, Ahmedabad - 380025
               </address>
               <div className="mt-8 space-y-5">
                 <ContactRow icon={Phone} label="Phone" value="+91 94278 06585" href="tel:+919427806585" />
