@@ -10,7 +10,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Factories", href: "/factories" },
+    { label: "Our Machinery", href: "/machinery" },
     { label: "Certifications", href: "/about" },
     { label: "Careers", href: "/contact" },
   ],
