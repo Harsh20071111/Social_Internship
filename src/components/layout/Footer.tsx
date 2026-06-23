@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
@@ -31,19 +32,15 @@ export function Footer() {
         <div className="space-y-8 md:hidden">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded bg-white">
-                <span className="text-xs font-bold text-[#001836] leading-none">B</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[14px] font-semibold leading-tight text-white">
-                  Bhakti Industries
-                </span>
-                <span className="text-[9px] font-medium uppercase tracking-[0.08em] text-[#7696ca]">
-                  Industries
-                </span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
+              <Image 
+                src="/images/logo.png" 
+                alt="Bhakti Industries Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
             <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
               Leading manufacturer of premium kitchenware, steel utensils, and
               household products since 1998.
@@ -103,19 +100,15 @@ export function Footer() {
         <div className="hidden gap-10 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded bg-white">
-                <span className="text-xs font-bold text-[#001836] leading-none">B</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[14px] font-semibold leading-tight text-white">
-                  Bhakti Industries
-                </span>
-                <span className="text-[9px] font-medium uppercase tracking-[0.08em] text-[#7696ca]">
-                  Industries
-                </span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
+              <Image 
+                src="/images/logo.png" 
+                alt="Bhakti Industries Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
             <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
               Leading manufacturer of premium kitchenware, steel utensils, and
               household products. Three state-of-the-art facilities serving
