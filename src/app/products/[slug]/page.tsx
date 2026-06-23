@@ -18,6 +18,98 @@ export default async function ProductDetailPage({
   const product = productCategories.find((item) => item.slug === slug);
   if (!product) notFound();
 
+  const is40Foot = slug === "40-foot-k-type-102-od";
+
+  const kSeriesData = is40Foot
+    ? [
+        {
+          id: "k30",
+          label: "K30",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K30 is designed for efficient water circulation in light-duty agricultural and domestic pumping systems. Its optimized vane design ensures smooth water flow, dependable operation, and energy-efficient performance for everyday water delivery needs.",
+        },
+        {
+          id: "k40",
+          label: "K40",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K40 offers improved hydraulic efficiency for medium-scale irrigation and water transfer applications. Engineered for consistent performance, it delivers stable pressure and reliable water discharge while maintaining durability in continuous operation.",
+        },
+        {
+          id: "k50-a",
+          label: "K50",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K50 is a versatile impeller designed for balanced flow and pressure requirements. Its precision-engineered construction helps maximize pump efficiency, making it suitable for a wide range of agricultural and industrial water management systems.",
+        },
+        {
+          id: "k70",
+          label: "K70",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K70 is built for demanding pumping environments where higher water lift and increased discharge are required. Its advanced hydraulic profile enhances water movement, providing efficient performance across larger irrigation networks.",
+        },
+        {
+          id: "k80",
+          label: "K80",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K80 delivers high-capacity water transfer capabilities for intensive agricultural operations. Designed for long-term reliability, it provides strong pressure generation, efficient flow characteristics, and dependable performance under heavy workloads.",
+        },
+        {
+          id: "k100",
+          label: "K100",
+          type: "40 Foot K Type Impeller (113 OD)",
+          description:
+            "The K100 is the highest-performance model in the 40 Foot K Type range. Engineered for maximum water lifting efficiency, it offers exceptional flow velocity and pressure output, making it ideal for deep borewell systems and large-scale irrigation projects.",
+        },
+      ]
+    : [
+        {
+          id: "k30",
+          label: "K30",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K30 is designed for efficient water delivery in small agricultural fields and domestic water systems. Its optimized blade geometry ensures smooth flow characteristics, reliable performance, and reduced energy consumption for everyday pumping requirements.",
+        },
+        {
+          id: "k40",
+          label: "K40",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K40 offers enhanced hydraulic performance for medium-duty irrigation and water transfer applications. Built for durability and consistent flow rates, it provides improved pressure generation while maintaining operational efficiency.",
+        },
+        {
+          id: "k50-a",
+          label: "K50",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K50 is a versatile, high-performance impeller engineered for V6 submersible pumps. With its balanced design and 113 mm outer diameter, it delivers excellent water discharge, higher lift capability, and dependable operation in agricultural and industrial environments.",
+        },
+        {
+          id: "k70",
+          label: "K70",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K70 is built for demanding water pumping applications where higher head and increased flow are required. Its precision-engineered construction maximizes centrifugal force, ensuring efficient water movement over greater distances and elevations.",
+        },
+        {
+          id: "k80",
+          label: "K80",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K80 provides superior hydraulic efficiency for large-scale irrigation systems and heavy-duty pumping operations. Designed to handle higher workloads, it offers strong pressure output, reliable water delivery, and long service life under continuous operation.",
+        },
+        {
+          id: "k100",
+          label: "K100",
+          type: "45 Foot K Type Impeller (113 OD)",
+          description:
+            "The K100 is the premium high-capacity model in the range, developed for maximum water lifting performance and intensive agricultural applications. Its advanced impeller profile generates exceptional flow velocity and pressure, making it ideal for deep borewell and large-scale water distribution systems.",
+        },
+      ];
+
   return (
     <PuckPage hero={product.title} subtitle={product.summary}>
       <section className="bg-[#f3f3f3] py-16 md:py-24">
@@ -59,57 +151,21 @@ export default async function ProductDetailPage({
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1160px] px-5">
+        <div className="mx-auto max-w-[1440px] px-5">
           <PuckSectionTitle>Models & Variants</PuckSectionTitle>
           <p className="mt-6 max-w-4xl text-base leading-7 text-black/70">
-            <strong>40 Foot K Type Impeller (113 OD)</strong><br/><br/>
-            Our 40 Foot K Type Impeller range is manufactured using premium-quality engineering materials and advanced molding technology to ensure excellent durability, hydraulic efficiency, and long service life. Designed specifically for V6 submersible pumps, these impellers provide reliable water delivery for agricultural, industrial, and domestic applications. Available in K30, K40, K50, K60, K70, K80, and K100 variants, the range offers solutions for diverse pumping requirements while maintaining consistent performance and energy efficiency.
+            <strong>{is40Foot ? "40 Foot K Type Impeller (102 OD)" : "45 Foot K Type Impeller (113 OD)"}</strong><br/><br/>
+            Our {is40Foot ? "40" : "45"} Foot K Type Impeller range is manufactured using premium-quality engineering materials and advanced molding technology to ensure excellent durability, hydraulic efficiency, and long service life. Designed specifically for V6 submersible pumps, these impellers provide reliable water delivery for agricultural, industrial, and domestic applications. Available in K30, K40, K50, K70, K80, and K100 variants, the range offers solutions for diverse pumping requirements while maintaining consistent performance and energy efficiency.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {[
-              {
-                model: "K30",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K30 is designed for efficient water circulation in light-duty agricultural and domestic pumping systems. Its optimized vane design ensures smooth water flow, dependable operation, and energy-efficient performance for everyday water delivery needs."
-              },
-              {
-                model: "K40",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K40 offers improved hydraulic efficiency for medium-scale irrigation and water transfer applications. Engineered for consistent performance, it delivers stable pressure and reliable water discharge while maintaining durability in continuous operation."
-              },
-              {
-                model: "K50",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K50 is a versatile impeller designed for balanced flow and pressure requirements. Its precision-engineered construction helps maximize pump efficiency, making it suitable for a wide range of agricultural and industrial water management systems."
-              },
-              {
-                model: "K60",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "Replace with actual model description and technical range."
-              },
-              {
-                model: "K70",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K70 is built for demanding pumping environments where higher water lift and increased discharge are required. Its advanced hydraulic profile enhances water movement, providing efficient performance across larger irrigation networks."
-              },
-              {
-                model: "K80",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K80 delivers high-capacity water transfer capabilities for intensive agricultural operations. Designed for long-term reliability, it provides strong pressure generation, efficient flow characteristics, and dependable performance under heavy workloads."
-              },
-              {
-                model: "K100",
-                subtitle: "40 Foot K Type Impeller (113 OD)",
-                desc: "The K100 is the highest-performance model in the 40 Foot K Type range. Engineered for maximum water lifting efficiency, it offers exceptional flow velocity and pressure output, making it ideal for deep borewell systems and large-scale irrigation projects."
-              }
-            ].map(({ model, subtitle, desc }) => (
-              <article key={model} className="border border-black/10 p-6">
+            {kSeriesData.map(({ id, label, type, description }) => (
+              <article key={id} className="border border-black/10 p-6">
                 <div className="flex aspect-square items-center justify-center bg-[#f5f5f5] text-center text-sm font-black text-black/25">
                   <span className="max-w-[70%]">Image Placeholder</span>
                 </div>
-                <h3 className="mt-6 text-xl font-black uppercase text-[#318bc1]">{model}</h3>
-                <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-[#888]">{subtitle}</p>
-                <p className="mt-3 text-sm leading-6 text-black/60">{desc}</p>
+                <h3 className="mt-6 text-xl font-black uppercase text-[#318bc1]">{label}</h3>
+                <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-[#888]">{type}</p>
+                <p className="mt-3 text-sm leading-6 text-black/60">{description}</p>
               </article>
             ))}
           </div>
