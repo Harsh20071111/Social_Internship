@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -17,19 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Bhakti Industries | Integrated Manufacturing",
-    template: "%s | Bhakti Industries",
-  },
-  description:
-    "Placeholder website for an integrated industrial manufacturing company.",
-  keywords: [
-    "industrial manufacturing",
-    "integrated manufacturing",
-    "industrial products",
-    "engineering",
-    "B2B manufacturing",
-  ],
+  title: "Bhakti Industries | B2B Manufacturing Company",
+  description: "Premium manufacturing solutions for spoons, kitchenware, and industrial components.",
 };
 
 export default function RootLayout({
@@ -41,16 +31,19 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${geistMono.variable} h-full`}
+      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
           <Toaster />
         </ThemeProvider>
       </body>
