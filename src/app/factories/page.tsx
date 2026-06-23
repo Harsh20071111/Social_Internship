@@ -35,7 +35,7 @@ export default function FactoriesPage() {
                 transition={{ delay: index * 0.05 }}
                 className="group relative min-h-[360px] overflow-hidden bg-[#102c3b]"
               >
-                <Image src={item.image} alt="" fill className="object-cover opacity-75 transition-transform duration-700 group-hover:scale-105" />
+                <Image src={item.image} alt="" fill className="object-cover opacity-75" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061821] via-transparent to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                   <item.icon className="h-8 w-8 text-[#77cff5]" />

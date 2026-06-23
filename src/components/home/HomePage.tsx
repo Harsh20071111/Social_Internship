@@ -61,11 +61,10 @@ function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className={`border-b-2 py-1 text-sm font-medium transition-colors ${
-                index === 0
+              className={`border-b-2 py-1 text-sm font-medium transition-colors ${index === 0
                   ? "border-[#001836] text-[#001836]"
                   : "border-transparent text-[#5c5f60] hover:text-[#001836]"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -85,8 +84,8 @@ function Navbar() {
             nativeButton={false}
             className="h-10 rounded-sm bg-[#001836] px-5 text-xs font-semibold uppercase tracking-[0.06em] text-white shadow-none hover:bg-[#002d5b]"
           >
-              Request Quote
-              <ArrowRight className="ml-1 h-4 w-4" />
+            Request Quote
+            <ArrowRight className="ml-1 h-4 w-4" />
           </Button>
         </div>
 
@@ -163,29 +162,25 @@ function FeaturePanel({
       />
 
       <div
-        className={`absolute inset-0 ${
-          isDark
+        className={`absolute inset-0 ${isDark
             ? "bg-gradient-to-t from-[#001836] via-[#001836]/62 to-[#001836]/12"
             : "bg-gradient-to-t from-[#f8f8f7]/95 via-[#f8f8f7]/40 to-black/5"
-        }`}
+          }`}
       />
 
       <div
-        className={`relative z-10 flex min-h-[calc(100svh-4rem)] items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${
-          isRightAligned ? "justify-end" : "justify-start"
-        }`}
+        className={`relative z-10 flex min-h-[calc(100svh-4rem)] items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
+          }`}
       >
         <div
-          className={`w-full max-w-[540px] border p-6 backdrop-blur-md sm:p-8 ${
-            isDark
+          className={`w-full max-w-[540px] border p-6 backdrop-blur-md sm:p-8 ${isDark
               ? "border-white/15 bg-[#001836]/82 text-white"
               : "border-white/50 bg-white/82 text-[#001836]"
-          }`}
+            }`}
         >
           <div
-            className={`mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] ${
-              isDark ? "text-[#a7c8ff]" : "text-[#5c5f60]"
-            }`}
+            className={`mb-4 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] ${isDark ? "text-[#a7c8ff]" : "text-[#5c5f60]"
+              }`}
           >
             <Icon className="h-4 w-4" strokeWidth={1.8} />
             <span>{eyebrow}</span>
@@ -196,9 +191,8 @@ function FeaturePanel({
           </Heading>
 
           <p
-            className={`mt-5 max-w-[480px] text-sm leading-6 sm:text-base ${
-              isDark ? "text-white/72" : "text-[#43474f]"
-            }`}
+            className={`mt-5 max-w-[480px] text-sm leading-6 sm:text-base ${isDark ? "text-white/72" : "text-[#43474f]"
+              }`}
           >
             {description}
           </p>
@@ -207,11 +201,10 @@ function FeaturePanel({
             render={<Link href={href} />}
             nativeButton={false}
             variant={isDark ? "outline" : "default"}
-            className={`mt-7 h-12 rounded-sm px-6 text-xs font-semibold uppercase tracking-[0.08em] shadow-none ${
-              isDark
+            className={`mt-7 h-12 rounded-sm px-6 text-xs font-semibold uppercase tracking-[0.08em] shadow-none ${isDark
                 ? "border-white/45 bg-transparent text-white hover:bg-white hover:text-[#001836]"
                 : "bg-[#001836] text-white hover:bg-[#002d5b]"
-            }`}
+              }`}
           >
             {cta}
             <ArrowRight className="ml-1 h-4 w-4" />
@@ -270,9 +263,9 @@ export function HomePage() {
         />
         <FeaturePanel
           eyebrow="Heavy Duty Assembly"
-          title="The Impeller Series"
-          description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
-          cta="Explore Impeller"
+          title="The Ambular Series"
+          description="Robust. Reliable. Ready for scale. The Ambular series sets the standard for high-capacity structural components built for demanding operational environments."
+          cta="Explore Ambular"
           href="/products"
           image="https://lh3.googleusercontent.com/aida-public/AB6AXuARJjGqeII7uT_I8n2GcLlStbxdtpYIfN_1yMN_BEVewBAPrr9GqgFRphdfY6mS9CBi2HvRPEPxGbGA0FYYpJSIFN_X9FApjooZlMRXedgpQ3PW1qPfzRslQdISSdlVZIVQc-jIfMuOPcvs6o89DQQrQu8pcIjybkIe9jN6uYJaIJ4SOJABtfeE19Uvgclc_v2ADoh7PA3TgQUgeAXteX3yW8cjtuKNOq6UH4_SyfL_mordKWGTsPyUI0PaYLhLyhNhqL1ke2aEc-M"
           imagePosition="58% center"

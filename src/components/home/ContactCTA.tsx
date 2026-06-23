@@ -29,7 +29,7 @@ export function ContactCTA() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <a href="tel:+919876543210">
+              <a href="tel:+919427806585">
                 <Button
                   variant="outline"
                   className="h-11 rounded border-white/20 bg-transparent px-7 text-[14px] font-medium text-white shadow-none hover:border-white/40 hover:bg-white/5 transition-colors duration-200"

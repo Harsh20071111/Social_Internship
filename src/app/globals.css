@@ -229,3 +229,21 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── Global Animation & Motion Removal Override ─── */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Disable any zoom, scale, translate transitions globally on hover for items */
+img, 
+a, 
+button, 
+div, 
+span {
+  transition: none !important;
+  transform: none !important;
+}
+
