@@ -61,14 +61,55 @@ export default async function ProductDetailPage({
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-[1160px] px-5">
           <PuckSectionTitle>Models & Variants</PuckSectionTitle>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <article key={item} className="border border-black/10 p-6">
-                <div className="flex aspect-square items-center justify-center bg-[#f5f5f5] text-sm font-black text-black/25">
-                  Product Image {item}
+          <p className="mt-6 max-w-4xl text-base leading-7 text-black/70">
+            <strong>40 Foot K Type Impeller (113 OD)</strong><br/><br/>
+            Our 40 Foot K Type Impeller range is manufactured using premium-quality engineering materials and advanced molding technology to ensure excellent durability, hydraulic efficiency, and long service life. Designed specifically for V6 submersible pumps, these impellers provide reliable water delivery for agricultural, industrial, and domestic applications. Available in K30, K40, K50, K60, K70, K80, and K100 variants, the range offers solutions for diverse pumping requirements while maintaining consistent performance and energy efficiency.
+          </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {[
+              {
+                model: "K30",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K30 is designed for efficient water circulation in light-duty agricultural and domestic pumping systems. Its optimized vane design ensures smooth water flow, dependable operation, and energy-efficient performance for everyday water delivery needs."
+              },
+              {
+                model: "K40",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K40 offers improved hydraulic efficiency for medium-scale irrigation and water transfer applications. Engineered for consistent performance, it delivers stable pressure and reliable water discharge while maintaining durability in continuous operation."
+              },
+              {
+                model: "K50",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K50 is a versatile impeller designed for balanced flow and pressure requirements. Its precision-engineered construction helps maximize pump efficiency, making it suitable for a wide range of agricultural and industrial water management systems."
+              },
+              {
+                model: "K60",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "Replace with actual model description and technical range."
+              },
+              {
+                model: "K70",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K70 is built for demanding pumping environments where higher water lift and increased discharge are required. Its advanced hydraulic profile enhances water movement, providing efficient performance across larger irrigation networks."
+              },
+              {
+                model: "K80",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K80 delivers high-capacity water transfer capabilities for intensive agricultural operations. Designed for long-term reliability, it provides strong pressure generation, efficient flow characteristics, and dependable performance under heavy workloads."
+              },
+              {
+                model: "K100",
+                subtitle: "40 Foot K Type Impeller (113 OD)",
+                desc: "The K100 is the highest-performance model in the 40 Foot K Type range. Engineered for maximum water lifting efficiency, it offers exceptional flow velocity and pressure output, making it ideal for deep borewell systems and large-scale irrigation projects."
+              }
+            ].map(({ model, subtitle, desc }) => (
+              <article key={model} className="border border-black/10 p-6">
+                <div className="flex aspect-square items-center justify-center bg-[#f5f5f5] text-center text-sm font-black text-black/25">
+                  <span className="max-w-[70%]">Image Placeholder</span>
                 </div>
-                <h3 className="mt-6 text-xl font-black">Placeholder Model 0{item}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/55">Replace with actual model description and technical range.</p>
+                <h3 className="mt-6 text-xl font-black uppercase text-[#318bc1]">{model}</h3>
+                <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-[#888]">{subtitle}</p>
+                <p className="mt-3 text-sm leading-6 text-black/60">{desc}</p>
               </article>
             ))}
           </div>
