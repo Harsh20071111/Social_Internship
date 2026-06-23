@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Package, Factory, Info, Phone } from "lucide-react";
+import { Home, Package, Cog, Info, Phone } from "lucide-react";
 
 const tabs = [
   { href: "/", label: "Home", icon: Home },
   { href: "/products", label: "Products", icon: Package },
-  { href: "/factories", label: "Factories", icon: Factory },
+  { href: "/machinery", label: "Machinery", icon: Cog },
   { href: "/about", label: "About", icon: Info },
   { href: "/contact", label: "Contact", icon: Phone },
 ];
