@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { PuckFooter, PuckHeader } from "@/components/layout/PuckChrome";
+import { PuckFooter } from "@/components/layout/PuckChrome";
+import { Navbar } from "@/components/layout/Navbar";
 
 export function PuckPage({
   children,
@@ -20,26 +20,18 @@ export function PuckPage({
   const imageHero = Boolean(heroImage);
 
   return (
-    <div className="min-h-screen bg-white text-[#111]">
-      {!imageHero && <PuckHeader />}
+    <div className="min-h-screen bg-white pt-16 text-[#111] antialiased">
+      <Navbar />
       <section
-        className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[180px] ${
-          imageHero ? "pt-24" : "bg-[#3e94cc]"
-        }`}
+        className="relative flex min-h-[300px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[380px] bg-[#3e94cc]"
       >
         {imageHero && (
           <>
             <Image src={heroImage!} alt="" fill priority className="object-cover" />
             <div className="absolute inset-0 bg-[#167fbd]/70" />
-            <PuckHeader overlay />
           </>
         )}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10"
-        >
+        <div className="relative z-10">
           {eyebrow && (
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">
               {eyebrow}
@@ -53,7 +45,7 @@ export function PuckPage({
               {subtitle}
             </p>
           )}
-        </motion.div>
+        </div>
       </section>
       <main>{children}</main>
       <PuckFooter />

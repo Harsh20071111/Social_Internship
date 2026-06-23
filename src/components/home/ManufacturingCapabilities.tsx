@@ -73,7 +73,7 @@ export function ManufacturingCapabilities() {
             <StaggerItem key={cap.title} direction={index % 2 === 0 ? "up" : "up"}>
               <div className="group rounded-lg border border-[#e5e2e3] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 <div className="flex h-10 w-10 items-center justify-center rounded border border-[#e5e2e3] bg-[#fcf8f9] transition-colors duration-300 group-hover:border-[#001836]/20 group-hover:bg-[#001836]/5">
-                  <cap.icon className="h-5 w-5 text-[#001836] transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
+                  <cap.icon className="h-5 w-5 text-[#001836]" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-4 text-[16px] font-semibold leading-[22px] text-[#1b1b1c]">
                   {cap.title}
