@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { PuckFooter } from "@/components/layout/PuckChrome";
+import { motion } from "framer-motion";
+
 
 export function PuckPage({
   children,
@@ -49,7 +50,7 @@ export function PuckPage({
               {subtitle}
             </p>
           )}
-        </motion.div>
+        </div>
       </section>
       <main>{children}</main>
       <PuckFooter />

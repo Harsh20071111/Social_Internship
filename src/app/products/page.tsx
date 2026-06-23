@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Factory, Leaf, Waves } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { PuckPage } from "@/components/layout/PuckPage";
 import { productCategories } from "@/lib/puck-content";
-
-const applicationIcons = [Factory, Leaf, Waves];
 
 export default function ProductsPage() {
   return (
@@ -42,28 +40,10 @@ export default function ProductsPage() {
                   <p className="mt-3 max-w-xl text-sm leading-6 text-black/55">
                     {category.summary}
                   </p>
-                  <div className="mt-6 flex gap-5">
-                    {category.applications.map((item, itemIndex) => {
-                      const Icon = applicationIcons[itemIndex % applicationIcons.length];
-                      return (
-                        <span
-                          key={item}
-                          className="flex items-center gap-2 text-xs font-bold text-[#001836]"
-                        >
-                          <Icon className="h-4 w-4" />
-                          {item}
-                        </span>
-                      );
-                    })}
-                  </div>
                 </div>
-                <div className="flex items-center border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
-                  <ul className="space-y-2 text-sm leading-5 text-black/70">
-                    {category.specs.map((spec) => (
-                      <li key={spec}>• {spec}</li>
-                    ))}
-                  </ul>
-                  <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
+                <div className="flex items-center justify-end border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
+                  <span className="text-sm font-bold text-[#001836]">View Range</span>
+                  <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </motion.article>

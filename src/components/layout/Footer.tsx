@@ -84,9 +84,9 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-2 border-t border-white/10 pt-4">
-            <a href="tel:+919876543210" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
+            <a href="tel:+919427806585" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
               <Phone className="h-3.5 w-3.5 shrink-0" />
-              +91 98765 43210
+              +91 94278 06585
             </a>
             <a href="mailto:info@bhaktiindustries.com" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
               <Mail className="h-3.5 w-3.5 shrink-0" />
@@ -123,11 +123,11 @@ export function Footer() {
             </p>
             <div className="space-y-2.5">
               <a
-                href="tel:+919876543210"
+                href="tel:+919427806585"
                 className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors duration-200"
               >
                 <Phone className="h-3.5 w-3.5 shrink-0" />
-                +91 98765 43210
+                +91 94278 06585
               </a>
               <a
                 href="mailto:info@bhaktiindustries.com"

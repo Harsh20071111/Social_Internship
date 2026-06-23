@@ -51,7 +51,7 @@ export function Certifications() {
           {certifications.map((cert) => (
             <StaggerItem key={cert.code} distance={30}>
               <div className="group rounded-lg border border-[#e5e2e3] bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded border border-[#e5e2e3] bg-[#fcf8f9] transition-all duration-300 group-hover:scale-110 group-hover:border-[#001836]/20 group-hover:bg-[#001836]/5">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded border border-[#e5e2e3] bg-[#fcf8f9] transition-all duration-300 group-hover:border-[#001836]/20 group-hover:bg-[#001836]/5">
                   <span className="text-[13px] font-bold text-[#001836]">
                     {cert.code.length > 6 ? cert.code.split(" ")[0] : cert.code}
                   </span>

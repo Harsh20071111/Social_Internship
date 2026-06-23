@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <footer className="w-full bg-white dark:bg-[#0b0f24] py-8 border-t border-slate-200 dark:border-slate-800 transition-colors">
       <div className="w-full flex flex-col items-center justify-center">
-        {/* Full-width responsive card wrapper */}
-        <div className="relative w-full aspect-[1.67] shadow-sm hover:shadow-md transition-shadow duration-300">
+        {/* Responsive card wrapper with proper sizing */}
+        <div className="relative w-full max-w-2xl mx-auto shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden" style={{ aspectRatio: '1024 / 614' }}>
           <Image
-            src="/bhakti-card.jpg"
+            src="/bhakti-card-v2.jpg"
             alt="Bhakti Industries Business Card"
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </div>

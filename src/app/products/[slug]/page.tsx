@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Download } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import { notFound } from "next/navigation";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
 import { productCategories } from "@/lib/puck-content";
@@ -130,20 +130,16 @@ export default async function ProductDetailPage({
               <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]">Product Family</p>
               <h2 className="mt-3 text-4xl font-black">{product.title}</h2>
               <p className="mt-5 text-base leading-7 text-black/60">{product.summary}</p>
-              <div className="mt-8 grid gap-3">
-                {product.specs.map((spec) => (
-                  <div key={spec} className="flex items-center gap-3 border-b border-black/10 py-3 text-sm font-bold">
-                    <CheckCircle2 className="h-5 w-5 text-[#001836]" /> {spec}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/inquiry" className="inline-flex h-12 items-center gap-2 bg-[#001836] px-6 text-sm font-black text-white">
-                  Request Quote <ArrowRight className="h-4 w-4" />
-                </Link>
-                <button className="inline-flex h-12 items-center gap-2 border border-black/15 px-6 text-sm font-black">
-                  Placeholder Catalogue <Download className="h-4 w-4" />
-                </button>
+              <div className="mt-8">
+                <a
+                  href="https://wa.me/919427806585"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center gap-2.5 bg-[#25D366] px-6 text-sm font-bold text-white transition-colors hover:bg-[#1da851]"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  Inquiry on WhatsApp
+                </a>
               </div>
             </div>
           </div>

@@ -7,17 +7,8 @@ import {
   Utensils,
 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Factories", href: "/factories" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { Navbar } from "@/components/layout/Navbar";
 
 const footerLinks = [
   { label: "Privacy Policy", href: "#" },
@@ -41,7 +32,6 @@ type FeaturePanelProps = {
 };
 
 
-
 function FeaturePanel({
   eyebrow,
   title,
@@ -60,9 +50,9 @@ function FeaturePanel({
   const isRightAligned = align === "right";
 
   return (
-    <article className="group relative min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/15">
+    <article className="group relative h-[calc(100vh-4rem)] min-h-[calc(100vh-4rem)] w-full snap-start overflow-hidden border-b border-white/15">
       <div
-        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('${image}')`,
           backgroundPosition: imagePosition,
@@ -161,7 +151,8 @@ function Footer() {
 
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-[#fcf8f9] text-[#1b1b1c] antialiased">
+    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-pt-16 bg-[#fcf8f9] pt-16 text-[#1b1b1c] antialiased">
+      <Navbar />
       <main className="flex flex-col">
         <FeaturePanel
           eyebrow="Precision Cutlery"
@@ -190,7 +181,9 @@ export function HomePage() {
           align="right"
         />
       </main>
-      <Footer />
+      <div className="snap-start">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -67,7 +67,7 @@ export function ProductCategories() {
                     src={factory.image}
                     alt={factory.subtitle}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
