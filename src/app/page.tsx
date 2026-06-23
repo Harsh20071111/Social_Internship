@@ -1,5 +1,5 @@
-import { PuckLandingPage } from "@/components/home/PuckLandingPage";
+import { HomePage } from "@/components/home/HomePage";
 
-export default function HomePage() {
-  return <PuckLandingPage />;
+export default function Home() {
+  return <HomePage />;
 }
