@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { PuckFooter, PuckHeader } from "@/components/layout/PuckChrome";
+import { PuckFooter } from "@/components/layout/PuckChrome";
 
 export function PuckPage({
   children,
@@ -21,7 +21,6 @@ export function PuckPage({
 
   return (
     <div className="min-h-screen bg-white text-[#111]">
-      {!imageHero && <PuckHeader />}
       <section
         className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center text-white md:min-h-[180px] ${
           imageHero ? "pt-24" : "bg-[#3e94cc]"
@@ -31,7 +30,6 @@ export function PuckPage({
           <>
             <Image src={heroImage!} alt="" fill priority className="object-cover" />
             <div className="absolute inset-0 bg-[#167fbd]/70" />
-            <PuckHeader overlay />
           </>
         )}
         <motion.div
