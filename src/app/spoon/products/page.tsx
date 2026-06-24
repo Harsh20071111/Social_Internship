@@ -19,36 +19,30 @@ const spoons = [
     name: "S Kumar",
     description:
       "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/s-kumar-spoon.jpg",
   },
   {
     id: "serving-spoon",
     name: "Serving Spoon",
     description:
       "Heavy-duty serving spoon built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/serving-spoon.jpeg",
   },
   {
     id: "soup-spoon",
     name: "Soup Spoon",
     description:
       "Deep-bowl stainless steel soup spoon shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/soup-spoon-2.jpg",
   },
   {
     id: "dessert-spoon",
     name: "Dessert Spoon",
     description:
       "Elegant stainless steel dessert spoon suitable for ice cream, sweets, and serving applications with a refined, polished look.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/dessert-spoon.jpg",
   },
-  {
-    id: "baby-spoon",
-    name: "Baby Spoon",
-    description:
-      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
-    image: "/uploads/spoon.svg",
-  },
+
 ];
 
 export default function SpoonProductsPage() {

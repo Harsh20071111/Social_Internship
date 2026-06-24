@@ -43,21 +43,21 @@ export const spoonCategories = [
     title: "S Kumar",
     summary:
       "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/s-kumar-spoon.jpg",
   },
   {
     slug: "serving-spoon",
     title: "Serving Spoon",
     summary:
       "Heavy-duty serving spoons built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/serving-spoon.jpeg",
   },
   {
     slug: "soup-spoon",
     title: "Soup Spoon",
     summary:
       "Deep-bowl stainless steel soup spoons shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/soup-spoon-2.jpg",
   },
 ] as const;
 
