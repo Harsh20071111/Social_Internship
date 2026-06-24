@@ -1,29 +1,58 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
 import { motion } from "framer-motion";
 
-const navItems = [
+const defaultNavItems = [
   { label: "About Us", href: "/about" },
-  { label: "Media", href: "/#media" },
-  { label: "Careers", href: "/contact" },
-  { label: "Applications", href: "/factories" },
-  { label: "Products", href: "/products", dropdown: true },
-  { label: "Contact Us", href: "/contact", dropdown: true },
-  { label: "Our Verticals", href: "/factories", dropdown: true },
+  { label: "Products", href: "/products" },
+  { label: "Spoon Machineries", href: "/spoon/machineries" },
+  { label: "Impeller Machineries", href: "/impeller/machineries" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const spoonNavItems = [
+  { label: "Home", href: "/" },
+  { label: "Spoon Products", href: "/spoon/products" },
+  { label: "Spoon Machineries", href: "/spoon/machineries" },
+  { label: "About Spoons", href: "/spoon/about" },
+  { label: "Contact Us", href: "/spoon/contact" },
+];
+
+const impellerNavItems = [
+  { label: "Home", href: "/" },
+  { label: "Impeller Products", href: "/impeller/products" },
+  { label: "Impeller Machineries", href: "/impeller/machineries" },
+  { label: "About Impellers", href: "/impeller/about" },
+  { label: "Contact Us", href: "/impeller/contact" },
 ];
 
 export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
+  const pathname = usePathname() || "/";
+  const isSpoon = pathname.startsWith("/spoon");
+  const isImpeller = pathname.startsWith("/impeller");
+
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
-      <div className={`relative flex items-center gap-2 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
+      <div className={`relative flex items-center gap-2.5 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
         <img
           src="/images/logo.png"
           alt="Bhakti Industries Logo"
           className="h-11 w-auto object-contain"
         />
+        {isSpoon && (
+          <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
+            Cutlery Division
+          </span>
+        )}
+        {isImpeller && (
+          <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
+            Pump Spares Division
+          </span>
+        )}
       </div>
     </Link>
   );
@@ -32,6 +61,16 @@ export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
 
 
 export function PuckFooter() {
+  const pathname = usePathname() || "/";
+  const isSpoon = pathname.startsWith("/spoon");
+  const isImpeller = pathname.startsWith("/impeller");
+
+  const navItems = isSpoon
+    ? spoonNavItems
+    : isImpeller
+    ? impellerNavItems
+    : defaultNavItems;
+
   return (
     <footer className="bg-[#fcf8f9] text-[#001836] border-t border-black/10">
       <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
@@ -63,10 +102,7 @@ export function PuckFooter() {
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
-            {navItems
-              .filter((item) => item.label !== "Media" && item.label !== "Applications")
-              .slice(0, 6)
-              .map((item) => (
+            {navItems.map((item) => (
               <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>
@@ -76,7 +112,7 @@ export function PuckFooter() {
       </div>
       <div className="border-t border-black/10">
         <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-[#001836]/65 sm:flex-row">
-          <p>© 20XX Bhakti Industries. Placeholder rights statement.</p>
+          <p>© {new Date().getFullYear()} Bhakti Industries. All rights reserved.</p>
           <p>Terms of Use &nbsp; | &nbsp; Privacy Policy</p>
         </div>
       </div>

@@ -124,7 +124,7 @@ export function HomePage() {
         title="The Spoon Collection"
         description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
         cta="Explore Spoons"
-        href="/products/spoons"
+        href="/spoon/products"
         image="/images/spoon-hero.png"
         imagePosition="center center"
         icon={Utensils}
@@ -137,7 +137,7 @@ export function HomePage() {
         title="The Impeller Series"
         description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
         cta="Explore Impeller"
-        href="/products/impellers"
+        href="/impeller/products"
         image="/images/home-hero.png"
         imagePosition="center center"
         icon={Factory}

@@ -21,7 +21,7 @@ export default function ProductsPage() {
               transition={{ duration: 0.6 }}
             >
               <Link
-                href={`/products/${category.slug}`}
+                href={category.slug === "spoons" ? "/spoon/products" : "/impeller/products"}
                 className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
               >
                 <div className="relative min-h-[220px] bg-white">
