@@ -125,7 +125,7 @@ export function HomePage() {
           description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
           cta="Explore Spoons"
           href="/products"
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuBCYJ8a1Ig2LhzbOiISmz5W2yPI7DdlidbmwfGRv-zAOKQgeO69knptfCxcuAhtszteWCYN5pHQr2GUVr9Vr4bk-4mC5HdI2SSZitDnIR76tKb81p1hSHyL_8bNhBUhPjKYVcokAaHPX-w2NhLRlqs5X4MnoBWcUikuLjMriA0BI0BjFuDmQrAQv3dVs1LhG6dSm9nziNu6R4Y_qMaBPcTzIYUs16wgnH9Q5vywCLNTeyPTxpWgTD2lrc2Rhx4t7fcRA3x7f8bYzz8"
+          image="/images/spoon-hero.png"
           imagePosition="center center"
           icon={Utensils}
           tone="light"
