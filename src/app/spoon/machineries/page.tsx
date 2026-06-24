@@ -6,29 +6,14 @@ import { MachineryVideoSection } from "@/components/home/MachineryVideoSection";
 
 const spoonMachines = [
   {
-    name: "Blanking Press",
-    description: "High-speed mechanical press used to punch out the initial spoon blanks from stainless steel sheets with minimal material waste.",
-    icon: Scissors,
+    name: "Manual Polishing Station",
+    description: "Heavy-duty double-ended bench motor setup utilized for precise, manual polishing and edge-buffing of stainless steel spoons.",
+    image: "/images/manual-polishing.png",
   },
   {
-    name: "Cross Rolling Machine",
-    description: "Precision rolling equipment that adjusts the thickness of the spoon handle and bowl area to ensure perfect balance and ergonomic feel.",
-    icon: Cog,
-  },
-  {
-    name: "Bowl Forming Press",
-    description: "Heavy-duty hydraulic press with specialized dies to form the exact curvature and depth of the spoon bowl.",
-    icon: Hammer,
-  },
-  {
-    name: "Edge Grinding Station",
-    description: "Automated grinding machinery that removes sharp edges and burrs, creating a smooth, food-safe perimeter around the entire spoon.",
-    icon: ScanLine,
-  },
-  {
-    name: "Mirror Polishing Line",
-    description: "Multi-stage buffing and polishing equipment that delivers the final high-gloss, hygienic finish to the stainless steel cutlery.",
-    icon: Sparkles,
+    name: "Rotary Tumbling Machine",
+    description: "Industrial rotating barrel equipment designed for bulk deburring, smoothing, and mass finishing of metal cutlery components.",
+    image: "/images/rotary-tumbling.png",
   },
 ];
 
@@ -54,21 +39,27 @@ export default function SpoonMachineryPage() {
             Our spoon production line is equipped with specialized machinery designed exclusively for high-volume, high-quality stainless steel cutlery manufacturing. From initial sheet blanking to final mirror polishing, every stage is optimized for precision.
           </p>
           
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
             {spoonMachines.map((machine) => {
-              const Icon = machine.icon;
               return (
                 <article
                   key={machine.name}
-                  className="group overflow-hidden rounded-lg border border-black/10 bg-white p-6 transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+                  className="group overflow-hidden rounded-lg border border-black/10 bg-white transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f3f3f3] text-[#001836] mb-5">
-                    <Icon className="h-6 w-6" />
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#f3f3f3]">
+                    <img
+                      src={machine.image}
+                      alt={machine.name}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
-                  <h3 className="text-lg font-black text-zinc-900">{machine.name}</h3>
-                  <p className="mt-3 text-sm leading-6 text-black/60">
-                    {machine.description}
-                  </p>
+                  <div className="p-5">
+                    <h3 className="text-lg font-black text-zinc-900">{machine.name}</h3>
+                    <p className="mt-3 text-sm leading-6 text-black/60">
+                      {machine.description}
+                    </p>
+                  </div>
                 </article>
               );
             })}
