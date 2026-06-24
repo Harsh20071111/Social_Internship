@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 interface MachineryVideoSectionProps {
   videoSrc?: string;
@@ -67,11 +66,14 @@ export function MachineryVideoSection({
           transition={{ delay: 0.7, duration: 0.8 }}
           className="mt-10"
         >
-          <Button
-            className="h-14 rounded-sm bg-white px-10 text-xs font-bold uppercase tracking-widest text-black hover:bg-white/90"
+          <a
+            href="https://wa.me/919427806585"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-14 items-center justify-center rounded-sm bg-white px-10 text-xs font-bold uppercase tracking-widest text-black hover:bg-white/90"
           >
-            Request Quote
-          </Button>
+            Enquiry
+          </a>
         </motion.div>
       </div>
     </motion.section>

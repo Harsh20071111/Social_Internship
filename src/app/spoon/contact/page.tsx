@@ -15,9 +15,6 @@ export default function SpoonContactPage() {
             <div>
               <p className="text-sm font-bold text-black/45">Industry</p>
               <h2 className="mt-2 text-3xl font-black text-[#001836]">BHAKTI INDUSTRIES</h2>
-              <p className="text-xs font-bold uppercase tracking-wider text-[#a7c8ff] mt-1 bg-[#001836] w-fit px-2 py-0.5 rounded-sm">
-                Spoon & Cutlery Division
-              </p>
               <address className="mt-6 not-italic text-base leading-7 text-black/60">
                 7, Kumar Estate
                 <br />
