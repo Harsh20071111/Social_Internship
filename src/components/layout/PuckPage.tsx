@@ -11,12 +11,16 @@ export function PuckPage({
   heroImage,
   eyebrow,
   subtitle,
+  overlayOpacity = 0.7,
+  overlayColor = "bg-[#001836]",
 }: {
   children: React.ReactNode;
   hero?: string;
   heroImage?: string;
   eyebrow?: string;
   subtitle?: string;
+  overlayOpacity?: number;
+  overlayColor?: string;
 }) {
   const imageHero = Boolean(heroImage);
 
@@ -30,8 +34,8 @@ export function PuckPage({
         >
           {imageHero && (
             <>
-              <Image src={heroImage!} alt="" fill priority className="object-cover" />
-              <div className="absolute inset-0 bg-[#001836]/70" />
+              <Image src={heroImage!} alt="" fill priority className="object-cover" sizes="100vw" />
+              <div className={`absolute inset-0 ${overlayColor}`} style={{ opacity: overlayOpacity }} />
             </>
           )}
           <motion.div

@@ -236,6 +236,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   if (categoryItem) {
     const is40Foot = id === "40-foot-k-type-102-od";
+    const isKType = id === "40-foot-k-type-102-od" || id === "45-foot-k-type-113-od";
 
     const kSeriesData = is40Foot
       ? [
@@ -356,7 +357,13 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         ];
 
     return (
-      <PuckPage hero={categoryItem.title} subtitle={categoryItem.summary}>
+      <PuckPage
+        hero={categoryItem.title}
+        subtitle={categoryItem.summary}
+        heroImage={isKType ? "/images/impeller-hero.jpg" : undefined}
+        overlayOpacity={isKType ? 0.45 : undefined}
+        overlayColor={isKType ? "bg-black" : undefined}
+      >
         <section className="bg-[#f3f3f3] dark:bg-[#12162e] py-16 md:py-24">
           <div className="mx-auto max-w-[1160px] px-5">
             <Link
