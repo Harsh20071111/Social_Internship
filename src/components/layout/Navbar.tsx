@@ -22,7 +22,7 @@ const spoonLinks = [
   { label: "Spoon Products", href: "/spoon/products" },
   { label: "Spoon Machineries", href: "/spoon/machineries" },
   { label: "About Spoons", href: "/spoon/about" },
-  { label: "Contact", href: "/spoon/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const impellerLinks = [
@@ -30,7 +30,7 @@ const impellerLinks = [
   { label: "Impeller Products", href: "/impeller/products" },
   { label: "Impeller Machineries", href: "/impeller/machineries" },
   { label: "About Impellers", href: "/impeller/about" },
-  { label: "Contact", href: "/impeller/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -71,7 +71,7 @@ export function Navbar() {
           />
           {isSpoon && (
             <span className="hidden font-bold tracking-wider text-[#001836] sm:inline-block border-l-2 border-[#d9dce3] pl-2.5 text-[11px] uppercase">
-              Cutlery Division
+              Spoon Division
             </span>
           )}
           {isImpeller && (

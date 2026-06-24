@@ -2,7 +2,17 @@
 
 import { motion } from "framer-motion";
 
-export function MachineryVideoSection() {
+interface MachineryVideoSectionProps {
+  videoSrc?: string;
+  title?: string;
+  description?: string;
+}
+
+export function MachineryVideoSection({
+  videoSrc = "/videos/manufacturing-process.mp4",
+  title = "Inside Our Manufacturing Facility",
+  description = "Explore our advanced machinery, precision engineering, and quality-focused production process.",
+}: MachineryVideoSectionProps) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -21,7 +31,7 @@ export function MachineryVideoSection() {
         poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=75"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/videos/manufacturing-process.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}
@@ -36,7 +46,7 @@ export function MachineryVideoSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-3xl font-black tracking-tight sm:text-5xl lg:text-7xl"
         >
-          Inside Our Manufacturing Facility
+          {title}
         </motion.h2>
         
         <motion.p
@@ -46,7 +56,7 @@ export function MachineryVideoSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-6 max-w-[800px] text-base font-medium opacity-90 sm:text-lg lg:text-xl"
         >
-          Explore our advanced machinery, precision engineering, and quality-focused production process.
+          {description}
         </motion.p>
 
         <motion.div
@@ -60,7 +70,7 @@ export function MachineryVideoSection() {
             href="https://wa.me/919427806585"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-14 rounded-sm bg-white px-10 text-xs font-bold uppercase tracking-widest text-black hover:bg-white/90"
+            className="inline-flex h-14 items-center justify-center rounded-sm bg-white px-10 text-xs font-bold uppercase tracking-widest text-black hover:bg-white/90"
           >
             Enquiry
           </a>

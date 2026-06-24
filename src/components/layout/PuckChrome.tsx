@@ -2,9 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
-import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 const defaultNavItems = [
   { label: "About Us", href: "/about" },
@@ -38,14 +36,16 @@ export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
       <div className={`relative flex items-center gap-2.5 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
-        <img
+        <Image
           src="/images/logo.png"
           alt="Bhakti Industries Logo"
+          width={44}
+          height={44}
           className="h-11 w-auto object-contain"
         />
         {isSpoon && (
           <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
-            Cutlery Division
+            Spoon Division
           </span>
         )}
         {isImpeller && (

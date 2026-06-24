@@ -55,12 +55,12 @@ export default function SpoonAboutPage() {
   return (
     <PuckPage
       hero="Crafting Premium Cutlery with Precision"
-      eyebrow="Cutlery Division"
+      eyebrow="Spoon Division"
       subtitle="Quality | Ergonomics | Durability"
     >
       <nav className="sticky top-0 z-30 border-b border-black/10 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1160px] gap-8 overflow-x-auto px-5 py-5 text-sm font-bold md:gap-16">
-          {["About Bhakti Cutlery", "Culture", "History"].map((item) => (
+          {["Bhakti Spoon", "Culture", "History"].map((item) => (
             <a key={item} href={`#${item.toLowerCase().replaceAll(" ", "-")}`} className="whitespace-nowrap">
               {item}
             </a>
@@ -68,10 +68,10 @@ export default function SpoonAboutPage() {
         </div>
       </nav>
 
-      <section id="about-bhakti-cutlery" className="py-20 md:py-28">
+      <section id="bhakti-spoon" className="py-20 md:py-28">
         <div className="mx-auto grid max-w-[1160px] gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div initial={{ opacity: 0, x: -25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <PuckSectionTitle>About Bhakti Cutlery</PuckSectionTitle>
+            <PuckSectionTitle>Bhakti Spoon</PuckSectionTitle>
             <p className="mt-8 text-lg leading-8 text-black/65">
               Bhakti Industries is a leading manufacturer of premium stainless steel spoons and cutlery. Built on a foundation of quality, precision, and reliable supply chains, we serve wholesalers, distributors, retail brands, and commercial kitchen suppliers across India.
               <br /><br />

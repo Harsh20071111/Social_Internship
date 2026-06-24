@@ -1,21 +1,15 @@
-import Image from "next/image";
-
 export function WhatsAppFloat() {
   return (
     <a
       href="https://wa.me/919427806585"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center transition-all hover:scale-110 drop-shadow-lg hover:drop-shadow-xl"
+      className="fixed bottom-6 right-5 z-50 flex items-center justify-center rounded-full h-14 w-14 shadow-md bg-[#25D366] text-white hover:brightness-110 active:scale-90 transition-all"
       aria-label="Chat on WhatsApp"
     >
-      <Image
-        src="/images/whatsapp-icon.png"
-        alt="WhatsApp"
-        width={60}
-        height={60}
-        className="h-[60px] w-[60px] object-contain"
-      />
+      <span className="material-symbols-outlined" style={{ fontSize: 28, fontVariationSettings: "'FILL' 1" }}>
+        chat
+      </span>
     </a>
   );
 }

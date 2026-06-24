@@ -2,77 +2,191 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
-import { spoonCategories } from "@/lib/puck-content";
+import { PuckPage } from "@/components/layout/PuckPage";
+
+const spoons = [
+  {
+    id: "table-spoon",
+    name: "Hiramoti Table Spoon",
+    description:
+      "Elegant stainless steel table spoon with a polished finish, decorative handle design, and durable construction. Perfect for daily dining, serving, and hospitality use.",
+    image: "/images/hiramoti-table-spoon.png",
+  },
+  {
+    id: "tea-spoon",
+    name: "S Kumar",
+    description:
+      "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "serving-spoon",
+    name: "Award Stainless Steel Spoon",
+    description:
+      "Award stainless steel table spoon with a sleek mirror-polished finish and modern ergonomic handle design. Built for strength, durability, and everyday convenience, it offers a comfortable grip and long-lasting shine. Ideal for dining, serving, and hospitality applications, this spoon combines functionality with a clean, elegant look.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "soup-spoon",
+    name: "Monalisa Stainless Steel Table Spoon",
+    description:
+      "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "dessert-spoon",
+    name: "Casino Stainless Steel Table Spoon",
+    description:
+      "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "baby-spoon",
+    name: "Baby Spoon",
+    description:
+      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
+    image: "/uploads/spoon.svg",
+  },
+];
+
+import { MobileLayout } from "@/components/mobile/MobileLayout";
+import { MobileFooter } from "@/components/mobile/MobileFooter";
 
 export default function SpoonProductsPage() {
   return (
-    <PuckPage
-      hero="Spoon Collection"
-      subtitle="Food-grade stainless steel spoons manufactured for clean finishing, daily durability, and consistent quality"
-      heroImage="/images/spoon-hero.png"
-      overlayOpacity={0.25}
-      overlayColor="bg-black"
-    >
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1160px] space-y-6 px-5">
-          <Link
-            href="/"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-black text-[#001836]"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to Home
-          </Link>
+    <>
+      {/* ── Mobile Version ── */}
+      <div className="md:hidden bg-[#f9f9ff] text-[#181c23] antialiased">
+        <MobileLayout>
+          {/* Page Header */}
+          <section className="px-[20px] pt-[48px] pb-[16px]">
+            <div className="flex flex-col gap-[8px]">
+              <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase tracking-wider">Product Catalog</span>
+              <h2 className="text-[28px] leading-[34px] font-semibold text-[#000000]">Industrial Components</h2>
+              <p className="text-[16px] leading-[24px] font-normal text-[#44474e] max-w-prose">Engineered with metallurgical precision for demanding operational environments.</p>
+            </div>
+          </section>
 
-          <PuckSectionTitle>Our Spoon Range</PuckSectionTitle>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-black/55">
-            Explore our complete range of stainless steel spoons — from everyday
-            table spoons to specialty serving and soup spoons, all manufactured
-            with precision finishing and food-safe quality.
-          </p>
+          {/* Product 1: The Spoon Collection */}
+          <section className="px-[20px] py-[16px]">
+            <div className="border border-[#c4c6ce] rounded-[0.5rem] bg-[#f9f9ff] overflow-hidden">
+              <div className="w-full h-48 bg-[#ebeef8] relative">
+                <img 
+                  className="object-cover w-full h-full" 
+                  alt="A highly detailed close-up shot of a meticulously machined industrial steel spoon component resting on a pristine, brushed steel workbench." 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo6ra_pq4jnyTUSVFELgWfW0X1V6RP8PGCyO2dmWV_vNFrJVrDhdoYVpKHbErE00jYRbxnOC5G52DdGZ5q50ae1iTgcb2srW7JjfDHjNLV4oKWmlHwcVzHgRE8F4mKgslSgGXdi1dAgZatApBWHuZF4X4_GuJlfi43OmvRNxCcfZREm-oU4Huo4fHYF-HWQOZ7psJixcL7x4opt7sRnTu_KOgJVoss0kaWDdjxlxz3n3-v_8MCFuPfLdzHt6SMTXtRUkEQNSmcH90"
+                />
+                <div className="absolute top-4 left-4 bg-[#f9f9ff] text-[#181c23] text-[12px] leading-[16px] tracking-[0.05em] font-semibold uppercase px-2 py-1 rounded-[0.125rem] border border-[#c4c6ce]">
+                  Precision Cutlery
+                </div>
+              </div>
+              <div className="p-[16px] flex flex-col gap-[16px]">
+                <div>
+                  <h3 className="text-[24px] leading-[32px] font-semibold text-[#181c23] mb-[4px]">The Spoon Collection</h3>
+                  <p className="text-[16px] leading-[24px] font-normal text-[#44474e]">Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design. Machine polished 316L Stainless Steel.</p>
+                </div>
+                <div className="border-t border-[#c4c6ce] pt-[16px]">
+                  <h4 className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] mb-[8px] uppercase">Technical Specifications</h4>
+                  <table className="w-full text-left">
+                    <tbody>
+                      <tr className="border-b border-[#dfe2ec]">
+                        <th className="py-2 text-[16px] leading-[24px] text-[#44474e] font-normal">Material</th>
+                        <td className="py-2 text-[14px] leading-[20px] tracking-[0.01em] font-medium text-[#181c23] text-right">316L Stainless Steel</td>
+                      </tr>
+                      <tr className="border-b border-[#dfe2ec]">
+                        <th className="py-2 text-[16px] leading-[24px] text-[#44474e] font-normal">Finish</th>
+                        <td className="py-2 text-[14px] leading-[20px] tracking-[0.01em] font-medium text-[#181c23] text-right">Machine Polished</td>
+                      </tr>
+                      <tr className="border-b border-[#dfe2ec]">
+                        <th className="py-2 text-[16px] leading-[24px] text-[#44474e] font-normal">Tolerance</th>
+                        <td className="py-2 text-[14px] leading-[20px] tracking-[0.01em] font-medium text-[#181c23] text-right">±0.05mm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <a className="w-full flex items-center justify-center gap-2 bg-[#fb3232] text-[#ffffff] text-[12px] leading-[16px] tracking-[0.05em] font-semibold uppercase py-3 rounded-[0.125rem] active:scale-[0.98] transition-transform" href="https://wa.me/919427806585?text=I'm%20interested%20in%20The%20Spoon%20Collection">
+                  Request Quote
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <MobileFooter />
+        </MobileLayout>
+      </div>
 
-          <div className="mt-10 space-y-6">
-            {spoonCategories.map((category) => (
-              <motion.article
-                key={category.slug}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6 }}
+      {/* ── Desktop Version ── */}
+      <div className="hidden md:block">
+        <PuckPage
+          hero="Spoon Collection"
+          subtitle="Food-grade stainless steel spoons manufactured for clean finishing, daily durability, and consistent quality"
+          heroImage="/images/spoon-hero.png"
+          overlayOpacity={0.25}
+          overlayColor="bg-black"
+        >
+          <section className="py-16 md:py-24 bg-[#f9f7f7]">
+            <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+              <Link
+                href="/"
+                className="mb-10 inline-flex items-center gap-2 text-sm font-black text-[#001836]"
               >
-                <Link
-                  href={`/spoon/products/${category.slug}`}
-                  className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
-                >
-                  <div className="relative min-h-[220px] bg-white">
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      className="object-contain p-6"
-                      sizes="(max-width: 768px) 100vw, 230px"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-center px-7 py-8 md:px-10">
-                    <h2 className="text-2xl font-black tracking-tight md:text-[28px]">
-                      {category.title}
-                    </h2>
-                    <p className="mt-3 max-w-xl text-sm leading-6 text-black/55">
-                      {category.summary}
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-end border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
-                    <span className="text-sm font-bold text-[#001836]">View Range</span>
-                    <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-    </PuckPage>
+                <ArrowLeft className="h-4 w-4" /> Back to Home
+              </Link>
+
+              <div className="mt-4 mb-12 text-center">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#3e5f90]">
+                  Our Products
+                </p>
+                <h2 className="mt-3 text-[28px] font-semibold leading-[36px] tracking-tight text-[#1b1b1c] md:text-[36px]">
+                  Our Spoon Range
+                </h2>
+                <p className="mx-auto mt-4 max-w-[600px] text-base leading-7 text-black/55">
+                  Explore our complete range of stainless steel spoons — from everyday
+                  table spoons to specialty serving and soup spoons, all manufactured
+                  with precision finishing and food-safe quality.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {spoons.map((spoon, index) => (
+                  <motion.div
+                    key={spoon.id}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.07 }}
+                    className="group flex flex-col overflow-hidden rounded-xl border border-black/8 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)]"
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-square overflow-hidden bg-[#f5f5f5]">
+                      <Image
+                        src={spoon.image}
+                        alt={spoon.name}
+                        fill
+                        className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col p-5">
+                      <h3 className="text-[17px] font-semibold leading-[24px] text-[#1b1b1c]">
+                        {spoon.name}
+                      </h3>
+                      <p className="mt-2 flex-1 text-[13px] leading-[20px] text-[#43474f]">
+                        {spoon.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </PuckPage>
+      </div>
+    </>
   );
 }

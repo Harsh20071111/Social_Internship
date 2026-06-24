@@ -33,30 +33,44 @@ export const impellerCategories = [
 export const spoonCategories = [
   {
     slug: "table-spoon",
-    title: "Table Spoon",
+    title: "Hiramoti Table Spoon",
     summary:
-      "A balanced stainless steel table spoon range designed for daily dining, smooth edges, reliable thickness, and long-lasting polish.",
-    image: "/images/spoon-hero.png",
+      "Elegant stainless steel table spoon with a polished finish, decorative handle design, and durable construction. Perfect for daily dining, serving, and hospitality use.",
+    image: "/images/hiramoti-table-spoon.png",
   },
   {
     slug: "tea-spoon",
-    title: "Tea Spoon",
+    title: "S Kumar",
     summary:
-      "Compact stainless steel tea spoons with clean bowl shaping, comfortable grip, and a hygienic finish for household and hospitality use.",
+      "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
     image: "/uploads/spoon.svg",
   },
   {
     slug: "serving-spoon",
-    title: "Serving Spoon",
+    title: "Award Stainless Steel Spoon",
     summary:
-      "Heavy-duty serving spoons built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
+      "Award stainless steel table spoon with a sleek mirror-polished finish and modern ergonomic handle design. Built for strength, durability, and everyday convenience, it offers a comfortable grip and long-lasting shine. Ideal for dining, serving, and hospitality applications, this spoon combines functionality with a clean, elegant look.",
     image: "/uploads/spoon.svg",
   },
   {
     slug: "soup-spoon",
-    title: "Soup Spoon",
+    title: "Monalisa Stainless Steel Table Spoon",
     summary:
-      "Deep-bowl stainless steel soup spoons shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
+      "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    slug: "dessert-spoon",
+    title: "Casino Stainless Steel Table Spoon",
+    summary:
+      "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    slug: "baby-spoon",
+    title: "Baby Spoon",
+    summary:
+      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
     image: "/uploads/spoon.svg",
   },
   {

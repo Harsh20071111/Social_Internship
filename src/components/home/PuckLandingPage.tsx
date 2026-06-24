@@ -59,9 +59,11 @@ function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
       <div className={`relative flex items-center gap-2 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
-        <img
+        <Image
           src="/images/logo.png"
           alt="Bhakti Industries Logo"
+          width={44}
+          height={44}
           className="h-11 w-auto object-contain"
         />
       </div>
