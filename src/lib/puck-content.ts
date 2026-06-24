@@ -33,10 +33,10 @@ export const impellerCategories = [
 export const spoonCategories = [
   {
     slug: "table-spoon",
-    title: "Table Spoon",
+    title: "Hiramoti Table Spoon",
     summary:
-      "A balanced stainless steel table spoon range designed for daily dining, smooth edges, reliable thickness, and long-lasting polish.",
-    image: "/images/spoon-hero.png",
+      "Elegant stainless steel table spoon with a polished finish, decorative handle design, and durable construction. Perfect for daily dining, serving, and hospitality use.",
+    image: "/images/hiramoti-table-spoon.png",
   },
   {
     slug: "tea-spoon",
