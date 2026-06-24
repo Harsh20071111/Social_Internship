@@ -2,10 +2,54 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
-import { spoonCategories } from "@/lib/puck-content";
+import { PuckPage } from "@/components/layout/PuckPage";
+
+const spoons = [
+  {
+    id: "table-spoon",
+    name: "Table Spoon",
+    description:
+      "Premium stainless steel table spoon designed for daily dining with a smooth finish, balanced weight, and durable food-grade construction.",
+    image: "/images/spoon-hero.png",
+  },
+  {
+    id: "tea-spoon",
+    name: "Tea Spoon",
+    description:
+      "Compact stainless steel tea spoon with ergonomic grip, clean bowl shaping, and a hygienic mirror-polished finish for household and hospitality use.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "serving-spoon",
+    name: "Serving Spoon",
+    description:
+      "Heavy-duty serving spoon built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "soup-spoon",
+    name: "Soup Spoon",
+    description:
+      "Deep-bowl stainless steel soup spoon shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "dessert-spoon",
+    name: "Dessert Spoon",
+    description:
+      "Elegant stainless steel dessert spoon suitable for ice cream, sweets, and serving applications with a refined, polished look.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    id: "baby-spoon",
+    name: "Baby Spoon",
+    description:
+      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
+    image: "/uploads/spoon.svg",
+  },
+];
 
 export default function SpoonProductsPage() {
   return (
@@ -16,59 +60,61 @@ export default function SpoonProductsPage() {
       overlayOpacity={0.25}
       overlayColor="bg-black"
     >
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1160px] space-y-6 px-5">
+      <section className="py-16 md:py-24 bg-[#f9f7f7]">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <Link
             href="/"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-black text-[#001836]"
+            className="mb-10 inline-flex items-center gap-2 text-sm font-black text-[#001836]"
           >
             <ArrowLeft className="h-4 w-4" /> Back to Home
           </Link>
 
-          <PuckSectionTitle>Our Spoon Range</PuckSectionTitle>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-black/55">
-            Explore our complete range of stainless steel spoons — from everyday
-            table spoons to specialty serving and soup spoons, all manufactured
-            with precision finishing and food-safe quality.
-          </p>
+          <div className="mt-4 mb-12 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#3e5f90]">
+              Our Products
+            </p>
+            <h2 className="mt-3 text-[28px] font-semibold leading-[36px] tracking-tight text-[#1b1b1c] md:text-[36px]">
+              Our Spoon Range
+            </h2>
+            <p className="mx-auto mt-4 max-w-[600px] text-base leading-7 text-black/55">
+              Explore our complete range of stainless steel spoons — from everyday
+              table spoons to specialty serving and soup spoons, all manufactured
+              with precision finishing and food-safe quality.
+            </p>
+          </div>
 
-          <div className="mt-10 space-y-6">
-            {spoonCategories.map((category) => (
-              <motion.article
-                key={category.slug}
-                initial={{ opacity: 0, y: 25 }}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {spoons.map((spoon, index) => (
+              <motion.div
+                key={spoon.id}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.07 }}
+                className="group flex flex-col overflow-hidden rounded-xl border border-black/8 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)]"
               >
-                <Link
-                  href={`/spoon/products/${category.slug}`}
-                  className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
-                >
-                  <div className="relative min-h-[220px] bg-white">
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      className="object-contain p-6"
-                      sizes="(max-width: 768px) 100vw, 230px"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-center px-7 py-8 md:px-10">
-                    <h2 className="text-2xl font-black tracking-tight md:text-[28px]">
-                      {category.title}
-                    </h2>
-                    <p className="mt-3 max-w-xl text-sm leading-6 text-black/55">
-                      {category.summary}
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-end border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
-                    <span className="text-sm font-bold text-[#001836]">View Range</span>
-                    <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </motion.article>
+                {/* Image */}
+                <div className="relative aspect-square overflow-hidden bg-[#f5f5f5]">
+                  <Image
+                    src={spoon.image}
+                    alt={spoon.name}
+                    fill
+                    className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="text-[17px] font-semibold leading-[24px] text-[#1b1b1c]">
+                    {spoon.name}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[13px] leading-[20px] text-[#43474f]">
+                    {spoon.description}
+                  </p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
