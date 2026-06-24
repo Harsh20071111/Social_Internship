@@ -16,9 +16,9 @@ const spoons = [
   },
   {
     id: "tea-spoon",
-    name: "Tea Spoon",
+    name: "S Kumar",
     description:
-      "Compact stainless steel tea spoon with ergonomic grip, clean bowl shaping, and a hygienic mirror-polished finish for household and hospitality use.",
+      "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
     image: "/uploads/spoon.svg",
   },
   {

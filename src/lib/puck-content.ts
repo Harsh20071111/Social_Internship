@@ -40,9 +40,9 @@ export const spoonCategories = [
   },
   {
     slug: "tea-spoon",
-    title: "Tea Spoon",
+    title: "S Kumar",
     summary:
-      "Compact stainless steel tea spoons with clean bowl shaping, comfortable grip, and a hygienic finish for household and hospitality use.",
+      "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
     image: "/uploads/spoon.svg",
   },
   {
