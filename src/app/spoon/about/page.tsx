@@ -30,24 +30,24 @@ const principles = [
 
 const timeline = [
   { 
-    year: "2010", 
-    title: "Foundation of Bhakti Industries", 
-    desc: "Established with a vision to manufacture quality stainless steel kitchenware and spoons for the Indian consumer market." 
+    year: "1995", 
+    title: "Spoon Operations Commenced", 
+    desc: "Began its journey in spoon manufacturing with two machines, laying the foundation for a business focused on quality and precision manufacturing." 
   },
   { 
-    year: "2014", 
-    title: "Dedicated Cutlery Production Lines", 
-    desc: "Expanded manufacturing capabilities with dedicated automated production lines specializing in high-tolerance stainless steel spoons." 
+    year: "2005", 
+    title: "Production Capacity Growth", 
+    desc: "Expanded capacity by adding three additional machines, strengthening our manufacturing capabilities to meet rising product demand." 
   },
   { 
-    year: "2019", 
-    title: "Advanced Pressing Machinery", 
-    desc: "Invested in high-pressure sheet pressing and automatic polishing systems to increase spoon manufacturing capacity and surface finish quality." 
+    year: "2009", 
+    title: "Dedicated Manufacturing Hub", 
+    desc: "Acquired a private manufacturing shed, providing a dedicated facility for large-scale production and future industrial growth." 
   },
   { 
-    year: "2025", 
-    title: "Expanding Cutlery Distribution", 
-    desc: "Strengthened distribution networks and expanded market reach for our premium cutlery and spoon collections across India." 
+    year: "2018", 
+    title: "Rajnigandha Manufacturing Partner", 
+    desc: "Achieved a major milestone by becoming a manufacturing partner for Rajnigandha, demonstrating our ability to meet the high quality standards of leading brands." 
   },
 ];
 
@@ -73,11 +73,11 @@ export default function SpoonAboutPage() {
           <motion.div initial={{ opacity: 0, x: -25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <PuckSectionTitle>Bhakti Spoon</PuckSectionTitle>
             <p className="mt-8 text-lg leading-8 text-black/65">
-              Bhakti Industries is a leading manufacturer of premium stainless steel spoons and cutlery. Built on a foundation of quality, precision, and reliable supply chains, we serve wholesalers, distributors, retail brands, and commercial kitchen suppliers across India.
+              With 31 years of industry experience, Bhakti Industries is a leading manufacturer of premium stainless steel spoons and cutlery. Built on a foundation of reliability, precision, and consistent quality, we serve wholesalers, distributors, retail brands, and commercial kitchen suppliers across India.
               <br /><br />
               Our stainless steel spoons are crafted for durability, elegant aesthetics, and comfortable everyday use. Through advanced stamping, forming, and multi-stage polishing processes, we ensure every spoon meets the highest standards of structural integrity and mirror finish.
               <br /><br />
-              With a commitment to aesthetic design and volume reliability, Bhakti Industries continues to grow as a trusted manufacturing partner in the kitchenware and dining industry.
+              With a commitment to excellence and customer satisfaction, Bhakti Industries continues to grow as a trusted manufacturing partner in the kitchenware and dining industry.
             </p>
           </motion.div>
           <div className="grid gap-8 sm:grid-cols-2">

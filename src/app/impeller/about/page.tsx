@@ -30,24 +30,24 @@ const principles = [
 
 const timeline = [
   { 
-    year: "2010", 
-    title: "Foundation of Bhakti Industries", 
-    desc: "Established with a focus on manufacturing high-precision industrial press components for local engineering sectors." 
+    year: "2013", 
+    title: "Impeller Journey Begins", 
+    desc: "Started impeller manufacturing with a modest setup consisting of three machines and a small production shed." 
   },
   { 
-    year: "2014", 
-    title: "Launch of Submersible Pump Impellers", 
-    desc: "Pioneered the development and manufacturing of sheet metal fabricated impellers and pump spares for submersible pump brands." 
+    year: "2016", 
+    title: "Capacity Enhancement", 
+    desc: "Added four additional machines to the production line, enabling increased manufacturing efficiency and higher output." 
   },
   { 
-    year: "2019", 
-    title: "Precision Machinery Expansion", 
-    desc: "Invested in specialized pneumatic presses, precision welding fixtures, and dynamic balancing machines to support higher volume OEM impeller supply." 
+    year: "2018", 
+    title: "Strategic Infrastructure Growth", 
+    desc: "Installed four more machines and established a larger production shed to accommodate rising demand and future development." 
   },
   { 
-    year: "2025", 
-    title: "OEM Partner Growth", 
-    desc: "Expanded B2B supply agreements with major national submersible pump companies, cementing Bhakti Industries as a key supplier for pump spare parts." 
+    year: "Today", 
+    title: "Continuous Innovation", 
+    desc: "Stands as a growing manufacturer with a strong foundation built on continuous investment in technology and manufacturing excellence." 
   },
 ];
 
