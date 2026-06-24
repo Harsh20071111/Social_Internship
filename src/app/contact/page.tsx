@@ -7,7 +7,6 @@ export default function ContactPage() {
     <PuckPage
       hero="Contact Us"
       subtitle="Get in touch with us"
-      heroImage="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=88"
     >
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1160px] px-5">
