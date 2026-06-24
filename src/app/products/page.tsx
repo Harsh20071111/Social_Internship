@@ -9,7 +9,7 @@ import { productCategories } from "@/lib/puck-content";
 
 export default function ProductsPage() {
   return (
-    <PuckPage hero="Categories">
+    <PuckPage hero="Products">
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1160px] space-y-6 px-5">
           {productCategories.map((category, index) => (

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Cog, Drill, Gauge, Wrench, Zap, Hammer, ScanLine } from "lucide-react";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
+import { MachineryVideoSection } from "@/components/home/MachineryVideoSection";
 
 const machines = [
   {
@@ -9,7 +10,7 @@ const machines = [
       "High-precision CNC lathe for machining impeller shafts, hubs, and critical components with tight dimensional tolerances.",
     icon: Cog,
     image:
-      "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Vertical Machining Center",
@@ -17,7 +18,7 @@ const machines = [
       "Multi-axis milling and drilling center used for complex impeller vane profiling and precision bore operations.",
     icon: Drill,
     image:
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Hydraulic Press",
@@ -25,7 +26,7 @@ const machines = [
       "Heavy-duty press for forming, stamping, and assembling impeller components with consistent force application.",
     icon: Hammer,
     image:
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Dynamic Balancing Machine",
@@ -33,7 +34,7 @@ const machines = [
       "Precision balancing equipment that ensures each impeller rotates smoothly at operating speeds with minimal vibration.",
     icon: Gauge,
     image:
-      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Surface Grinding Machine",
@@ -41,7 +42,7 @@ const machines = [
       "Fine surface finishing equipment for achieving superior flatness and surface roughness on mating faces.",
     icon: Wrench,
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Welding & Fabrication Station",
@@ -49,7 +50,7 @@ const machines = [
       "Industrial welding setup for fabricating custom impeller assemblies and structural pump components.",
     icon: Zap,
     image:
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=75",
   },
   {
     name: "Quality Inspection Lab",
@@ -57,7 +58,7 @@ const machines = [
       "Equipped with CMM, hardness testers, and dimensional gauges to verify every component meets specification.",
     icon: ScanLine,
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=75"
   },
 ];
 
@@ -107,6 +108,7 @@ export default function MachineryPage() {
           </div>
         </div>
       </section>
+      <MachineryVideoSection />
     </PuckPage>
   );
 }

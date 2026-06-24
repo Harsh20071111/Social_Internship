@@ -15,7 +15,7 @@ export function PuckPage({
   overlayColor = "bg-[#001836]",
 }: {
   children: React.ReactNode;
-  hero: string;
+  hero?: string;
   heroImage?: string;
   eyebrow?: string;
   subtitle?: string;
@@ -26,36 +26,38 @@ export function PuckPage({
 
   return (
     <div className="min-h-screen bg-[#fcf8f9] text-[#1b1b1c] antialiased">
-      <section
-        className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center md:min-h-[180px] ${
-          imageHero ? "pt-24 text-white" : "bg-[#fcf8f9] border-b border-[#d9dce3] text-[#001836]"
-        }`}
-      >
-        {imageHero && (
-          <>
-            <Image src={heroImage!} alt="" fill priority className="object-cover" sizes="100vw" />
-            <div className={`absolute inset-0 ${overlayColor}`} style={{ opacity: overlayOpacity }} />
-          </>
-        )}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 mx-auto max-w-[800px]"
+      {hero && (
+        <section
+          className={`relative flex min-h-[140px] items-center justify-center overflow-hidden px-5 text-center md:min-h-[180px] ${
+            imageHero ? "pt-24 text-white" : "bg-[#fcf8f9] border-b border-[#d9dce3] text-[#001836]"
+          }`}
         >
-          {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-80">
-              {eyebrow}
-            </p>
+          {imageHero && (
+            <>
+              <Image src={heroImage!} alt="" fill priority className="object-cover" sizes="100vw" />
+              <div className={`absolute inset-0 ${overlayColor}`} style={{ opacity: overlayOpacity }} />
+            </>
           )}
-          <h1 className="text-3xl font-black md:text-5xl">{hero}</h1>
-          {subtitle && (
-            <p className={`mt-4 text-base font-medium md:text-lg ${imageHero ? "text-white/80" : "text-[#5c5f60]"}`}>
-              {subtitle}
-            </p>
-          )}
-        </motion.div>
-      </section>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 mx-auto max-w-[800px]"
+          >
+            {eyebrow && (
+              <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-80">
+                {eyebrow}
+              </p>
+            )}
+            <h1 className="text-3xl font-black md:text-5xl">{hero}</h1>
+            {subtitle && (
+              <p className={`mt-4 text-base font-medium md:text-lg ${imageHero ? "text-white/80" : "text-[#5c5f60]"}`}>
+                {subtitle}
+              </p>
+            )}
+          </motion.div>
+        </section>
+      )}
       <main>{children}</main>
       <PuckFooter />
     </div>

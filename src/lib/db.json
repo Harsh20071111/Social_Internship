@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "prod-impeller-001",
+      "sku": "IMPELLER-001",
+      "name": "High-Performance Industrial Impeller",
+      "shortDescription": "Stainless steel construction, corrosion resistant impeller for fluid systems.",
+      "description": "Engineered for demanding industrial applications, this high-performance impeller offers exceptional efficiency and durability in fluid transfer operations. Built with premium grade stainless steel, it ensures long service life and resistance to hostile chemical environments.",
+      "features": [
+        "Stainless steel construction",
+        "Corrosion resistant",
+        "High hydrodynamic efficiency",
+        "Precision balanced to reduce vibration"
+      ],
+      "specifications": {
+        "Material": "Grade 316 Stainless Steel",
+        "Diameter": "250mm",
+        "Max Speed": "3600 RPM",
+        "Connection Type": "Keyed Shaft",
+        "Weight": "4.2 kg"
+      },
+      "applications": [
+        "Pumps and fluid transfer systems",
+        "Chemical processing plants",
+        "Pharmaceutical manufacturing",
+        "Food & water treatment industries"
+      ],
+      "benefits": [
+        "Reduced energy consumption due to high efficiency",
+        "Minimal maintenance requirements",
+        "Longer equipment life cycle",
+        "Safe for sanitary and food-grade operations"
+      ],
+      "imageUrl": "/uploads/impeller.svg",
+      "images": [
+        "/uploads/impeller.svg"
+      ],
+      "price": 1250.00,
+      "factoryId": "fact-gujarat-001",
+      "categoryId": "cat-pumps-001"
+    },
+    {
+      "id": "prod-spoon-001",
+      "sku": "SPOON-001",
+      "name": "Industrial Stainless Steel Spoon",
+      "shortDescription": "Hygienic and durable food-grade stainless steel spoon for industrial processing.",
+      "description": "Our industrial-grade stainless steel spoon is designed specifically for processing, laboratory, and cleanroom environments. It complies with strict hygiene standards and offers robust resistance to acids and high-temperature sanitization.",
+      "features": [
+        "Industrial stainless steel spoon",
+        "Food-grade material",
+        "Hygienic and durable design",
+        "Easy to clean"
+      ],
+      "specifications": {
+        "Material": "Grade 304 Stainless Steel",
+        "Length": "300mm",
+        "Capacity": "50ml",
+        "Finish": "Electropolished Mirror Finish",
+        "Thickness": "2.0 mm"
+      },
+      "applications": [
+        "Food processing industries",
+        "Pharmaceutical manufacturing",
+        "Laboratory applications",
+        "Chemical sampling"
+      ],
+      "benefits": [
+        "Zero risk of bacterial contamination",
+        "High durability under frequent sanitization",
+        "Resistant to mild organic acids",
+        "Easy integration with cleanroom protocols"
+      ],
+      "imageUrl": "/uploads/spoon.svg",
+      "images": [
+        "/uploads/spoon.svg"
+      ],
+      "price": 45.00,
+      "factoryId": "fact-maharashtra-002",
+      "categoryId": "cat-utensils-002"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-pumps-001",
+      "name": "Pump Components",
+      "description": "High-precision components for industrial fluid handling and pumps."
+    },
+    {
+      "id": "cat-utensils-002",
+      "name": "Industrial Kitchenware",
+      "description": "Food-grade stainless steel utensils and processing containers."
+    }
+  ],
+  "factories": [
+    {
+      "id": "fact-gujarat-001",
+      "name": "Gujarat Casting & Machinery Unit",
+      "location": "Ahmedabad, Gujarat",
+      "description": "Our flagship casting factory specializing in high-grade stainless steel and heavy machined components."
+    },
+    {
+      "id": "fact-maharashtra-002",
+      "name": "Pune Fabrication & Finishing Unit",
+      "location": "Pune, Maharashtra",
+      "description": "State-of-the-art sheet metal fabrication and electro-polishing facility for hygienic food-grade products."
+    }
+  ]
+}

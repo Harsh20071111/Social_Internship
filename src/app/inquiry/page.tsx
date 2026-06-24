@@ -1,82 +1,58 @@
-"use client";
-
-import { FileCheck2, PackageCheck, Send, Users } from "lucide-react";
-import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
-
-const steps = [
-  { icon: FileCheck2, number: "01", title: "Share Requirements" },
-  { icon: Users, number: "02", title: "Technical Review" },
-  { icon: PackageCheck, number: "03", title: "Sample & Production" },
-];
-
-const control =
-  "h-12 w-full border border-black/15 bg-white px-4 text-sm outline-none focus:border-[#001836]";
+import Image from "next/image";
+import { Phone, MapPin } from "lucide-react";
+import { PuckPage } from "@/components/layout/PuckPage";
 
 export default function InquiryPage() {
   return (
-    <PuckPage
-      hero="Request a Quote"
-      subtitle="Share placeholder project details and replace them later with your real inquiry workflow."
-    >
-      <section className="py-20 md:py-28">
+    <PuckPage>
+      <section className="py-16 md:py-24 bg-[#f5f5f5] dark:bg-[#12162e]">
         <div className="mx-auto max-w-[1160px] px-5">
-          <PuckSectionTitle center>How It Works</PuckSectionTitle>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {steps.map((step) => (
-              <div key={step.number} className="relative border border-black/10 p-7">
-                <span className="absolute right-5 top-3 text-6xl font-black text-[#eef7fc]">{step.number}</span>
-                <step.icon className="relative h-8 w-8 text-[#001836]" />
-                <h2 className="relative mt-8 text-xl font-black">{step.title}</h2>
-                <p className="relative mt-3 text-sm leading-6 text-black/55">
-                  Placeholder description for this inquiry stage.
-                </p>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] items-center">
+            <div>
+              <p className="text-sm font-bold text-black/45 dark:text-zinc-400">Industry</p>
+              <h2 className="mt-2 text-3xl font-black text-[#001836] dark:text-white uppercase tracking-tight">BHAKTI INDUSTRIES</h2>
+              <address className="mt-6 not-italic text-base leading-7 text-black/60 dark:text-zinc-350">
+                7, Kumar Estate
+                <br />
+                B/S Bank of Baroda, nr. Shayona Estate
+                <br />
+                Naroda Road, Ahmedabad - 380025
+              </address>
+              <div className="mt-8 space-y-5">
+                <ContactRow icon={Phone} label="Phone" value="+91 94278 06585" href="tel:+919427806585" />
+                <ContactRow icon={MapPin} label="Working Hours" value="Tue–Sun, 9:00 AM – 6:00 PM" />
               </div>
-            ))}
-          </div>
-
-          <form className="mt-20 bg-[#f3f8fb] p-6 md:p-12">
-            <div className="grid gap-6 md:grid-cols-2">
-              <InputBlock label="Company Name"><input className={control} placeholder="Your company" /></InputBlock>
-              <InputBlock label="Contact Person"><input className={control} placeholder="Full name" /></InputBlock>
-              <InputBlock label="Email Address"><input type="email" className={control} placeholder="work@company.com" /></InputBlock>
-              <InputBlock label="Phone Number"><input type="tel" className={control} placeholder="+00 00000 00000" /></InputBlock>
-              <InputBlock label="Product Category">
-                <select className={control} defaultValue="">
-                  <option value="" disabled>Select category</option>
-                  <option>Precision Pump Systems</option>
-                  <option>Electric Motors</option>
-                  <option>Industrial Valves</option>
-                  <option>Filtration Units</option>
-                  <option>Custom / OEM</option>
-                </select>
-              </InputBlock>
-              <InputBlock label="Estimated Quantity">
-                <select className={control} defaultValue="">
-                  <option value="" disabled>Select quantity</option>
-                  <option>Placeholder range 01</option>
-                  <option>Placeholder range 02</option>
-                  <option>Placeholder range 03</option>
-                </select>
-              </InputBlock>
-              <InputBlock label="Detailed Requirements" wide>
-                <textarea className={`${control} h-40 resize-none py-3`} placeholder="Specifications, materials, quantities, and timeline..." />
-              </InputBlock>
             </div>
-            <button type="button" className="mt-7 inline-flex h-12 items-center gap-2 bg-[#001836] px-8 text-sm font-black uppercase tracking-[0.08em] text-white">
-              Submit Inquiry <Send className="h-4 w-4" />
-            </button>
-          </form>
+            <div className="relative aspect-[1.67] w-full shadow-md rounded-lg overflow-hidden bg-white">
+              <Image
+                src="/bhakti-card-new.jpg"
+                alt="Bhakti Industries Business Card"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
     </PuckPage>
   );
 }
 
-function InputBlock({ label, children, wide = false }: { label: string; children: React.ReactNode; wide?: boolean }) {
-  return (
-    <label className={wide ? "md:col-span-2" : ""}>
-      <span className="mb-2 block text-xs font-black uppercase tracking-[0.12em] text-black/55">{label}</span>
-      {children}
-    </label>
+function ContactRow({ icon: Icon, label, value, href }: { icon: typeof Phone; label: string; value: string; href?: string }) {
+  const content = (
+    <div className="flex gap-4">
+      <Icon className="mt-1 h-6 w-6 text-black/35 dark:text-zinc-400" />
+      <div>
+        <p className="text-sm font-bold text-black/45 dark:text-zinc-450">{label}</p>
+        <p className="mt-1 font-black text-[#001836] dark:text-[#318bc1]">{value}</p>
+      </div>
+    </div>
   );
+
+  if (href) {
+    return <a href={href}>{content}</a>;
+  }
+
+  return content;
 }

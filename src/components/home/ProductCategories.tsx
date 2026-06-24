@@ -14,7 +14,7 @@ const factories = [
       "Specialized in manufacturing high-grade stainless steel spoons, forks, and cutlery sets for domestic and export markets.",
     products: ["Table Spoons", "Tea Spoons", "Serving Spoons", "Fork Sets"],
     image:
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format",
+      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&auto=format",
   },
   {
     id: "factory-2",
@@ -24,7 +24,7 @@ const factories = [
       "Producing premium cookware, tiffin boxes, containers, and kitchen accessories built for durability and everyday use.",
     products: ["Cookware", "Tiffin Boxes", "Storage Containers", "Accessories"],
     image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75&auto=format",
   },
   {
     id: "factory-3",
@@ -34,7 +34,7 @@ const factories = [
       "Manufacturing steel utensils, plates, glasses, and household essentials with focus on quality finishing and polish.",
     products: ["Steel Plates", "Glasses", "Bowls", "Utility Items"],
     image:
-      "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?w=600&q=80&auto=format",
+      "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?w=600&q=75&auto=format",
   },
 ];
 

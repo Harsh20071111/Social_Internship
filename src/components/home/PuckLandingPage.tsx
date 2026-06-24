@@ -32,21 +32,21 @@ const applications = [
     description: "Placeholder solutions for demanding production environments.",
     icon: Factory,
     image:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=75",
   },
   {
     title: "Infrastructure",
     description: "Placeholder systems engineered for scale and reliability.",
     icon: ShieldCheck,
     image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=75",
   },
   {
     title: "Energy",
     description: "Placeholder technologies for efficient industrial operations.",
     icon: Zap,
     image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=75",
   },
 ];
 
@@ -140,7 +140,7 @@ function Hero() {
                   loop
                   muted
                   playsInline
-                  poster="https://images.unsplash.com/photo-1531053326607-9d349096d887?auto=format&fit=crop&w=1000&q=80"
+                  poster="https://images.unsplash.com/photo-1531053326607-9d349096d887?auto=format&fit=crop&w=1000&q=75"
                 >
                   <source
                     src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4"
@@ -195,7 +195,7 @@ function CampaignFilm() {
           loop
           muted
           playsInline
-          poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=88"
+          poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=75"
         >
           <source
             src="https://videos.pexels.com/video-files/4488706/4488706-hd_1920_1080_25fps.mp4"
@@ -337,7 +337,7 @@ function Media() {
         <div className="mt-14 grid gap-6 md:grid-cols-[1.25fr_0.75fr]">
           <article className="group relative min-h-[480px] overflow-hidden bg-black">
             <Image
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=88"
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=75"
               alt=""
               fill
               className="object-cover opacity-75"
