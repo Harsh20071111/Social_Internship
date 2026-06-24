@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
-import { Button } from "@/components/ui/button";
 
 function HomeNavbar() {
   return (
@@ -32,14 +31,15 @@ function HomeNavbar() {
         </span>
 
         {/* Request Quote */}
-        <Button
-          render={<Link href="/inquiry" />}
-          nativeButton={false}
-          className="h-10 rounded-sm border border-white/50 bg-white/20 px-5 text-xs font-semibold uppercase tracking-[0.06em] text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all hover:bg-white hover:text-[#001836] hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+        <a
+          href="https://wa.me/919427806585"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/button inline-flex shrink-0 items-center justify-center h-10 rounded-sm border border-white/50 bg-white/20 px-5 text-xs font-semibold uppercase tracking-[0.06em] text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all hover:bg-white hover:text-[#001836] hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] outline-none select-none"
         >
-          Request Quote
+          For Enquiry
           <ArrowRight className="ml-1 h-4 w-4" />
-        </Button>
+        </a>
       </div>
     </header>
   );
