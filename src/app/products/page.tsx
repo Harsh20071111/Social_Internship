@@ -26,10 +26,10 @@ export default function ProductsPage() {
               >
                 <div className="relative min-h-[220px] bg-white">
                   <Image
-                    src={index === 0 ? "/images/puck-product-collage.png" : category.image}
+                    src={category.image}
                     alt={category.title}
                     fill
-                    className={index === 0 ? "object-contain p-5" : "object-cover"}
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 230px"
                   />
                 </div>
