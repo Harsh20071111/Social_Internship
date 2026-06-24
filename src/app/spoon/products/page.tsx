@@ -23,9 +23,9 @@ const spoons = [
   },
   {
     id: "serving-spoon",
-    name: "Serving Spoon",
+    name: "Award Stainless Steel Spoon",
     description:
-      "Heavy-duty serving spoon built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
+      "Award stainless steel table spoon with a sleek mirror-polished finish and modern ergonomic handle design. Built for strength, durability, and everyday convenience, it offers a comfortable grip and long-lasting shine. Ideal for dining, serving, and hospitality applications, this spoon combines functionality with a clean, elegant look.",
     image: "/uploads/spoon.svg",
   },
   {
