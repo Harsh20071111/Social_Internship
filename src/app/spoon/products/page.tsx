@@ -37,9 +37,9 @@ const spoons = [
   },
   {
     id: "dessert-spoon",
-    name: "Dessert Spoon",
+    name: "Casino Stainless Steel Table Spoon",
     description:
-      "Elegant stainless steel dessert spoon suitable for ice cream, sweets, and serving applications with a refined, polished look.",
+      "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
     image: "/uploads/spoon.svg",
   },
   {

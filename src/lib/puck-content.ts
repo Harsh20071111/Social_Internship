@@ -59,6 +59,20 @@ export const spoonCategories = [
       "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
     image: "/uploads/spoon.svg",
   },
+  {
+    slug: "dessert-spoon",
+    title: "Casino Stainless Steel Table Spoon",
+    summary:
+      "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
+    image: "/uploads/spoon.svg",
+  },
+  {
+    slug: "baby-spoon",
+    title: "Baby Spoon",
+    summary:
+      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
+    image: "/uploads/spoon.svg",
+  },
 ] as const;
 
 export const productCategories = impellerCategories;
