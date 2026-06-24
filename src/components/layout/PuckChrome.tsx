@@ -45,7 +45,7 @@ export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
         />
         {isSpoon && (
           <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
-            Cutlery Division
+            Spoon Division
           </span>
         )}
         {isImpeller && (

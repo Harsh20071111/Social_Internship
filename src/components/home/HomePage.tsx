@@ -65,7 +65,7 @@ function FeaturePanel({
             ? overlayColor
             : isDark
             ? "bg-gradient-to-t from-[#001836] via-[#001836]/62 to-[#001836]/12"
-            : "bg-gradient-to-t from-[#f8f8f7]/95 via-[#f8f8f7]/40 to-black/5"
+            : "bg-gradient-to-t from-[#f8f8f7]/40 via-[#f8f8f7]/15 to-transparent"
         }`}
         style={overlayOpacity !== undefined ? { opacity: overlayOpacity } : undefined}
       />
@@ -118,14 +118,14 @@ function FeaturePanel({
 
 export function HomePage() {
   return (
-    <div className="h-svh w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
+    <div id="home-scroll-container" className="h-svh w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
       <FeaturePanel
         eyebrow="Precision Cutlery"
         title="The Spoon Collection"
         description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
         cta="Explore Spoons"
         href="/spoon/products"
-        image="/images/spoon-hero.png"
+        image="/images/spoonbg.jpg"
         imagePosition="center center"
         icon={Utensils}
         tone="light"

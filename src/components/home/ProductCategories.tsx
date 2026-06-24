@@ -9,7 +9,7 @@ const factories = [
   {
     id: "factory-1",
     name: "Factory 1",
-    subtitle: "Spoons & Cutlery Division",
+    subtitle: "Spoon Division",
     description:
       "Specialized in manufacturing high-grade stainless steel spoons, forks, and cutlery sets for domestic and export markets.",
     products: ["Table Spoons", "Tea Spoons", "Serving Spoons", "Fork Sets"],

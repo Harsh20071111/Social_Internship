@@ -17,7 +17,7 @@ const spoonTabs = [
   { href: "/spoon/products", label: "Products", icon: Package },
   { href: "/spoon/machineries", label: "Machineries", icon: Cog },
   { href: "/spoon/about", label: "About", icon: Info },
-  { href: "/spoon/contact", label: "Contact", icon: Phone },
+  { href: "/contact", label: "Contact", icon: Phone },
 ];
 
 const impellerTabs = [
@@ -25,7 +25,7 @@ const impellerTabs = [
   { href: "/impeller/products", label: "Products", icon: Package },
   { href: "/impeller/machineries", label: "Machineries", icon: Cog },
   { href: "/impeller/about", label: "About", icon: Info },
-  { href: "/impeller/contact", label: "Contact", icon: Phone },
+  { href: "/contact", label: "Contact", icon: Phone },
 ];
 
 export function BottomNav() {
