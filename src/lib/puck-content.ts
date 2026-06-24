@@ -59,6 +59,13 @@ export const spoonCategories = [
       "Deep-bowl stainless steel soup spoons shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
     image: "/uploads/spoon.svg",
   },
+  {
+    slug: "s-kumar",
+    title: "S Kumar",
+    summary:
+      "Premium S Kumar series stainless steel spoons designed for exceptional quality, perfect balance, and elegant dining experiences.",
+    image: "/images/s-kumar.png",
+  },
 ] as const;
 
 export const productCategories = impellerCategories;
