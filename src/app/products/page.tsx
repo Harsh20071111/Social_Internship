@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { PuckPage } from "@/components/layout/PuckPage";
-import { productCategories } from "@/lib/puck-content";
+import { productLines } from "@/lib/puck-content";
 
 export default function ProductsPage() {
   return (
     <PuckPage hero="Products">
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1160px] space-y-6 px-5">
-          {productCategories.map((category, index) => (
+          {productLines.map((category) => (
             <motion.article
               key={category.slug}
               initial={{ opacity: 0, y: 25 }}

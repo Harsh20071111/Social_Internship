@@ -3,7 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProductById, getCategories, getFactories } from "@/lib/db";
-import { productCategories } from "@/lib/puck-content";
+import {
+  allProductCategories,
+  impellerCategories,
+  productCategoriesByLine,
+  productLines,
+  spoonCategories,
+} from "@/lib/puck-content";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
 import ProductGallery from "./product-gallery";
 import {
@@ -38,8 +44,17 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
     };
   }
 
-  // 2. Try Category Slug
-  const categoryItem = productCategories.find((item) => item.slug === id);
+  // 2. Try Product Line Slug
+  const productLine = productLines.find((item) => item.slug === id);
+  if (productLine) {
+    return {
+      title: `${productLine.title} | Bhakti Industries`,
+      description: productLine.summary,
+    };
+  }
+
+  // 3. Try Category Slug
+  const categoryItem = allProductCategories.find((item) => item.slug === id);
   if (categoryItem) {
     return {
       title: `${categoryItem.title} | Bhakti Industries`,
@@ -231,12 +246,75 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     );
   }
 
-  // 2. Try to load Product Family Category from static puck-content
-  const categoryItem = productCategories.find((item) => item.slug === id);
+  // 2. Product line overview pages: /products/impellers and /products/spoons
+  const productLine = productLines.find((item) => item.slug === id);
+
+  if (productLine) {
+    const lineCategories =
+      productCategoriesByLine[productLine.slug as keyof typeof productCategoriesByLine];
+    const isImpellerLine = productLine.slug === "impellers";
+
+    return (
+      <PuckPage
+        hero={productLine.title}
+        subtitle={productLine.summary}
+        heroImage={productLine.image}
+        overlayOpacity={isImpellerLine ? 0.55 : 0.25}
+        overlayColor={isImpellerLine ? "bg-[#001836]" : "bg-black"}
+      >
+        <section className="py-16 md:py-24">
+          <div className="mx-auto max-w-[1160px] space-y-6 px-5">
+            <Link
+              href="/products"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-black text-[#001836] dark:text-zinc-200"
+            >
+              <ArrowLeft className="h-4 w-4" /> Back to Product Lines
+            </Link>
+
+            {lineCategories.map((category) => (
+              <article key={category.slug}>
+                <Link
+                  href={`/products/${category.slug}`}
+                  className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
+                >
+                  <div className="relative min-h-[220px] bg-white">
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      fill
+                      className={isImpellerLine ? "object-cover" : "object-contain p-6"}
+                      sizes="(max-width: 768px) 100vw, 230px"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center px-7 py-8 md:px-10">
+                    <h2 className="text-2xl font-black tracking-tight md:text-[28px]">
+                      {category.title}
+                    </h2>
+                    <p className="mt-3 max-w-xl text-sm leading-6 text-black/55">
+                      {category.summary}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-end border-t border-black/5 px-7 py-7 md:border-l md:border-t-0">
+                    <span className="text-sm font-bold text-[#001836]">View Range</span>
+                    <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[#001836] transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      </PuckPage>
+    );
+  }
+
+  // 3. Try to load Product Family Category from static puck-content
+  const categoryItem = allProductCategories.find((item) => item.slug === id);
 
   if (categoryItem) {
     const is40Foot = id === "40-foot-k-type-102-od";
-    const isKType = id === "40-foot-k-type-102-od" || id === "45-foot-k-type-113-od";
+    const isKType = impellerCategories.some((item) => item.slug === id);
+    const isSpoon = spoonCategories.some((item) => item.slug === id);
 
     const kSeriesData = is40Foot
       ? [
@@ -356,13 +434,50 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           },
         ];
 
+    const spoonSeriesData = [
+      {
+        id: "standard",
+        label: "Standard",
+        type: categoryItem.title,
+        description:
+          "A dependable everyday stainless steel spoon with smooth edge finishing, balanced weight, and food-safe polishing for regular use.",
+        image: categoryItem.image,
+      },
+      {
+        id: "premium",
+        label: "Premium",
+        type: categoryItem.title,
+        description:
+          "A heavier-gauge premium version with improved grip comfort, brighter surface finish, and added durability for hospitality and bulk supply.",
+        image: categoryItem.image,
+      },
+      {
+        id: "mirror-finish",
+        label: "Mirror Finish",
+        type: categoryItem.title,
+        description:
+          "A high-polish variant made for presentation-focused dining, retail sets, and customers who need a cleaner reflective finish.",
+        image: categoryItem.image,
+      },
+      {
+        id: "matte-finish",
+        label: "Matte Finish",
+        type: categoryItem.title,
+        description:
+          "A satin-finished option with a softer visual texture, practical handling, and resistance to visible fingerprints during daily use.",
+        image: categoryItem.image,
+      },
+    ];
+
+    const variantData = isSpoon ? spoonSeriesData : kSeriesData;
+
     return (
       <PuckPage
         hero={categoryItem.title}
         subtitle={categoryItem.summary}
-        heroImage={isKType ? "/images/impeller-hero.jpg" : undefined}
-        overlayOpacity={isKType ? 0.45 : undefined}
-        overlayColor={isKType ? "bg-black" : undefined}
+        heroImage={isKType ? "/images/impeller-hero.jpg" : categoryItem.image}
+        overlayOpacity={isKType ? 0.45 : 0.25}
+        overlayColor={isKType ? "bg-black" : "bg-black"}
       >
         <section className="bg-[#f3f3f3] dark:bg-[#12162e] py-16 md:py-24">
           <div className="mx-auto max-w-[1160px] px-5">
@@ -378,7 +493,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   src={categoryItem.image}
                   alt={categoryItem.title}
                   fill
-                  className={is40Foot ? "object-cover" : "object-contain p-2"}
+                  className={is40Foot ? "object-cover" : "object-contain p-6"}
                   loading="lazy"
                 />
               </div>
@@ -415,24 +530,20 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <PuckSectionTitle>Models & Variants</PuckSectionTitle>
             <p className="mt-6 max-w-4xl text-base leading-7 text-black/70 dark:text-zinc-300">
               <strong>
-                {is40Foot
-                  ? "40 Foot K Type Impeller (102 OD)"
-                  : "45 Foot K Type Impeller (113 OD)"}
+                {isSpoon
+                  ? categoryItem.title
+                  : is40Foot
+                    ? "40 Foot K Type Impeller (102 OD)"
+                    : "45 Foot K Type Impeller (113 OD)"}
               </strong>
               <br />
               <br />
-              Our {is40Foot ? "40" : "45"} Foot K Type Impeller range is
-              manufactured using premium-quality engineering materials and
-              advanced molding technology to ensure excellent durability, hydraulic
-              efficiency, and long service life. Designed specifically for V6
-              submersible pumps, these impellers provide reliable water delivery
-              for agricultural, industrial, and domestic applications. Available in
-              K30, K40, K50, K70, K80, and K100 variants, the range offers
-              solutions for diverse pumping requirements while maintaining
-              consistent performance and energy efficiency.
+              {isSpoon
+                ? `Our ${categoryItem.title.toLowerCase()} range is manufactured using food-grade stainless steel with controlled shaping, edge finishing, and polishing for clean everyday use. These spoon variants are made for domestic, hospitality, catering, and bulk supply requirements while keeping the spoon section separate from impeller products.`
+                : `Our ${is40Foot ? "40" : "45"} Foot K Type Impeller range is manufactured using premium-quality engineering materials and advanced molding technology to ensure excellent durability, hydraulic efficiency, and long service life. Designed specifically for V6 submersible pumps, these impellers provide reliable water delivery for agricultural, industrial, and domestic applications. Available in K30, K40, K50, K70, K80, and K100 variants, the range offers solutions for diverse pumping requirements while maintaining consistent performance and energy efficiency.`}
             </p>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {kSeriesData.map(({ id, label, type, description, image }) => (
+              {variantData.map(({ id, label, type, description, image }) => (
                 <article
                   key={id}
                   className="border border-black/10 dark:border-zinc-800 p-6 rounded-xl bg-white dark:bg-zinc-950 shadow-sm"
@@ -443,7 +554,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         src={image}
                         alt={label}
                         fill
-                        className={is40Foot ? "object-cover" : "object-contain p-1"}
+                        className={is40Foot ? "object-cover" : "object-contain p-6"}
                         loading="lazy"
                       />
                     </div>

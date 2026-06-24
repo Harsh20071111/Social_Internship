@@ -120,33 +120,33 @@ export function HomePage() {
   return (
     <div className="h-svh w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
       <FeaturePanel
-          eyebrow="Precision Cutlery"
-          title="The Spoon Collection"
-          description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
-          cta="Explore Spoons"
-          href="/products"
-          image="/images/spoon-hero.png"
-          imagePosition="center center"
-          icon={Utensils}
-          tone="light"
-          headingLevel="h1"
-          align="left"
-        />
-        <FeaturePanel
-          eyebrow="Heavy Duty Assembly"
-          title="The Impeller Series"
-          description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
-          cta="Explore Impeller"
-          href="/products"
-          image="/images/home-hero.png"
-          imagePosition="center center"
-          icon={Factory}
-          tone="dark"
-          headingLevel="h2"
-          align="right"
-          overlayColor="bg-[#001836]"
-          overlayOpacity={0.55}
-        />
+        eyebrow="Precision Cutlery"
+        title="The Spoon Collection"
+        description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
+        cta="Explore Spoons"
+        href="/products/spoons"
+        image="/images/spoon-hero.png"
+        imagePosition="center center"
+        icon={Utensils}
+        tone="light"
+        headingLevel="h1"
+        align="left"
+      />
+      <FeaturePanel
+        eyebrow="Heavy Duty Assembly"
+        title="The Impeller Series"
+        description="Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments."
+        cta="Explore Impeller"
+        href="/products/impellers"
+        image="/images/home-hero.png"
+        imagePosition="center center"
+        icon={Factory}
+        tone="dark"
+        headingLevel="h2"
+        align="right"
+        overlayColor="bg-[#001836]"
+        overlayOpacity={0.55}
+      />
       <div className="snap-start">
         <PuckFooter />
       </div>
