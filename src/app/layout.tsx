@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Bhakti Industries | B2B Manufacturing Company",
-  description: "Premium manufacturing solutions for spoons, kitchenware, and industrial components.",
+  title: "Bhakti Industries | Premium B2B Manufacturing & Pump Components",
+  description: "Premium manufacturing solutions for fabricated impellers, pump spare parts, and industrial kitchenware.",
 };
 
 export default function RootLayout({
@@ -31,19 +30,22 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+      <body className="min-h-full flex flex-col bg-slate-50 dark:bg-[#0b0f24]">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
+          <div className="flex flex-col min-h-screen w-full">
+            <Navbar />
+            <main className="flex-1 flex flex-col">
+              {children}
+            </main>
+            <Footer />
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>
