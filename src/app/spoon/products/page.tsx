@@ -19,36 +19,30 @@ const spoons = [
     name: "S Kumar",
     description:
       "Premium S Kumar stainless steel table spoon featuring a polished finish, decorative handle pattern, and sturdy construction. Perfect for home, restaurant, hotel, and catering use.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/s-kumar-spoon.jpg",
   },
   {
     id: "serving-spoon",
     name: "Award Stainless Steel Spoon",
     description:
       "Award stainless steel table spoon with a sleek mirror-polished finish and modern ergonomic handle design. Built for strength, durability, and everyday convenience, it offers a comfortable grip and long-lasting shine. Ideal for dining, serving, and hospitality applications, this spoon combines functionality with a clean, elegant look.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/serving-spoon.jpeg",
   },
   {
     id: "soup-spoon",
     name: "Monalisa Stainless Steel Table Spoon",
     description:
       "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/soup-spoon-2.jpg",
   },
   {
     id: "dessert-spoon",
     name: "Casino Stainless Steel Table Spoon",
     description:
       "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
-    image: "/uploads/spoon.svg",
+    image: "/uploads/dessert-spoon.jpg",
   },
-  {
-    id: "baby-spoon",
-    name: "Baby Spoon",
-    description:
-      "Soft-edged, food-safe stainless steel baby spoon with a compact bowl size and comfortable grip for safe infant feeding.",
-    image: "/uploads/spoon.svg",
-  },
+
 ];
 
 import { MobileLayout } from "@/components/mobile/MobileLayout";
