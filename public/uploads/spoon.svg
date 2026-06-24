@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#34495e" />
+      <stop offset="100%" stop-color="#2c3e50" />
+    </radialGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfdfd" />
+      <stop offset="30%" stop-color="#d2d7db" />
+      <stop offset="70%" stop-color="#7f8c8d" />
+      <stop offset="100%" stop-color="#505a5b" />
+    </linearGradient>
+    <linearGradient id="glareGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Blueprint circles -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#34495e" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" />
+  
+  <g transform="translate(100, 100) rotate(45)">
+    <!-- Handle -->
+    <path d="M -4,80 L 4,80 L 3,-20 L -3,-20 Z" fill="url(#metalGrad)" stroke="#7f8c8d" stroke-width="0.5" />
+    <!-- Handle Detail Line -->
+    <line x1="0" y1="75" x2="0" y2="-10" stroke="#95a5a6" stroke-width="0.75" />
+    
+    <!-- Spoon Head Connection -->
+    <path d="M -5,-20 Q 0,-30 5,-20" fill="url(#metalGrad)" stroke="#7f8c8d" stroke-width="0.5" />
+    
+    <!-- Spoon Bowl -->
+    <path d="M -18,-20 C -25,-40 -25,-75 0,-75 C 25,-75 25,-40 18,-20 C 13,-5 -13,-5 -18,-20 Z" fill="url(#metalGrad)" stroke="#7f8c8d" stroke-width="0.75" />
+    
+    <!-- Spoon Bowl Inner shadow / depth -->
+    <path d="M -14,-22 C -20,-38 -20,-68 0,-68 C 20,-68 20,-38 14,-22 C 10,-8 -10,-8 -14,-22 Z" fill="#7f8c8d" opacity="0.3" />
+    <path d="M -12,-24 C -17,-36 -17,-64 0,-64 C 17,-64 17,-36 12,-24 C 8,-10 -8,-10 -12,-24 Z" fill="url(#metalGrad)" />
+    
+    <!-- Reflection/Glare Highlight -->
+    <path d="M -10,-45 C -13,-52 -13,-60 0,-60 C 13,-60 13,-52 10,-45 C 5,-40 -5,-40 -10,-45 Z" fill="url(#glareGrad)" />
+  </g>
+</svg>

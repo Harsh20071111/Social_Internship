@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { LayoutShell } from "@/components/layout/LayoutShell";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bhakti Industries | Premium Submersible Impeller & Spare Parts",
-  description: "Premium manufacturing solutions for fabricated impellers and pump spare parts.",
+  title: "Bhakti Industries | Premium B2B Manufacturing & Pump Components",
+  description: "Premium manufacturing solutions for fabricated impellers, pump spare parts, and industrial kitchenware.",
 };
 
 export default function RootLayout({
