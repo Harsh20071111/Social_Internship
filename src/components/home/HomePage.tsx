@@ -46,7 +46,7 @@ function FeaturePanel({
   const isRightAligned = align === "right";
 
   return (
-    <article className="snap-start group relative min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/15">
+    <article className="snap-start group relative min-h-svh overflow-hidden border-b border-white/15">
       <div
         className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat transition-transform duration-700 ease-out"
         style={{
@@ -65,7 +65,7 @@ function FeaturePanel({
       />
 
       <div
-        className={`relative z-10 flex min-h-[calc(100svh-4rem)] items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
+        className={`relative z-10 flex min-h-svh items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
           }`}
       >
         <div
@@ -114,7 +114,7 @@ function FeaturePanel({
 
 export function HomePage() {
   return (
-    <div className="h-[calc(100svh-4rem)] w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
+    <div className="h-svh w-full overflow-y-auto snap-y snap-mandatory bg-[#fcf8f9] text-[#1b1b1c] antialiased">
       <FeaturePanel
           eyebrow="Precision Cutlery"
           title="The Spoon Collection"

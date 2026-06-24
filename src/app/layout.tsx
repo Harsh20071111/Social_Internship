@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { Navbar } from "@/components/layout/Navbar";
+import { LayoutShell } from "@/components/layout/LayoutShell";
 
 
 const geistSans = Geist({
@@ -40,12 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen w-full pt-16">
-            <Navbar />
-            <main className="flex-1 flex flex-col">
-              {children}
-            </main>
-          </div>
+          <LayoutShell>{children}</LayoutShell>
           <Toaster />
           <WhatsAppFloat />
         </ThemeProvider>
