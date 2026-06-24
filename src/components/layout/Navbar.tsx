@@ -73,14 +73,15 @@ export function Navbar() {
             <Phone className="h-3.5 w-3.5" />
             +91 94278 06585
           </a>
-          <Button
-            render={<Link href="/inquiry" />}
-            nativeButton={false}
-            className="h-10 rounded-sm bg-[#001836] px-5 text-xs font-semibold uppercase tracking-[0.06em] text-white shadow-none hover:bg-[#002d5b]"
+          <a
+            href="https://wa.me/919427806585"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/button inline-flex shrink-0 items-center justify-center h-10 rounded-sm bg-[#001836] px-5 text-xs font-semibold uppercase tracking-[0.06em] text-white shadow-none hover:bg-[#002d5b] transition-all outline-none select-none"
           >
-            Request Quote
+            For Enquiry
             <ArrowRight className="ml-1 h-4 w-4" />
-          </Button>
+          </a>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -116,15 +117,15 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button
-              render={
-                <Link href="/inquiry" onClick={() => setMobileOpen(false)} />
-              }
-              nativeButton={false}
-              className="mt-3 h-10 rounded-sm bg-[#001836] text-sm text-white shadow-none hover:bg-[#002d5b]"
+            <a
+              href="https://wa.me/919427806585"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="group/button inline-flex shrink-0 items-center justify-center mt-3 h-10 rounded-sm bg-[#001836] text-sm text-white shadow-none hover:bg-[#002d5b] transition-all outline-none select-none w-full"
             >
-              Request Quote
-            </Button>
+              For Enquiry
+            </a>
           </div>
         </nav>
       )}
