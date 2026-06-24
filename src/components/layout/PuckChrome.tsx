@@ -43,16 +43,6 @@ export function PuckBrandMark({ inverse = false }: { inverse?: boolean }) {
           height={44}
           className="h-11 w-auto object-contain"
         />
-        {isSpoon && (
-          <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
-            Spoon Division
-          </span>
-        )}
-        {isImpeller && (
-          <span className="font-bold tracking-wider text-[#001836] border-l-2 border-black/15 pl-2.5 text-[11px] uppercase">
-            Pump Spares Division
-          </span>
-        )}
       </div>
     </Link>
   );
