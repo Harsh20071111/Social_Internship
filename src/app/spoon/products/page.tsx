@@ -23,23 +23,23 @@ const spoons = [
   },
   {
     id: "serving-spoon",
-    name: "Serving Spoon",
+    name: "Award Stainless Steel Spoon",
     description:
-      "Heavy-duty serving spoon built with food-grade stainless steel for buffets, catering, restaurants, and everyday kitchen service.",
+      "Award stainless steel table spoon with a sleek mirror-polished finish and modern ergonomic handle design. Built for strength, durability, and everyday convenience, it offers a comfortable grip and long-lasting shine. Ideal for dining, serving, and hospitality applications, this spoon combines functionality with a clean, elegant look.",
     image: "/uploads/spoon.svg",
   },
   {
     id: "soup-spoon",
-    name: "Soup Spoon",
+    name: "Monalisa Stainless Steel Table Spoon",
     description:
-      "Deep-bowl stainless steel soup spoon shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
+      "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
     image: "/uploads/spoon.svg",
   },
   {
     id: "dessert-spoon",
-    name: "Dessert Spoon",
+    name: "Casino Stainless Steel Table Spoon",
     description:
-      "Elegant stainless steel dessert spoon suitable for ice cream, sweets, and serving applications with a refined, polished look.",
+      "Elegant stainless steel table spoon featuring a premium mirror-polished finish and a stylish fluted handle design. Crafted for durability, corrosion resistance, and comfortable everyday use, this spoon offers a perfect balance of functionality and elegance. Ideal for daily dining, food serving, restaurants, hotels, catering services, and hospitality applications. Its sleek design and long-lasting shine make it a sophisticated addition to any table setting.",
     image: "/uploads/spoon.svg",
   },
   {
