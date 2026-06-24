@@ -379,6 +379,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   alt={categoryItem.title}
                   fill
                   className={is40Foot ? "object-cover" : "object-contain p-2"}
+                  loading="lazy"
                 />
               </div>
               <div className="flex flex-col justify-between">
@@ -443,6 +444,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         alt={label}
                         fill
                         className={is40Foot ? "object-cover" : "object-contain p-1"}
+                        loading="lazy"
                       />
                     </div>
                   ) : (

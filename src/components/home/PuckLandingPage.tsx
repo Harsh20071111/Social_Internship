@@ -288,13 +288,14 @@ function Applications() {
                 key={application.title}
                 className="group relative min-h-[430px] overflow-hidden rounded-[4px] bg-[#0b2230]"
               >
-                <Image
-                  src={application.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+<Image
+                   src={application.image}
+                   alt=""
+                   fill
+                   className="object-cover"
+                   sizes="(max-width: 768px) 100vw, 33vw"
+                   loading="lazy"
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041722] via-[#041722]/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-7 text-white">
                   <Icon className="h-8 w-8 text-[#70c4ef]" />
@@ -336,13 +337,14 @@ function Media() {
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-[1.25fr_0.75fr]">
           <article className="group relative min-h-[480px] overflow-hidden bg-black">
-            <Image
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=75"
-              alt=""
-              fill
-              className="object-cover opacity-75"
-              sizes="(max-width: 768px) 100vw, 65vw"
-            />
+<Image
+               src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=75"
+               alt=""
+               fill
+               className="object-cover opacity-75"
+               sizes="(max-width: 768px) 100vw, 65vw"
+               loading="lazy"
+             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 p-8 text-white">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#70c4ef]">
@@ -405,7 +407,10 @@ function Footer() {
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
-            {navItems.slice(0, 6).map((item) => (
+            {navItems
+              .filter((item) => item.label !== "Media" && item.label !== "Applications")
+              .slice(0, 6)
+              .map((item) => (
               <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>

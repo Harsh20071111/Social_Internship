@@ -69,13 +69,14 @@ export function FactoryShowcase() {
               <Parallax speed={index % 2 === 0 ? -10 : 10}>
                 <ClipReveal direction={index % 2 === 0 ? "right" : "left"}>
                   <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[#e5e2e3]">
-                    <Image
-                      src={factory.image}
-                      alt={factory.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
+<Image
+                       src={factory.image}
+                       alt={factory.name}
+                       fill
+                       className="object-cover"
+                       sizes="(max-width: 1024px) 100vw, 50vw"
+                       loading="lazy"
+                     />
                   </div>
                 </ClipReveal>
               </Parallax>

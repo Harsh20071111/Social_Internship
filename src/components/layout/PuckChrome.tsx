@@ -63,7 +63,10 @@ export function PuckFooter() {
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
-            {navItems.slice(0, 6).map((item) => (
+            {navItems
+              .filter((item) => item.label !== "Media" && item.label !== "Applications")
+              .slice(0, 6)
+              .map((item) => (
               <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>

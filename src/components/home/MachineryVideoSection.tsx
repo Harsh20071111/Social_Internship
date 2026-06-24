@@ -19,6 +19,7 @@ export function MachineryVideoSection() {
         loop
         playsInline
         preload="metadata"
+        poster="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=75"
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/manufacturing-process.mp4" type="video/mp4" />

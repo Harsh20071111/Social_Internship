@@ -63,13 +63,14 @@ export function ProductCategories() {
               <div className="group overflow-hidden rounded-lg border border-[#e5e2e3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={factory.image}
-                    alt={factory.subtitle}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+<Image
+                     src={factory.image}
+                     alt={factory.subtitle}
+                     fill
+                     className="object-cover"
+                     sizes="(max-width: 768px) 100vw, 33vw"
+                     loading="lazy"
+                   />
                 </div>
 
                 {/* Content */}

@@ -99,21 +99,22 @@ export function Footer() {
         {/* Desktop: 4-column grid (unchanged) */}
         <div className="hidden gap-10 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
-          <div className="space-y-5">
-            <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
-              <Image 
-                src="/images/logo.png" 
-                alt="Bhakti Industries Logo" 
-                width={120} 
-                height={40} 
-                className="h-8 w-auto object-contain"
-              />
-            </Link>
-            <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
-              Leading manufacturer of premium kitchenware, steel utensils, and
-              household products. Three state-of-the-art facilities serving
-              clients nationwide since 1998.
-            </p>
+<div className="space-y-5">
+             <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
+               <Image 
+                 src="/images/logo.png" 
+                 alt="Bhakti Industries Logo" 
+                 width={120} 
+                 height={40} 
+                 className="h-8 w-auto object-contain"
+                 loading="lazy"
+               />
+             </Link>
+             <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
+               Leading manufacturer of premium kitchenware, steel utensils, and
+               household products. Three state-of-the-art facilities serving
+               clients nationwide since 1998.
+             </p>
             <div className="space-y-2.5">
               <a
                 href="tel:+919427806585"

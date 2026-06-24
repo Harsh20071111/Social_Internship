@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 export function WhatsAppFloat() {
   return (
@@ -6,10 +6,16 @@ export function WhatsAppFloat() {
       href="https://wa.me/919427806585"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl"
+      className="fixed bottom-6 left-6 z-50 flex items-center justify-center transition-all hover:scale-110 drop-shadow-lg hover:drop-shadow-xl"
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="h-7 w-7" />
+      <Image
+        src="/images/whatsapp-icon.png"
+        alt="WhatsApp"
+        width={60}
+        height={60}
+        className="h-[60px] w-[60px] object-contain"
+      />
     </a>
   );
 }

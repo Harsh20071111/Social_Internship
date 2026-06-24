@@ -59,23 +59,24 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
       {images.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
           {images.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(img)}
-              className={`relative aspect-square w-16 rounded-lg bg-zinc-900 border overflow-hidden p-1 transition-all ${
-                activeImage === img
-                  ? "border-zinc-950 dark:border-zinc-100 ring-2 ring-zinc-900/10 dark:ring-white/10"
-                  : "border-zinc-200 dark:border-zinc-800 opacity-60 hover:opacity-100"
-              }`}
-            >
-              <Image 
-                src={img} 
-                alt={`${name} thumbnail ${idx + 1}`} 
-                fill 
-                className="object-contain p-1"
-                sizes="64px" 
-              />
-            </button>
+<button
+               key={idx}
+               onClick={() => setActiveImage(img)}
+               className={`relative aspect-square w-16 rounded-lg bg-zinc-900 border overflow-hidden p-1 transition-all ${
+                 activeImage === img
+                   ? "border-zinc-950 dark:border-zinc-100 ring-2 ring-zinc-900/10 dark:ring-white/10"
+                   : "border-zinc-200 dark:border-zinc-800 opacity-60 hover:opacity-100"
+               }`}
+             >
+               <Image 
+                 src={img} 
+                 alt={`${name} thumbnail ${idx + 1}`} 
+                 fill 
+                 className="object-contain p-1"
+                 sizes="64px" 
+                 loading="lazy"
+               />
+             </button>
           ))}
         </div>
       )}

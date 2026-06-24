@@ -25,13 +25,14 @@ export default function ProductsPage() {
                 className="group grid min-h-[220px] overflow-hidden rounded-[14px] border border-black/10 bg-[#fcfcfc] transition-shadow hover:shadow-[0_14px_45px_rgba(0,0,0,0.08)] md:grid-cols-[230px_1fr_210px]"
               >
                 <div className="relative min-h-[220px] bg-white">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 230px"
-                  />
+<Image
+                     src={category.image}
+                     alt={category.title}
+                     fill
+                     className="object-cover"
+                     sizes="(max-width: 768px) 100vw, 230px"
+                     loading="lazy"
+                   />
                 </div>
                 <div className="flex flex-col justify-center px-7 py-8 md:px-10">
                   <h2 className="text-2xl font-black tracking-tight md:text-[28px]">

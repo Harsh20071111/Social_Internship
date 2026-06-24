@@ -401,7 +401,7 @@ export default function AdminClient({
                   {uploading && <Loader2 className="h-4 w-4 animate-spin text-zinc-500" />}
                   {imageUrl && (
                     <div className="relative h-10 w-10 rounded border border-zinc-200 overflow-hidden bg-zinc-900">
-                      <Image src={imageUrl} alt="preview" fill className="object-contain p-1" />
+                      <Image src={imageUrl} alt="preview" fill className="object-contain p-1" loading="lazy" />
                     </div>
                   )}
                 </div>
@@ -625,6 +625,7 @@ export default function AdminClient({
                                 alt={product.name}
                                 fill
                                 className="object-contain p-1"
+                                loading="lazy"
                               />
                             </div>
                             <div>

@@ -113,6 +113,7 @@ export default function ProductsClient({
                       fill
                       className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
                     />
                     <div className="absolute top-3 left-3 rounded-full bg-zinc-900/85 backdrop-blur-sm border border-zinc-700/50 px-2.5 py-0.5 text-[10px] font-bold text-zinc-200 uppercase tracking-wider">
                       {categoryName}

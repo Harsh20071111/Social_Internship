@@ -53,13 +53,14 @@ export default function MachineryPage() {
                   className="group overflow-hidden rounded-lg border border-black/10 bg-white transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={machine.image}
-                      alt={machine.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
+<Image
+                       src={machine.image}
+                       alt={machine.name}
+                       fill
+                       className="object-cover"
+                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                       loading="lazy"
+                     />
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2">
