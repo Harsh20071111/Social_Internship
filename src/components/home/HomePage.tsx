@@ -24,9 +24,9 @@ type FeaturePanelProps = {
   tone: "light" | "dark";
   headingLevel: "h1" | "h2";
   align?: "left" | "right";
+  overlayColor?: string;
+  overlayOpacity?: number;
 };
-
-
 
 function FeaturePanel({
   eyebrow,
@@ -40,6 +40,8 @@ function FeaturePanel({
   tone,
   headingLevel,
   align = "left",
+  overlayColor,
+  overlayOpacity,
 }: FeaturePanelProps) {
   const isDark = tone === "dark";
   const Heading = headingLevel;
@@ -58,10 +60,14 @@ function FeaturePanel({
       />
 
       <div
-        className={`absolute inset-0 ${isDark
+        className={`absolute inset-0 ${
+          overlayColor 
+            ? overlayColor 
+            : isDark
             ? "bg-gradient-to-t from-[#001836] via-[#001836]/62 to-[#001836]/12"
             : "bg-gradient-to-t from-[#f8f8f7]/95 via-[#f8f8f7]/40 to-black/5"
-          }`}
+        }`}
+        style={overlayOpacity !== undefined ? { opacity: overlayOpacity } : undefined}
       />
 
       <div
@@ -119,7 +125,7 @@ export function HomePage() {
           description="Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design."
           cta="Explore Spoons"
           href="/products"
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuBCYJ8a1Ig2LhzbOiISmz5W2yPI7DdlidbmwfGRv-zAOKQgeO69knptfCxcuAhtszteWCYN5pHQr2GUVr9Vr4bk-4mC5HdI2SSZitDnIR76tKb81p1hSHyL_8bNhBUhPjKYVcokAaHPX-w2NhLRlqs5X4MnoBWcUikuLjMriA0BI0BjFuDmQrAQv3dVs1LhG6dSm9nziNu6R4Y_qMaBPcTzIYUs16wgnH9Q5vywCLNTeyPTxpWgTD2lrc2Rhx4t7fcRA3x7f8bYzz8"
+          image="/images/spoon-hero.png"
           imagePosition="center center"
           icon={Utensils}
           tone="light"
@@ -132,12 +138,14 @@ export function HomePage() {
           description="Robust. Reliable. Ready for scale. The Ambular series sets the standard for high-capacity structural components built for demanding operational environments."
           cta="Explore Ambular"
           href="/products"
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuARJjGqeII7uT_I8n2GcLlStbxdtpYIfN_1yMN_BEVewBAPrr9GqgFRphdfY6mS9CBi2HvRPEPxGbGA0FYYpJSIFN_X9FApjooZlMRXedgpQ3PW1qPfzRslQdISSdlVZIVQc-jIfMuOPcvs6o89DQQrQu8pcIjybkIe9jN6uYJaIJ4SOJABtfeE19Uvgclc_v2ADoh7PA3TgQUgeAXteX3yW8cjtuKNOq6UH4_SyfL_mordKWGTsPyUI0PaYLhLyhNhqL1ke2aEc-M"
-          imagePosition="58% center"
+          image="/images/home-hero.png"
+          imagePosition="center center"
           icon={Factory}
           tone="dark"
           headingLevel="h2"
           align="right"
+          overlayColor="bg-[#001836]"
+          overlayOpacity={0.55}
         />
       <div className="snap-start">
         <PuckFooter />
