@@ -1,5 +1,3 @@
-"use client";
-
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/FadeUp";
 
 const certifications = [
