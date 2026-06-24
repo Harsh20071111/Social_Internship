@@ -18,6 +18,7 @@ const defaultLinks = [
 ];
 
 const spoonLinks = [
+  { label: "Home", href: "/" },
   { label: "Spoon Products", href: "/spoon/products" },
   { label: "Spoon Machineries", href: "/spoon/machineries" },
   { label: "About Spoons", href: "/spoon/about" },
@@ -25,6 +26,7 @@ const spoonLinks = [
 ];
 
 const impellerLinks = [
+  { label: "Home", href: "/" },
   { label: "Impeller Products", href: "/impeller/products" },
   { label: "Impeller Machineries", href: "/impeller/machineries" },
   { label: "About Impellers", href: "/impeller/about" },

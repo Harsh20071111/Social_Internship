@@ -15,6 +15,7 @@ const defaultNavItems = [
 ];
 
 const spoonNavItems = [
+  { label: "Home", href: "/" },
   { label: "Spoon Products", href: "/spoon/products" },
   { label: "Spoon Machineries", href: "/spoon/machineries" },
   { label: "About Spoons", href: "/spoon/about" },
@@ -22,6 +23,7 @@ const spoonNavItems = [
 ];
 
 const impellerNavItems = [
+  { label: "Home", href: "/" },
   { label: "Impeller Products", href: "/impeller/products" },
   { label: "Impeller Machineries", href: "/impeller/machineries" },
   { label: "About Impellers", href: "/impeller/about" },
