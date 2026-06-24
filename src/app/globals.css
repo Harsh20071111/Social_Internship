@@ -64,6 +64,55 @@
   --color-outline-variant: #c3c6d0;
   --color-tertiary: #501e01;
   --color-on-tertiary: #ffffff;
+
+  /* Precision Industrial mobile tokens */
+  --color-pi-background: #f9f9ff;
+  --color-pi-on-background: #181c23;
+  --color-pi-primary: #000000;
+  --color-pi-on-primary: #ffffff;
+  --color-pi-secondary: #5f5e5f;
+  --color-pi-surface: #f9f9ff;
+  --color-pi-surface-alt: #f4f4f6;
+  --color-pi-surface-container-low: #f0f3fd;
+  --color-pi-surface-container: #ebeef8;
+  --color-pi-surface-container-high: #e5e8f2;
+  --color-pi-surface-container-highest: #dfe2ec;
+  --color-pi-outline: #74777e;
+  --color-pi-outline-variant: #c4c6ce;
+  --color-pi-industrial-grey: #5c5f60;
+  --color-pi-status-critical: #b30000;
+  --color-pi-on-surface-variant: #44474e;
+  --color-pi-on-surface: #181c23;
+  --color-pi-secondary-container: #e2dfe0;
+  --color-pi-on-secondary-container: #646263;
+  --color-pi-primary-container: #031c3a;
+  --color-pi-on-primary-container: #7085a8;
+  --color-pi-tertiary-container: #410002;
+  --color-pi-on-tertiary-container: #fb3232;
+
+  /* Mobile spacing */
+  --spacing-margin-mobile: 20px;
+  --spacing-section-gap: 48px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-gutter-mobile: 16px;
+  --spacing-unit: 4px;
+
+  /* Mobile font sizes */
+  --font-size-headline-xl: 40px;
+  --font-size-headline-lg: 32px;
+  --font-size-headline-lg-mobile: 28px;
+  --font-size-headline-md: 24px;
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+  --font-size-label-caps: 12px;
+  --font-size-mono-data: 14px;
+
+  /* Mobile border radius */
+  --radius-pi: 0.125rem;
+  --radius-pi-lg: 0.25rem;
+  --radius-pi-xl: 0.5rem;
+  --radius-pi-full: 0.75rem;
 }
 
 :root {
@@ -187,6 +236,71 @@
 }
 
 @layer utilities {
+  /* Mobile typography utilities */
+  .text-headline-xl {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .text-headline-lg {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .text-headline-lg-mobile {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 600;
+  }
+  .text-headline-md {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+  .text-body-lg {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+  .text-body-md {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .text-label-caps {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .text-mono-data {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+  }
+
+  /* Material Symbols sizing helper */
+  .mat-symbols {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  }
+
   .puck-outline-heading {
     color: white;
     -webkit-text-stroke: 1.7px #111111;

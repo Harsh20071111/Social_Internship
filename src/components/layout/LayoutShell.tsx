@@ -67,7 +67,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
       const height = container.clientHeight;
       const scrollTop = container.scrollTop;
       const activeIndex = Math.round(scrollTop / height);
-      setIsDarkNavbar(activeIndex === 1);
+      setIsDarkNavbar(activeIndex >= 1);
     };
 
     container.addEventListener("scroll", handleScroll);
@@ -85,9 +85,12 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   }, [isHome]);
 
   return (
-    <div className={`flex flex-col min-h-screen w-full ${isHome ? "" : "pt-16"}`}>
-      {isHome ? <HomeNavbar isDark={isDarkNavbar} /> : <Navbar />}
-      <main className="flex-1 flex flex-col">{children}</main>
+    <div className="flex flex-col min-h-screen w-full">
+      {/* Desktop navbars are hidden on mobile — mobile layout handles its own header */}
+      <div className="hidden md:block">
+        {isHome ? <HomeNavbar isDark={isDarkNavbar} /> : <Navbar />}
+      </div>
+      <main className={`flex-1 flex flex-col ${isHome ? "" : "md:pt-16"}`}>{children}</main>
     </div>
   );
 }
