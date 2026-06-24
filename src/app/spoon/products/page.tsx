@@ -9,10 +9,10 @@ import { PuckPage } from "@/components/layout/PuckPage";
 const spoons = [
   {
     id: "table-spoon",
-    name: "Table Spoon",
+    name: "Hiramoti Table Spoon",
     description:
-      "Premium stainless steel table spoon designed for daily dining with a smooth finish, balanced weight, and durable food-grade construction.",
-    image: "/images/spoon-hero.png",
+      "Elegant stainless steel table spoon with a polished finish, decorative handle design, and durable construction. Perfect for daily dining, serving, and hospitality use.",
+    image: "/images/hiramoti-table-spoon.png",
   },
   {
     id: "tea-spoon",
