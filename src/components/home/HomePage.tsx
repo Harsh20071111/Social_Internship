@@ -11,8 +11,6 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { PuckFooter } from "@/components/layout/PuckChrome";
-import { MobileLayout } from "@/components/mobile/MobileLayout";
-import { MobileFooter } from "@/components/mobile/MobileFooter";
 
 type FeaturePanelProps = {
   eyebrow: string;
@@ -151,85 +149,6 @@ export function HomePage() {
       />
       <div className="snap-start">
         <PuckFooter />
-      </div>
-
-      {/* ── Mobile Version ─────────────────────────────────────────── */}
-      <div className="md:hidden bg-background text-on-background antialiased">
-        <MobileLayout>
-          {/* Hero Section: The Spoon Collection */}
-          <section className="w-full px-[20px] py-[48px] flex flex-col gap-[16px] border-b border-[#c4c6ce]">
-            <div className="flex flex-col gap-[4px]">
-              <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Precision Cutlery</span>
-              <h1 className="text-[40px] leading-[48px] tracking-[-0.02em] font-bold text-[#000000]">The Spoon Collection</h1>
-            </div>
-            <div className="w-full aspect-[4/3] bg-[#e5e8f2] rounded-[0.125rem] border border-[#c4c6ce] overflow-hidden relative">
-              <img 
-                className="w-full h-full object-cover" 
-                alt="A highly detailed, macro shot of polished industrial-grade stainless steel spoons arrayed perfectly on a light grey technical work surface." 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYX9MrLMmVyDcbiPGhbPjYwparmpVg4vpUNsrLMTejArsBezGVfutVFd-d76qFSFeYaMfixtZZEY7RKXmcqalNDNqK0rcfmPuo_wrbHDH3YW0EDmfhfIyp89wHNedvaRh0Hii0O1VodlO9ahODncRFFyjp87m4eyv-__aZABPxxSWGql2vx2ZEHBUDppDp5strmrpzc8U1xSJ5R9NwujuTDHEqL_Nl5rZAD39KHcbtoeIkWMgl8N269yobKienQ55n4MXU7QLkMTE"
-              />
-              <div className="absolute top-2 left-2 bg-[#f9f9ff] px-2 py-1 rounded-[2px] border border-[#c4c6ce]">
-                <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#000000] uppercase">Technical Grade</span>
-              </div>
-            </div>
-            <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Engineered with metallurgical precision. Our premier line of industrial-grade spoons combines high-tolerance manufacturing with rigorous ergonomic design.</p>
-            <a href="/spoon/products" className="bg-[#000000] text-[#ffffff] text-[16px] leading-[24px] font-normal rounded-[0.125rem] h-12 flex items-center justify-center gap-2 hover:bg-[#181c23] transition-colors">
-              Explore Spoons <span className="material-symbols-outlined text-[18px] mat-symbols">arrow_forward</span>
-            </a>
-          </section>
-
-          {/* Secondary Section: The Impeller Series */}
-          <section className="w-full px-[20px] py-[48px] flex flex-col gap-[16px] bg-[#f4f4f6] border-b border-[#c4c6ce]">
-            <div className="flex flex-col gap-[4px]">
-              <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Heavy Duty Assembly</span>
-              <h2 className="text-[28px] leading-[34px] font-semibold text-[#000000]">The Impeller Series</h2>
-            </div>
-            <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Robust. Reliable. Ready for scale. The Impeller series sets the standard for high-capacity structural components built for demanding operational environments.</p>
-            {/* Bento-style Grid for Specs */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <div className="bg-[#f9f9ff] p-[16px] border border-[#c4c6ce] rounded-[0.125rem] flex flex-col gap-[4px]">
-                <span className="material-symbols-outlined text-[#5c5f60] mat-symbols" style={{fontVariationSettings: "'wght' 200"}}>precision_manufacturing</span>
-                <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Tolerance</span>
-                <span className="text-[14px] leading-[20px] tracking-[0.01em] font-medium text-[#000000]">±0.005mm</span>
-              </div>
-              <div className="bg-[#f9f9ff] p-[16px] border border-[#c4c6ce] rounded-[0.125rem] flex flex-col gap-[4px]">
-                <span className="material-symbols-outlined text-[#5c5f60] mat-symbols" style={{fontVariationSettings: "'wght' 200"}}>shield</span>
-                <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Material</span>
-                <span className="text-[14px] leading-[20px] tracking-[0.01em] font-medium text-[#000000]">SS-316L</span>
-              </div>
-            </div>
-            <div className="w-full h-48 bg-[#e5e8f2] rounded-[0.125rem] border border-[#c4c6ce] overflow-hidden mt-[8px]">
-              <img 
-                className="w-full h-full object-cover grayscale" 
-                alt="A close-up, high-contrast image of a heavy-duty industrial impeller component." 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0UEQc8psUFm-0v0G15G2_mpNJCmC4hkd_R29xBASuKbj6ZUNBz7hMteorOP9v15JVtVM6SGpeTi3AUijRBU-mVWaKStgnVxxNA3JF8TAI4C8V5tP_0ntau-XPAXi2p5nIqHZm6eoddsc4nR-lKmP9iDWyrANK0OI3-EdAsUDOsS-icyQpPzRe__8TM-oaCmcLJg6BQvz2PrCLvmGtWVCP8W0APLMrOwUyZMHhmONFBo54ikF6aZrWATSvpHnmYXX0FeE8ISBk0JE"
-              />
-            </div>
-            <a href="/impeller/products" className="border border-[#000000] text-[#000000] text-[16px] leading-[24px] font-normal rounded-[0.125rem] h-12 flex items-center justify-center gap-2 hover:bg-[#f0f3fd] transition-colors mt-[8px]">
-              Explore Impeller <span className="material-symbols-outlined text-[18px] mat-symbols">settings</span>
-            </a>
-          </section>
-
-          {/* Manufacturing Excellence Section */}
-          <section className="w-full px-[20px] py-[48px] flex flex-col gap-[16px]">
-            <div className="flex items-center gap-[8px] mb-[8px]">
-              <div className="w-10 h-10 bg-[#031c3a] text-[#7085a8] rounded-[0.125rem] flex items-center justify-center">
-                <span className="material-symbols-outlined mat-symbols" style={{fontVariationSettings: "'wght' 300"}}>factory</span>
-              </div>
-              <h2 className="text-[24px] leading-[32px] font-semibold text-[#000000]">Manufacturing Excellence</h2>
-            </div>
-            <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Our facility in Ahmedabad operates with uncompromising standards, utilizing advanced CNC machinery and rigorous quality control protocols to deliver structural integrity at scale.</p>
-            <div className="w-full p-[16px] bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem] flex flex-col gap-[4px]">
-              <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Facility Location</span>
-              <span className="text-[16px] leading-[24px] font-normal text-[#000000]">Ahmedabad, Gujarat</span>
-              <a href="/factories" className="text-[#410002] underline text-[16px] leading-[24px] font-normal mt-2 flex items-center gap-1">
-                View Facilities <span className="material-symbols-outlined text-[16px] mat-symbols">open_in_new</span>
-              </a>
-            </div>
-          </section>
-
-          <MobileFooter />
-        </MobileLayout>
       </div>
     </div>
   );

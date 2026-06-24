@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Award, Factory, Globe2, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
-import { MobileLayout } from "@/components/mobile/MobileLayout";
-import { MobileFooter } from "@/components/mobile/MobileFooter";
 
 const principles = [
   { icon: Factory, title: "Our Strength", text: "Our strength lies in our ability to manufacture products that combine precision, durability, and value. Backed by modern machinery, skilled technicians, and efficient production systems, we consistently deliver products that meet market demands and industry standards." },
@@ -23,108 +21,11 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <>
-      {/* ── Mobile Version ── */}
-      <div className="md:hidden bg-[#f9f9ff] text-[#181c23] font-body-md antialiased overflow-x-hidden">
-        <MobileLayout>
-          {/* Hero Section */}
-          <section className="w-full px-[20px] pt-8 pb-12 bg-[#f4f4f6] border-b border-[#c4c6ce]">
-            <div className="flex flex-col gap-[16px]">
-              <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">Company Profile</span>
-              <h1 className="text-[28px] leading-[34px] font-semibold text-[#000000]">Engineered with<br/>Metallurgical Precision.</h1>
-              <p className="text-[18px] leading-[28px] font-normal text-[#5f5e5f]">Bhakti Industries is a premier manufacturer of industrial-grade components, combining high-tolerance manufacturing with rigorous design principles.</p>
-            </div>
-          </section>
-
-          {/* Our Heritage (Bento Grid) */}
-          <section className="w-full px-[20px] py-12 flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-[24px] leading-[32px] font-semibold text-[#000000]">Our Heritage</h2>
-              <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Decades of precision manufacturing excellence.</p>
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem] p-6 flex flex-col gap-4">
-                <span className="material-symbols-outlined text-[#000000] mat-symbols" data-icon="history">history</span>
-                <h3 className="text-[18px] leading-[28px] font-medium text-[#000000]">Established Legacy</h3>
-                <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Setting the standard for high-capacity structural components built for demanding operational environments since our inception.</p>
-              </div>
-              <div className="bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem] p-6 flex flex-col gap-4">
-                <span className="material-symbols-outlined text-[#000000] mat-symbols" data-icon="engineering">engineering</span>
-                <h3 className="text-[18px] leading-[28px] font-medium text-[#000000]">Precision Engineering</h3>
-                <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Our premier lines, including The Impeller Series, reflect our commitment to robust, reliable components ready for scale.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Quality Standards */}
-          <section className="w-full px-[20px] py-12 bg-[#f4f4f6] border-y border-[#c4c6ce]">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <h2 className="text-[24px] leading-[32px] font-semibold text-[#000000]">Quality Standards</h2>
-                <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Uncompromising technical specifications.</p>
-              </div>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-start gap-4 p-4 bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem]">
-                  <div className="p-2 bg-[#f0f3fd] rounded-[0.125rem]">
-                    <span className="material-symbols-outlined text-[#000000] mat-symbols" data-icon="verified">verified</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#000000] uppercase">ISO Certified</span>
-                    <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Adhering to strict international quality management standards across all production lines.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 p-4 bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem]">
-                  <div className="p-2 bg-[#f0f3fd] rounded-[0.125rem]">
-                    <span className="material-symbols-outlined text-[#000000] mat-symbols" data-icon="straighten">straighten</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#000000] uppercase">Micron Tolerance</span>
-                    <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Achieving exact technical specifications for critical industrial and structural applications.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Facility Overview */}
-          <section className="w-full px-[20px] py-12 flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-[24px] leading-[32px] font-semibold text-[#000000]">Facility Overview</h2>
-              <p className="text-[16px] leading-[24px] font-normal text-[#5f5e5f]">Infrastructure built for scale in Ahmedabad.</p>
-            </div>
-            <div className="relative w-full h-48 border border-[#c4c6ce] rounded-[0.125rem] overflow-hidden">
-              <img 
-                className="w-full h-full object-cover" 
-                alt="A highly detailed exterior view of a modern, massive industrial manufacturing facility located in Ahmedabad." 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe3-1XBIP-KHceD68xfdCsOOB6IhnfkmwzM2aw65Jn_5KZx5xTvewGd1VJIg6vftiRvexM2hS7huPC5J9MTGQDhuOPYBFX48N5cWpG3xtmMY2BxMwofeRYkAK8AbkNLih72q972ViOYZHgRT4dsSkLG6oNwo_6kjGEmp03ZoN_WtXcRMRe2iVn_02C7B0wzN-ON4w0JS2SbFSZKk4xZkZ6uqohi3YjjrxYj6Q6ado64WwH5kMnMHsjGNxz1JErli6Bh-A8IMEzUcY"
-              />
-              <div className="absolute bottom-4 left-4 flex gap-2">
-                <span className="px-2 py-1 bg-[#f9f9ff]/90 border border-[#c4c6ce] rounded-[0.125rem] text-[10px] font-semibold tracking-wide uppercase text-[#000000]">50k+ Sq Ft</span>
-                <span className="px-2 py-1 bg-[#f9f9ff]/90 border border-[#c4c6ce] rounded-[0.125rem] text-[10px] font-semibold tracking-wide uppercase text-[#000000]">24/7 Ops</span>
-              </div>
-            </div>
-            <div className="bg-[#f9f9ff] border border-[#c4c6ce] rounded-[0.125rem] p-6">
-              <div className="flex flex-col gap-2">
-                <span className="text-[12px] leading-[16px] tracking-[0.05em] font-semibold text-[#5c5f60] uppercase">LOCATION</span>
-                <p className="text-[16px] leading-[24px] font-normal text-[#000000]">
-                  7, Kumar Estate,<br/>
-                  B/S Bank of Baroda, nr. Shayona Estate,<br/>
-                  Naroda Road,<br/>
-                  Ahmedabad - 380025.
-                </p>
-              </div>
-            </div>
-          </section>
-          <MobileFooter />
-        </MobileLayout>
-      </div>
-      {/* ── Desktop Version ── */}
-      <div className="hidden md:block">
-        <PuckPage
-          hero="Bringing Innovation to the Industry"
-          eyebrow="About Us"
-          subtitle="Quality | Innovation | Sustainability"
-        >
+    <PuckPage
+      hero="Bringing Innovation to the Industry"
+      eyebrow="About Us"
+      subtitle="Quality | Innovation | Sustainability"
+    >
       <nav className="sticky top-0 z-30 border-b border-black/10 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1160px] gap-8 overflow-x-auto px-5 py-5 text-sm font-bold md:gap-16">
           {["About Bhakti", "Culture", "History"].map((item) => (
@@ -200,7 +101,5 @@ export default function AboutPage() {
         </div>
       </section>
     </PuckPage>
-  </div>
-</>
   );
 }
