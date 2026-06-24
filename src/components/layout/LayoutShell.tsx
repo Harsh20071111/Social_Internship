@@ -11,8 +11,8 @@ function HomeNavbar({ isDark }: { isDark: boolean }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-transparent transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-10">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
+        {/* Logo and Mobile Company Name */}
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
             alt="Bhakti Industries Logo"
@@ -21,11 +21,19 @@ function HomeNavbar({ isDark }: { isDark: boolean }) {
             className="h-10 w-auto object-contain"
             priority
           />
+          <span
+            className={`text-sm font-bold uppercase tracking-tight transition-all duration-300 sm:hidden ${
+              isDark ? "text-white" : "text-[#001836]"
+            }`}
+            style={isDark ? { textShadow: "0 1px 4px rgba(0,0,0,0.45)" } : undefined}
+          >
+            Bhakti Industries
+          </span>
         </Link>
 
-        {/* Industry Name (centered) */}
+        {/* Industry Name (centered) - Large Screens Only */}
         <span
-          className={`absolute left-1/2 -translate-x-1/2 text-xl font-bold uppercase tracking-[0.15em] transition-all duration-300 sm:text-2xl ${
+          className={`absolute left-1/2 -translate-x-1/2 hidden font-bold uppercase tracking-[0.15em] transition-all duration-300 sm:block sm:text-2xl ${
             isDark ? "text-white" : "text-[#001836]"
           }`}
           style={isDark ? { textShadow: "0 1px 4px rgba(0,0,0,0.45), 0 0 12px rgba(0,0,0,0.25)" } : undefined}
@@ -38,13 +46,14 @@ function HomeNavbar({ isDark }: { isDark: boolean }) {
           href="https://wa.me/919427806585"
           target="_blank"
           rel="noopener noreferrer"
-          className={`group/button inline-flex shrink-0 items-center justify-center h-10 rounded-sm px-5 text-xs font-semibold uppercase tracking-[0.06em] transition-all duration-300 outline-none select-none ${
+          className={`group/button inline-flex shrink-0 items-center justify-center h-10 rounded-sm px-3 sm:px-5 text-xs font-semibold uppercase tracking-[0.06em] transition-all duration-300 outline-none select-none ${
             isDark
               ? "border border-white/50 bg-white/20 text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)] backdrop-blur-md hover:bg-white hover:text-[#001836] hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
               : "bg-[#001836] text-white hover:bg-[#002d5b]"
           }`}
         >
-          For Enquiry
+          <span className="hidden min-[500px]:inline">For Enquiry</span>
+          <span className="min-[500px]:hidden">Enquiry</span>
           <ArrowRight className="ml-1 h-4 w-4" />
         </a>
       </div>
