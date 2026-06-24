@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Cog, Drill, Gauge, Wrench, Zap, Hammer, ScanLine } from "lucide-react";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
+import { MachineryVideoSection } from "@/components/home/MachineryVideoSection";
 
 const machines = [
   {
@@ -107,6 +108,7 @@ export default function MachineryPage() {
           </div>
         </div>
       </section>
+      <MachineryVideoSection />
     </PuckPage>
   );
 }
