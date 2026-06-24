@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
@@ -10,7 +11,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Factories", href: "/factories" },
+    { label: "Our Machinery", href: "/machinery" },
     { label: "Certifications", href: "/about" },
     { label: "Careers", href: "/contact" },
   ],
@@ -31,19 +32,15 @@ export function Footer() {
         <div className="space-y-8 md:hidden">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded bg-white">
-                <span className="text-xs font-bold text-[#001836] leading-none">B</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[14px] font-semibold leading-tight text-white">
-                  Bhakti Industries
-                </span>
-                <span className="text-[9px] font-medium uppercase tracking-[0.08em] text-[#7696ca]">
-                  Industries
-                </span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
+              <Image 
+                src="/images/logo.png" 
+                alt="Bhakti Industries Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
             <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
               Leading manufacturer of premium kitchenware, steel utensils, and
               household products since 1998.
@@ -84,9 +81,9 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-2 border-t border-white/10 pt-4">
-            <a href="tel:+919876543210" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
+            <a href="tel:+919427806585" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
               <Phone className="h-3.5 w-3.5 shrink-0" />
-              +91 98765 43210
+              +91 94278 06585
             </a>
             <a href="mailto:info@bhaktiindustries.com" className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors">
               <Mail className="h-3.5 w-3.5 shrink-0" />
@@ -103,19 +100,15 @@ export function Footer() {
         <div className="hidden gap-10 sm:grid sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="space-y-5">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded bg-white">
-                <span className="text-xs font-bold text-[#001836] leading-none">B</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[14px] font-semibold leading-tight text-white">
-                  Bhakti Industries
-                </span>
-                <span className="text-[9px] font-medium uppercase tracking-[0.08em] text-[#7696ca]">
-                  Industries
-                </span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block bg-white/95 rounded p-1.5 w-fit">
+              <Image 
+                src="/images/logo.png" 
+                alt="Bhakti Industries Logo" 
+                width={120} 
+                height={40} 
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
             <p className="text-[13px] leading-[20px] text-[#a7c8ff]/70">
               Leading manufacturer of premium kitchenware, steel utensils, and
               household products. Three state-of-the-art facilities serving
@@ -123,11 +116,11 @@ export function Footer() {
             </p>
             <div className="space-y-2.5">
               <a
-                href="tel:+919876543210"
+                href="tel:+919427806585"
                 className="flex items-center gap-2 text-[13px] text-[#a7c8ff]/70 hover:text-white transition-colors duration-200"
               >
                 <Phone className="h-3.5 w-3.5 shrink-0" />
-                +91 98765 43210
+                +91 94278 06585
               </a>
               <a
                 href="mailto:info@bhaktiindustries.com"

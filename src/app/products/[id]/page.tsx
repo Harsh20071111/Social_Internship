@@ -16,6 +16,7 @@ import {
   HelpCircle,
   PhoneCall,
   ShieldCheck,
+  MessageCircle,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -234,67 +235,167 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   const categoryItem = productCategories.find((item) => item.slug === id);
 
   if (categoryItem) {
+    const is40Foot = id === "40-foot-k-type-102-od";
+
+    const kSeriesData = is40Foot
+      ? [
+          {
+            id: "k30",
+            label: "K30",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K30 is designed for efficient water circulation in light-duty agricultural and domestic pumping systems. Its optimized vane design ensures smooth water flow, dependable operation, and energy-efficient performance for everyday water delivery needs.",
+            image: "/images/k30.jpg",
+          },
+          {
+            id: "k40",
+            label: "K40",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K40 offers improved hydraulic efficiency for medium-scale irrigation and water transfer applications. Engineered for consistent performance, it delivers stable pressure and reliable water discharge while maintaining durability in continuous operation.",
+            image: "/images/k40.jpg",
+          },
+          {
+            id: "k50-a",
+            label: "K50",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K50 is a versatile impeller designed for balanced flow and pressure requirements. Its precision-engineered construction helps maximize pump efficiency, making it suitable for a wide range of agricultural and industrial water management systems.",
+            image: "/images/k50.jpg",
+          },
+          {
+            id: "k60",
+            label: "K60",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K60 is engineered for mid-to-high range pumping performance, offering an ideal balance between flow rate and pressure head. Its robust construction ensures reliable operation in demanding agricultural water supply systems.",
+            image: "/images/k60.jpg",
+          },
+          {
+            id: "k70",
+            label: "K70",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K70 is built for demanding pumping environments where higher water lift and increased discharge are required. Its advanced hydraulic profile enhances water movement, providing efficient performance across larger irrigation networks.",
+            image: "/images/k70.jpg",
+          },
+          {
+            id: "k80",
+            label: "K80",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K80 delivers high-capacity water transfer capabilities for intensive agricultural operations. Designed for long-term reliability, it provides strong pressure generation, efficient flow characteristics, and dependable performance under heavy workloads.",
+            image: "/images/k80.jpg",
+          },
+          {
+            id: "k100",
+            label: "K100",
+            type: "40 Foot K Type Impeller (102 OD)",
+            description:
+              "The K100 is the highest-performance model in the 40 Foot K Type range. Engineered for maximum water lifting efficiency, it offers exceptional flow velocity and pressure output, making it ideal for deep borewell systems and large-scale irrigation projects.",
+            image: "/images/k100.jpg",
+          },
+        ]
+      : [
+          {
+            id: "k30",
+            label: "K30",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K30 is designed for efficient water delivery in small agricultural fields and domestic water systems. Its optimized blade geometry ensures smooth flow characteristics, reliable performance, and reduced energy consumption for everyday pumping requirements.",
+            image: "/images/k30.jpg",
+          },
+          {
+            id: "k40",
+            label: "K40",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K40 offers enhanced hydraulic performance for medium-duty irrigation and water transfer applications. Built for durability and consistent flow rates, it provides improved pressure generation while maintaining operational efficiency.",
+            image: "/images/k40.jpg",
+          },
+          {
+            id: "k50-a",
+            label: "K50",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K50 is a versatile, high-performance impeller engineered for V6 submersible pumps. With its balanced design and 113 mm outer diameter, it delivers excellent water discharge, higher lift capability, and dependable operation in agricultural and industrial environments.",
+            image: "/images/k50.jpg",
+          },
+          {
+            id: "k60",
+            label: "K60",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K60 provides a powerful step-up in hydraulic performance for large-scale agricultural and water distribution systems. Designed for consistent high-head delivery, it offers reliable efficiency and durability under extended operational conditions.",
+            image: "/images/k60.jpg",
+          },
+          {
+            id: "k70",
+            label: "K70",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K70 is built for demanding water pumping applications where higher head and increased flow are required. Its precision-engineered construction maximizes centrifugal force, ensuring efficient water movement over greater distances and elevations.",
+            image: "/images/k70.jpg",
+          },
+          {
+            id: "k80",
+            label: "K80",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K80 provides superior hydraulic efficiency for large-scale irrigation systems and heavy-duty pumping operations. Designed to handle higher workloads, it offers strong pressure output, reliable water delivery, and long service life under continuous operation.",
+            image: "/images/k80.jpg",
+          },
+          {
+            id: "k100",
+            label: "K100",
+            type: "45 Foot K Type Impeller (113 OD)",
+            description:
+              "The K100 is the premium high-capacity model in the range, developed for maximum water lifting performance and intensive agricultural applications. Its advanced impeller profile generates exceptional flow velocity and pressure, making it ideal for deep borewell and large-scale water distribution systems.",
+            image: "/images/k100.jpg",
+          },
+        ];
+
     return (
       <PuckPage hero={categoryItem.title} subtitle={categoryItem.summary}>
-        <section className="bg-zinc-100 dark:bg-zinc-900 py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#f3f3f3] dark:bg-[#12162e] py-16 md:py-24">
+          <div className="mx-auto max-w-[1160px] px-5">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-sm font-black text-[#318bc1] hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-black text-[#001836] dark:text-zinc-200"
             >
-              <ArrowLeft className="h-4 w-4" /> Back to Products Catalog
+              <ArrowLeft className="h-4 w-4" /> Back to Categories
             </Link>
-            <div className="mt-8 grid gap-10 bg-white dark:bg-zinc-950 border border-zinc-200/50 dark:border-zinc-800/50 p-6 md:p-10 lg:grid-cols-[0.9fr_1.1fr] rounded-2xl shadow-sm">
-              <div className="relative min-h-[420px] bg-zinc-950 rounded-xl overflow-hidden flex items-center justify-center p-8">
+            <div className="mt-8 grid gap-10 bg-white dark:bg-[#0b0f24] p-6 md:p-10 lg:grid-cols-[0.9fr_1.1fr] rounded-2xl shadow-sm border border-zinc-200/50 dark:border-zinc-800/50">
+              <div className="relative min-h-[420px] bg-[#fafafa] dark:bg-zinc-950 rounded-xl overflow-hidden">
                 <Image
-                  src={
-                    id === "precision-pump-systems"
-                      ? "/images/puck-product-collage.png"
-                      : categoryItem.image
-                  }
+                  src={categoryItem.image}
                   alt={categoryItem.title}
                   fill
-                  className={
-                    id === "precision-pump-systems"
-                      ? "object-contain p-8"
-                      : "object-cover opacity-90"
-                  }
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
+                  className="object-cover"
                 />
               </div>
               <div className="flex flex-col justify-between">
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#318bc1]">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836] dark:text-[#318bc1]">
                     Product Family
                   </p>
-                  <h2 className="mt-3 text-4xl font-extrabold text-zinc-900 dark:text-white">
+                  <h2 className="mt-3 text-4xl font-black text-zinc-900 dark:text-white">
                     {categoryItem.title}
                   </h2>
-                  <p className="mt-5 text-base leading-7 text-zinc-650 dark:text-zinc-400">
+                  <p className="mt-5 text-base leading-7 text-black/60 dark:text-zinc-300">
                     {categoryItem.summary}
                   </p>
-                  <div className="mt-8 grid gap-3">
-                    {categoryItem.specs.map((spec) => (
-                      <div
-                        key={spec}
-                        className="flex items-center gap-3 border-b border-zinc-200 dark:border-zinc-800 py-3 text-sm font-bold text-zinc-800 dark:text-zinc-300"
-                      >
-                        <CheckCircle2 className="h-5 w-5 text-[#318bc1]" /> {spec}
-                      </div>
-                    ))}
-                  </div>
                 </div>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
-                    href="/inquiry"
-                    className="inline-flex h-12 items-center gap-2 bg-[#318bc1] px-6 text-sm font-black text-white rounded-lg hover:bg-[#2573a1] transition-colors"
+                <div className="mt-8">
+                  <a
+                    href="https://wa.me/919427806585"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center gap-2.5 bg-[#25D366] px-6 text-sm font-bold text-white transition-colors hover:bg-[#1da851]"
                   >
-                    Request Quote <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <button className="inline-flex h-12 items-center gap-2 border border-zinc-200 dark:border-zinc-800 px-6 text-sm font-black rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
-                    Catalogue PDF <Download className="h-4 w-4" />
-                  </button>
+                    <MessageCircle className="h-5 w-5" />
+                    Inquiry on WhatsApp
+                  </a>
                 </div>
               </div>
             </div>
@@ -302,22 +403,54 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         </section>
 
         <section className="py-20 md:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1440px] px-5">
             <PuckSectionTitle>Models & Variants</PuckSectionTitle>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {[1, 2, 3].map((item) => (
+            <p className="mt-6 max-w-4xl text-base leading-7 text-black/70 dark:text-zinc-300">
+              <strong>
+                {is40Foot
+                  ? "40 Foot K Type Impeller (102 OD)"
+                  : "45 Foot K Type Impeller (113 OD)"}
+              </strong>
+              <br />
+              <br />
+              Our {is40Foot ? "40" : "45"} Foot K Type Impeller range is
+              manufactured using premium-quality engineering materials and
+              advanced molding technology to ensure excellent durability, hydraulic
+              efficiency, and long service life. Designed specifically for V6
+              submersible pumps, these impellers provide reliable water delivery
+              for agricultural, industrial, and domestic applications. Available in
+              K30, K40, K50, K70, K80, and K100 variants, the range offers
+              solutions for diverse pumping requirements while maintaining
+              consistent performance and energy efficiency.
+            </p>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {kSeriesData.map(({ id, label, type, description, image }) => (
                 <article
-                  key={item}
-                  className="border border-zinc-200 dark:border-zinc-800 p-6 rounded-xl bg-white dark:bg-zinc-950 shadow-sm"
+                  key={id}
+                  className="border border-black/10 dark:border-zinc-800 p-6 rounded-xl bg-white dark:bg-zinc-950 shadow-sm"
                 >
-                  <div className="flex aspect-square items-center justify-center bg-zinc-100 dark:bg-zinc-900 rounded-lg text-sm font-bold text-zinc-400">
-                    Product Image {item}
-                  </div>
-                  <h3 className="mt-6 text-xl font-bold text-zinc-900 dark:text-white">
-                    Placeholder Model 0{item}
+                  {image ? (
+                    <div className="relative aspect-square overflow-hidden bg-[#f5f5f5] dark:bg-zinc-900 rounded-lg">
+                      <Image
+                        src={image}
+                        alt={label}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex aspect-square items-center justify-center bg-[#f5f5f5] dark:bg-zinc-900 text-center text-sm font-black text-black/25 rounded-lg">
+                      <span className="max-w-[70%]">Image Placeholder</span>
+                    </div>
+                  )}
+                  <h3 className="mt-6 text-xl font-black uppercase text-[#318bc1]">
+                    {label}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-450">
-                    Replace with actual model description and technical range.
+                  <p className="mt-1 text-[11px] font-bold uppercase tracking-widest text-[#888]">
+                    {type}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-black/60 dark:text-zinc-400">
+                    {description}
                   </p>
                 </article>
               ))}

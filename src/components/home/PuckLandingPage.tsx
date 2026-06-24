@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
@@ -14,7 +15,6 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 const navItems = [
   { label: "About Us", href: "/about" },
@@ -51,37 +51,19 @@ const applications = [
 ];
 
 const reveal = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
 };
 
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label="Bhakti Industries home">
-      <div
-        className={`relative flex h-[52px] w-[104px] items-center justify-center border-2 px-3 transition-colors ${
-          inverse
-            ? "border-white text-white"
-            : "border-[#4396c8] text-[#318bc1]"
-        }`}
-      >
-        <span className="puck-logo-word text-[25px] font-black italic tracking-[-0.08em]">
-          BHAKTI
-        </span>
-        <span
-          className={`absolute -bottom-[7px] right-2 bg-white px-1 text-[7px] font-bold uppercase tracking-[0.18em] ${
-            inverse ? "bg-[#0876b7] text-white" : "text-[#111]"
-          }`}
-        >
-          Industries
-        </span>
-      </div>
-      <div className="hidden h-[44px] w-[44px] items-center justify-center rounded-full border border-[#f0a13a] text-[#e87d24] sm:flex">
-        <Sparkles className="h-5 w-5" />
+      <div className={`relative flex items-center gap-2 p-1.5 rounded-lg transition-all duration-200 ${inverse ? 'bg-white/95 shadow-sm' : ''}`}>
+        <img
+          src="/images/logo.png"
+          alt="Bhakti Industries Logo"
+          className="h-11 w-auto object-contain"
+        />
       </div>
     </Link>
   );
@@ -100,7 +82,7 @@ function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-1 text-[14px] font-bold text-[#111] transition-colors hover:text-[#318bc1]"
+              className="flex items-center gap-1 text-[14px] font-bold text-[#111] transition-colors hover:text-[#001836]"
             >
               {item.label}
               {item.dropdown && <ChevronDown className="h-3.5 w-3.5" strokeWidth={2.5} />}
@@ -120,11 +102,7 @@ function Header() {
       </div>
 
       {open && (
-        <motion.nav
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="border-t border-black/10 bg-white px-5 py-5 lg:hidden"
-        >
+        <nav className="border-t border-black/10 bg-white px-5 py-5 lg:hidden">
           <div className="mx-auto grid max-w-[1160px] gap-1">
             {navItems.map((item) => (
               <Link
@@ -138,7 +116,7 @@ function Header() {
               </Link>
             ))}
           </div>
-        </motion.nav>
+        </nav>
       )}
     </header>
   );
@@ -149,15 +127,8 @@ function Hero() {
     <section className="overflow-hidden bg-white pb-10 pt-8 md:pb-16 md:pt-16">
       <div className="mx-auto max-w-[1160px] px-5">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            transition={{ staggerChildren: 0.1 }}
-          >
-            <motion.h1
-              variants={reveal}
-              className="puck-outline-heading text-[48px] font-black leading-[1.42] tracking-[-0.035em] sm:text-[60px] lg:text-[52px] xl:text-[62px]"
-            >
+          <div>
+            <h1 className="puck-outline-heading text-[48px] font-black leading-[1.42] tracking-[-0.035em] sm:text-[60px] lg:text-[52px] xl:text-[62px]">
               Totally Integrated &amp;
               <br />
               Sustainable
@@ -179,31 +150,23 @@ function Hero() {
                 <span className="relative">Manufacturing</span>
               </span>{" "}
               Solutions
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              variants={reveal}
-              className="mt-14 flex flex-wrap items-center gap-y-2 text-[15px] font-extrabold sm:text-[17px]"
-            >
+            <div className="mt-14 flex flex-wrap items-center gap-y-2 text-[15px] font-extrabold sm:text-[17px]">
               {["Products", "Systems", "Components", "Services", "Technology"].map(
                 (item, index, list) => (
                   <span key={item} className="flex items-center">
                     {item}
                     {index < list.length - 1 && (
-                      <span className="mx-2 h-5 w-[2px] bg-[#318bc1]" />
+                      <span className="mx-2 h-5 w-[2px] bg-[#001836]" />
                     )}
                   </span>
                 )
               )}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 55 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
+          <div className="relative">
             <Image
               src="/images/puck-product-collage.png"
               alt="Placeholder industrial product range"
@@ -215,7 +178,7 @@ function Hero() {
             <p className="mt-3 text-center text-[16px] font-extrabold lg:text-right">
               Est. 20XX - Made for Industry
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
@@ -225,13 +188,7 @@ function Hero() {
 function CampaignFilm() {
   return (
     <section className="bg-white pb-28 md:pb-52">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={reveal}
-        className="relative mx-auto aspect-video max-w-[1160px] overflow-hidden rounded-[5px] bg-[#0b303e]"
-      >
+      <div className="relative mx-auto aspect-video max-w-[1160px] overflow-hidden rounded-[5px] bg-[#0b303e]">
         <video
           className="h-full w-full object-cover"
           autoPlay
@@ -260,7 +217,7 @@ function CampaignFilm() {
         <div className="absolute bottom-7 right-7 flex h-12 w-12 items-center justify-center rounded-full border border-white/70 text-white md:bottom-10 md:right-10">
           <Play className="ml-0.5 h-4 w-4 fill-current" />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -278,7 +235,7 @@ function About() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#318bc1]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#001836]">
             About Bhakti Industries
           </p>
           <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight md:text-6xl">
@@ -288,13 +245,7 @@ function About() {
           </h2>
           <div className="mt-7 h-[5px] w-[60px] bg-black" />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative z-10"
-        >
+        <div className="relative z-10">
           <p className="text-lg leading-8 text-black/65">
             This is placeholder copy for the company story. Replace it with your
             actual manufacturing experience, product capabilities, quality
@@ -302,12 +253,12 @@ function About() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#318bc1]"
+            className="mt-8 inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.12em] text-[#001836]"
           >
             Know More
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -323,29 +274,25 @@ function Applications() {
           viewport={{ once: true, amount: 0.4 }}
           variants={reveal}
         >
-          <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">
+          <h2 className="text-4xl font-black text-[#001836] md:text-6xl">
             Applications
           </h2>
           <div className="mt-3 h-[5px] w-[60px] bg-black" />
         </motion.div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {applications.map((application, index) => {
+          {applications.map((application) => {
             const Icon = application.icon;
             return (
-              <motion.article
+              <article
                 key={application.title}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.65, delay: index * 0.1 }}
                 className="group relative min-h-[430px] overflow-hidden rounded-[4px] bg-[#0b2230]"
               >
                 <Image
                   src={application.image}
                   alt=""
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041722] via-[#041722]/20 to-transparent" />
@@ -362,7 +309,7 @@ function Applications() {
                     Know More <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>
@@ -377,7 +324,7 @@ function Media() {
       <div className="mx-auto max-w-[1160px] px-5">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h2 className="text-4xl font-black text-[#318bc1] md:text-6xl">Media</h2>
+            <h2 className="text-4xl font-black text-[#001836] md:text-6xl">Media</h2>
             <div className="mt-3 h-[5px] w-[60px] bg-black" />
           </div>
           <Link
@@ -393,7 +340,7 @@ function Media() {
               src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=88"
               alt=""
               fill
-              className="object-cover opacity-75 transition-transform duration-700 group-hover:scale-105"
+              className="object-cover opacity-75"
               sizes="(max-width: 768px) 100vw, 65vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -410,7 +357,7 @@ function Media() {
             {["Events & Exhibitions", "Case Study"].map((title) => (
               <article
                 key={title}
-                className="flex min-h-[228px] flex-col justify-end bg-[#318bc1] p-7 text-white transition-colors hover:bg-[#1f7eae]"
+                className="flex min-h-[228px] flex-col justify-end bg-[#001836] p-7 text-white transition-colors hover:bg-[#1f7eae]"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">
                   Placeholder
@@ -428,40 +375,46 @@ function Media() {
 
 function Footer() {
   return (
-    <footer className="bg-[#0876b7] text-white">
+    <footer className="bg-[#fcf8f9] text-[#001836] border-t border-black/10">
       <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-16 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <BrandMark inverse />
-          <p className="mt-7 max-w-sm text-sm leading-7 text-white/75">
-            Placeholder company address, industrial estate, city, state, postal
-            code, country.
+          <BrandMark />
+          <p className="mt-7 text-xs font-black uppercase tracking-[0.2em] text-[#001836]/55">
+            ADDRESS
+          </p>
+          <p className="mt-3 text-sm leading-7 text-[#001836]/75">
+            7, Kumar Estate,
+            <br />
+            B/S Bank of Baroda, nr. Shayona Estate,
+            <br />
+            Naroda Road,
+            <br />
+            Ahmedabad - 380025.
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Contact
           </p>
           <p className="mt-5 text-sm leading-8">
-            +00 00000 00000
-            <br />
-            hello@placeholder.com
+            +91 94278 06585
           </p>
         </div>
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-white/55">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#001836]/60">
             Quick Links
           </p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold">
             {navItems.slice(0, 6).map((item) => (
-              <Link key={item.label} href={item.href}>
+              <Link key={item.label} href={item.href} className="hover:text-[#001836]/70 transition-colors">
                 {item.label}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className="border-t border-white/15">
-        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-white/65 sm:flex-row">
+      <div className="border-t border-black/10">
+        <div className="mx-auto flex max-w-[1160px] flex-col justify-between gap-3 px-5 py-5 text-xs text-[#001836]/65 sm:flex-row">
           <p>© 20XX Bhakti Industries. Placeholder rights statement.</p>
           <p>Terms of Use &nbsp; | &nbsp; Privacy Policy</p>
         </div>
