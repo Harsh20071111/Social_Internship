@@ -19,6 +19,7 @@ export default async function ProductDetailPage({
   if (!product) notFound();
 
   const is40Foot = slug === "40-foot-k-type-102-od";
+  const isKType = slug === "40-foot-k-type-102-od" || slug === "45-foot-k-type-113-od";
 
   const kSeriesData = is40Foot
     ? [
@@ -139,7 +140,13 @@ export default async function ProductDetailPage({
       ];
 
   return (
-    <PuckPage hero={product.title} subtitle={product.summary}>
+    <PuckPage
+      hero={product.title}
+      subtitle={product.summary}
+      heroImage={isKType ? "/images/impeller-hero.jpg" : undefined}
+      overlayOpacity={isKType ? 0.45 : undefined}
+      overlayColor={isKType ? "bg-black" : undefined}
+    >
       <section className="bg-[#f3f3f3] py-16 md:py-24">
         <div className="mx-auto max-w-[1160px] px-5">
           <Link href="/products" className="inline-flex items-center gap-2 text-sm font-black text-[#001836]">
