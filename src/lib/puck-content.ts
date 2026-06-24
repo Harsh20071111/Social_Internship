@@ -3,7 +3,7 @@ export const productCategories = [
     slug: "40-foot-k-type-102-od",
     title: "40 foot k type(102 od)",
     summary: "The 40 Foot K Type Impeller (102 OD) is a precision-engineered fluid dynamic component designed primarily for V6 submersible pumps, monoset fittings, and agricultural water supply systems. Manufactured through industrial investment casting or high-grade stainless steel fabrication, it offers an optimal balance of structural strength and hydraulic efficiency.",
-    image: "/images/impeller-stack.jpg",
+    image: "/images/impeller-stack-40.png",
   },
   {
     slug: "45-foot-k-type-113-od",
