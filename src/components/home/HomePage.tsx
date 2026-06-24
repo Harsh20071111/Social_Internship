@@ -61,8 +61,8 @@ function FeaturePanel({
 
       <div
         className={`absolute inset-0 ${
-          overlayColor 
-            ? overlayColor 
+          overlayColor
+            ? overlayColor
             : isDark
             ? "bg-gradient-to-t from-[#001836] via-[#001836]/62 to-[#001836]/12"
             : "bg-gradient-to-t from-[#f8f8f7]/95 via-[#f8f8f7]/40 to-black/5"

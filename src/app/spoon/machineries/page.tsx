@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Hammer, Cog, Sparkles, Scissors, ScanLine } from "lucide-react";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
+import { MachineryVideoSection } from "@/components/home/MachineryVideoSection";
 
 const spoonMachines = [
   {
@@ -74,6 +75,11 @@ export default function SpoonMachineryPage() {
           </div>
         </div>
       </section>
+      <MachineryVideoSection
+        videoSrc="/videos/spoon-category-hero.mp4"
+        title="Spoon Manufacturing Excellence"
+        description="Witness the precision machinery and advanced polishing techniques that define our world-class spoon production."
+      />
     </PuckPage>
   );
 }

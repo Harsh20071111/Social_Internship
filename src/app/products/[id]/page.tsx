@@ -12,6 +12,7 @@ import {
 } from "@/lib/puck-content";
 import { PuckPage, PuckSectionTitle } from "@/components/layout/PuckPage";
 import ProductGallery from "./product-gallery";
+import { MachineryVideoSection } from "@/components/home/MachineryVideoSection";
 import {
   ArrowLeft,
   ArrowRight,
@@ -304,6 +305,13 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             ))}
           </div>
         </section>
+        {!isImpellerLine && (
+          <MachineryVideoSection 
+            videoSrc="/videos/spoon-category-hero.mp4" 
+            title="Spoon Manufacturing Excellence"
+            description="Witness the precision machinery and advanced polishing techniques that define our world-class spoon production."
+          />
+        )}
       </PuckPage>
     );
   }
@@ -577,6 +585,13 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             </div>
           </div>
         </section>
+        {isSpoon && (
+          <MachineryVideoSection 
+            videoSrc="/videos/spoon-category-hero.mp4" 
+            title="Spoon Manufacturing Excellence"
+            description="Witness the precision machinery and advanced polishing techniques that define our world-class spoon production."
+          />
+        )}
       </PuckPage>
     );
   }
