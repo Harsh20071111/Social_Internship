@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Phone, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const navLinks = [
+const defaultLinks = [
   { label: "Home", href: "/" },
   { label: "Spoons", href: "/spoon/products" },
   { label: "Impellers", href: "/impeller/products" },
@@ -17,9 +17,32 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const spoonLinks = [
+  { label: "Spoon Products", href: "/spoon/products" },
+  { label: "Spoon Machineries", href: "/spoon/machineries" },
+  { label: "About Spoons", href: "/spoon/about" },
+  { label: "Contact", href: "/spoon/contact" },
+];
+
+const impellerLinks = [
+  { label: "Impeller Products", href: "/impeller/products" },
+  { label: "Impeller Machineries", href: "/impeller/machineries" },
+  { label: "About Impellers", href: "/impeller/about" },
+  { label: "Contact", href: "/impeller/contact" },
+];
+
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname() || "/";
+
+  const isSpoon = pathname.startsWith("/spoon");
+  const isImpeller = pathname.startsWith("/impeller");
+
+  const navLinks = isSpoon
+    ? spoonLinks
+    : isImpeller
+    ? impellerLinks
+    : defaultLinks;
 
   // Helper to determine if a link is active based on current path
   const isActive = (href: string) => {
@@ -34,7 +57,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="flex items-center"
+          className="flex items-center gap-2.5"
         >
           <Image 
             src="/images/logo.png" 
@@ -44,6 +67,16 @@ export function Navbar() {
             className="h-10 w-auto object-contain"
             priority
           />
+          {isSpoon && (
+            <span className="hidden font-bold tracking-wider text-[#001836] sm:inline-block border-l-2 border-[#d9dce3] pl-2.5 text-[11px] uppercase">
+              Cutlery Division
+            </span>
+          )}
+          {isImpeller && (
+            <span className="hidden font-bold tracking-wider text-[#001836] sm:inline-block border-l-2 border-[#d9dce3] pl-2.5 text-[11px] uppercase">
+              Pump Spares Division
+            </span>
+          )}
         </Link>
 
         {/* Desktop Navigation */}

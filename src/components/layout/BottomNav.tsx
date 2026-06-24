@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Package, Cog, Info, Phone } from "lucide-react";
 
-const tabs = [
+const defaultTabs = [
   { href: "/", label: "Home", icon: Home },
   { href: "/spoon/products", label: "Spoons", icon: Package },
   { href: "/impeller/products", label: "Impellers", icon: Cog },
@@ -12,14 +12,39 @@ const tabs = [
   { href: "/contact", label: "Contact", icon: Phone },
 ];
 
+const spoonTabs = [
+  { href: "/", label: "Home", icon: Home },
+  { href: "/spoon/products", label: "Products", icon: Package },
+  { href: "/spoon/machineries", label: "Machineries", icon: Cog },
+  { href: "/spoon/about", label: "About", icon: Info },
+  { href: "/spoon/contact", label: "Contact", icon: Phone },
+];
+
+const impellerTabs = [
+  { href: "/", label: "Home", icon: Home },
+  { href: "/impeller/products", label: "Products", icon: Package },
+  { href: "/impeller/machineries", label: "Machineries", icon: Cog },
+  { href: "/impeller/about", label: "About", icon: Info },
+  { href: "/impeller/contact", label: "Contact", icon: Phone },
+];
+
 export function BottomNav() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
+
+  const isSpoon = pathname.startsWith("/spoon");
+  const isImpeller = pathname.startsWith("/impeller");
+
+  const tabs = isSpoon
+    ? spoonTabs
+    : isImpeller
+    ? impellerTabs
+    : defaultTabs;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#e5e2e3] bg-[#fcf8f9] md:hidden">
       <div className="mx-auto flex h-[68px] max-w-lg items-center justify-around px-2">
         {tabs.map((tab) => {
-          const isActive = pathname === tab.href;
+          const isActive = tab.href === "/" ? pathname === "/" : pathname.startsWith(tab.href);
           const Icon = tab.icon;
 
           return (
