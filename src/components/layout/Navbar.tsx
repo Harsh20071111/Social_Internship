@@ -22,7 +22,7 @@ const spoonLinks = [
   { label: "Spoon Products", href: "/spoon/products" },
   { label: "Spoon Machineries", href: "/spoon/machineries" },
   { label: "About Spoons", href: "/spoon/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/spoon/contact" },
 ];
 
 const impellerLinks = [
@@ -30,7 +30,7 @@ const impellerLinks = [
   { label: "Impeller Products", href: "/impeller/products" },
   { label: "Impeller Machineries", href: "/impeller/machineries" },
   { label: "About Impellers", href: "/impeller/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/impeller/contact" },
 ];
 
 export function Navbar() {
