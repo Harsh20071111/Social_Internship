@@ -30,9 +30,9 @@ const spoons = [
   },
   {
     id: "soup-spoon",
-    name: "Soup Spoon",
+    name: "Monalisa Stainless Steel Table Spoon",
     description:
-      "Deep-bowl stainless steel soup spoon shaped for comfortable use, polished finishing, and dependable resistance to frequent washing.",
+      "Stylish stainless steel table spoon with a smooth mirror-polished finish and sleek contemporary design. Crafted for durability, corrosion resistance, and comfortable handling, it is perfect for everyday dining and serving needs. Its elegant, minimalist look complements both casual and formal table settings.",
     image: "/uploads/spoon.svg",
   },
   {
