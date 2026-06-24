@@ -378,7 +378,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                   src={categoryItem.image}
                   alt={categoryItem.title}
                   fill
-                  className="object-cover"
+                  className={is40Foot ? "object-cover" : "object-contain p-2"}
                 />
               </div>
               <div className="flex flex-col justify-between">
@@ -442,7 +442,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                         src={image}
                         alt={label}
                         fill
-                        className="object-cover"
+                        className={is40Foot ? "object-cover" : "object-contain p-1"}
                       />
                     </div>
                   ) : (
