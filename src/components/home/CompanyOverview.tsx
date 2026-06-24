@@ -62,7 +62,7 @@ export function CompanyOverview() {
             <ClipReveal direction="up">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[#e5e2e3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&auto=format"
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=75&auto=format"
                   alt="Modern manufacturing facility interior"
                   fill
                   className="object-cover"

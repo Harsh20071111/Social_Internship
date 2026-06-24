@@ -16,7 +16,7 @@ const factoryData = [
     description:
       "Our flagship facility specializes in high-volume cutlery production with automated stamping, polishing, and quality grading lines.",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&auto=format",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=75&auto=format",
   },
   {
     name: "Factory 2 — Morbi",
@@ -27,7 +27,7 @@ const factoryData = [
     description:
       "Equipped with deep-draw presses and automated welding stations, this facility produces cookware, tiffin boxes, and kitchen accessories.",
     image:
-      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80&auto=format",
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=75&auto=format",
   },
   {
     name: "Factory 3 — Wankaner",
@@ -38,7 +38,7 @@ const factoryData = [
     description:
       "Dedicated to manufacturing steel plates, glasses, bowls, and utility products with a focus on finishing quality and surface polish.",
     image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80&auto=format",
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=75&auto=format",
   },
 ];
 

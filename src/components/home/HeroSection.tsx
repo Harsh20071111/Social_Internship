@@ -22,7 +22,7 @@ export function HeroSection() {
             className="absolute inset-0 h-full w-full bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80&auto=format')",
+                "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=75&auto=format')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f9] via-[#001836]/40 to-[#001836]/10" />
@@ -102,7 +102,7 @@ export function HeroSection() {
             className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80&auto=format')",
+                "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=75&auto=format')",
             }}
           />
         </div>

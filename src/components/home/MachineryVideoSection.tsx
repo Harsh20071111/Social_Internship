@@ -18,7 +18,7 @@ export function MachineryVideoSection() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/manufacturing-process.mp4" type="video/mp4" />
@@ -28,7 +28,7 @@ export function MachineryVideoSection() {
       <div className="absolute inset-0 bg-black/45" />
 
       {/* Content */}
-      <div className="container relative z-10 flex h-full flex-col items-center justify-center px-5 text-center text-white">
+      <div className="relative z-10 mx-auto flex h-full max-w-[1280px] flex-col items-center justify-center px-5 text-center text-white">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

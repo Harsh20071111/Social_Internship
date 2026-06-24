@@ -46,9 +46,9 @@ function FeaturePanel({
   const isRightAligned = align === "right";
 
   return (
-    <article className="snap-start group relative min-h-svh overflow-hidden border-b border-white/15">
+    <div className="block snap-start relative min-h-svh overflow-hidden border-b border-white/15">
       <div
-        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat transition-transform duration-700 ease-out"
+        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('${image}')`,
           backgroundPosition: imagePosition,
@@ -68,10 +68,11 @@ function FeaturePanel({
         className={`relative z-10 flex min-h-svh items-end p-5 sm:p-8 lg:p-10 xl:p-14 ${isRightAligned ? "justify-end" : "justify-start"
           }`}
       >
-        <div
-          className={`w-full max-w-[540px] border p-6 backdrop-blur-md sm:p-8 ${isDark
-              ? "border-white/15 bg-[#001836]/82 text-white"
-              : "border-white/50 bg-white/82 text-[#001836]"
+        <Link
+          href={href}
+          className={`group w-full max-w-[540px] border p-6 backdrop-blur-md sm:p-8 transition-colors duration-300 cursor-pointer ${isDark
+              ? "border-white/15 bg-[#001836]/82 text-white hover:bg-[#001836]"
+              : "border-white/50 bg-white/82 text-[#001836] hover:bg-white"
             }`}
         >
           <div
@@ -93,21 +94,18 @@ function FeaturePanel({
             {description}
           </p>
 
-          <Button
-            render={<Link href={href} />}
-            nativeButton={false}
-            variant={isDark ? "outline" : "default"}
-            className={`mt-7 h-12 rounded-sm px-6 text-xs font-semibold uppercase tracking-[0.08em] shadow-none ${isDark
-                ? "border-white/45 bg-transparent text-white hover:bg-white hover:text-[#001836]"
-                : "bg-[#001836] text-white hover:bg-[#002d5b]"
+          <div
+            className={`mt-7 inline-flex h-12 items-center justify-center rounded-sm px-6 text-xs font-semibold uppercase tracking-[0.08em] shadow-none transition-all duration-300 ${isDark
+                ? "border border-white/45 bg-transparent text-white group-hover:bg-white group-hover:text-[#001836]"
+                : "bg-[#001836] text-white group-hover:bg-[#002d5b]"
               }`}
           >
             {cta}
-            <ArrowRight className="ml-1 h-4 w-4" />
-          </Button>
-        </div>
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </div>
+        </Link>
       </div>
-    </article>
+    </div>
   );
 }
 
