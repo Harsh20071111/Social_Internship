@@ -47,12 +47,15 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="mt-6 flex flex-col gap-2.5">
-            <Link href="/inquiry">
-              <Button className="w-full h-11 rounded-sm bg-[#001836] text-[14px] font-semibold text-white shadow-none hover:bg-[#002d5b] transition-colors">
-                Request a Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <a
+              href="https://wa.me/919427806585"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full h-11 rounded-sm bg-[#001836] text-[14px] font-semibold text-white shadow-none hover:bg-[#002d5b] transition-colors"
+            >
+              Enquiry
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
             <Link href="/products">
               <Button
                 variant="outline"
@@ -133,12 +136,15 @@ export function HeroSection() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/inquiry">
-                <Button className="h-11 rounded bg-white px-6 text-[14px] font-semibold text-[#001836] shadow-none hover:bg-[#f0edee] transition-colors duration-200">
-                  Request a Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <a
+                href="https://wa.me/919427806585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-11 rounded bg-white px-6 text-[14px] font-semibold text-[#001836] shadow-none hover:bg-[#f0edee] transition-colors duration-200"
+              >
+                Enquiry
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
               <Link href="/products">
                 <Button
                   variant="outline"

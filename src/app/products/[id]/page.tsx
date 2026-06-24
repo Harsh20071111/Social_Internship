@@ -157,13 +157,15 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
             {/* Inquiry Action Buttons */}
             <div className="border-t border-zinc-200 dark:border-zinc-800 pt-6 flex flex-wrap gap-4">
-              <Link
-                href={`/inquiry?product=${product.id}&sku=${product.sku}`}
+              <a
+                href="https://wa.me/919427806585"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 px-6 py-3.5 text-sm font-bold shadow-md hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
               >
                 <PhoneCall className="h-4.5 w-4.5" />
-                Request Bulk Quote
-              </Link>
+                Enquiry
+              </a>
               {product.price && (
                 <div className="flex flex-col justify-center px-4">
                   <span className="text-xs text-zinc-400 font-semibold uppercase">Estimated Price</span>
