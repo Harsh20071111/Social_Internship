@@ -6,8 +6,8 @@ import { Home, Package, Cog, Info, Phone } from "lucide-react";
 
 const tabs = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/products", label: "Products", icon: Package },
-  { href: "/machinery", label: "Machinery", icon: Cog },
+  { href: "/spoon/products", label: "Spoons", icon: Package },
+  { href: "/impeller/products", label: "Impellers", icon: Cog },
   { href: "/about", label: "About", icon: Info },
   { href: "/contact", label: "Contact", icon: Phone },
 ];

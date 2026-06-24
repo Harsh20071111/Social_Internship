@@ -11,7 +11,8 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Machinery", href: "/machinery" },
+    { label: "Spoon Machinery", href: "/spoon/machineries" },
+    { label: "Impeller Machinery", href: "/impeller/machineries" },
     { label: "Certifications", href: "/about" },
     { label: "Careers", href: "/contact" },
   ],
