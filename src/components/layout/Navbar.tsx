@@ -69,16 +69,6 @@ export function Navbar() {
             className="h-10 w-auto object-contain"
             priority
           />
-          {isSpoon && (
-            <span className="hidden font-bold tracking-wider text-[#001836] sm:inline-block border-l-2 border-[#d9dce3] pl-2.5 text-[11px] uppercase">
-              Spoon Division
-            </span>
-          )}
-          {isImpeller && (
-            <span className="hidden font-bold tracking-wider text-[#001836] sm:inline-block border-l-2 border-[#d9dce3] pl-2.5 text-[11px] uppercase">
-              Pump Spares Division
-            </span>
-          )}
         </Link>
 
         {/* Desktop Navigation */}
