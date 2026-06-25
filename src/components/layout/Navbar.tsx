@@ -68,6 +68,7 @@ export function Navbar() {
             height={48} 
             className="h-10 w-auto object-contain"
             priority
+            sizes="(max-width: 768px) 40px, 48px"
           />
         </Link>
 

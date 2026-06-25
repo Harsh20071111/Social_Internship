@@ -7,6 +7,7 @@ import {
   Utensils,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -49,15 +50,17 @@ function FeaturePanel({
 
   return (
     <div className="block snap-start relative min-h-svh overflow-hidden border-b border-white/15">
-      <div
-        className="absolute inset-0 scale-[1.01] bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url('${image}')`,
-          backgroundPosition: imagePosition,
-        }}
-        role="img"
-        aria-label={`${title} product collection`}
-      />
+      <div className="absolute inset-0 scale-[1.01]">
+        <Image
+          src={image}
+          alt={`${title} product collection`}
+          fill
+          priority={headingLevel === "h1"}
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: imagePosition }}
+        />
+      </div>
 
       <div
         className={`absolute inset-0 ${

@@ -6,6 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
+import dynamic from "next/dynamic";
+
+const WhatsAppFloat = dynamic(() => import("@/components/WhatsAppFloat").then(mod => mod.WhatsAppFloat), { 
+  ssr: false,
+  loading: () => null
+});
 
 function HomeNavbar({ isDark }: { isDark: boolean }) {
   return (
@@ -97,6 +103,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
     <div className={`flex flex-col min-h-screen w-full ${isHome ? "" : "pt-16"}`}>
       {isHome ? <HomeNavbar isDark={isDarkNavbar} /> : <Navbar />}
       <main className="flex-1 flex flex-col">{children}</main>
+      <WhatsAppFloat />
     </div>
   );
 }

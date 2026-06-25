@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { LayoutShell } from "@/components/layout/LayoutShell";
 
 const geistSans = Geist({
@@ -49,7 +48,6 @@ export default function RootLayout({
         >
           <LayoutShell>{children}</LayoutShell>
           <Toaster />
-          <WhatsAppFloat />
         </ThemeProvider>
       </body>
     </html>
