@@ -33,7 +33,7 @@ export default function SpoonMachineryPage() {
           </Link>
           
           <div className="mt-6">
-            <PuckSectionTitle>Cutlery Manufacturing Equipment</PuckSectionTitle>
+            <PuckSectionTitle>Spoon Manufacturing Equipments</PuckSectionTitle>
           </div>
           <p className="mt-5 max-w-[720px] text-base leading-7 text-black/60">
             Our spoon production line is equipped with specialized machinery designed exclusively for high-volume, high-quality stainless steel cutlery manufacturing. From initial sheet blanking to final mirror polishing, every stage is optimized for precision.
