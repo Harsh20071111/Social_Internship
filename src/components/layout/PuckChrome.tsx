@@ -55,11 +55,15 @@ export function PuckFooter() {
   const isSpoon = pathname.startsWith("/spoon");
   const isImpeller = pathname.startsWith("/impeller");
 
-  const navItems = isSpoon
+  const navItems = (isSpoon
     ? spoonNavItems
     : isImpeller
     ? impellerNavItems
-    : defaultNavItems;
+    : defaultNavItems).filter(item => {
+      // Hide "About Us" only on the Home page (/)
+      if (pathname === "/" && item.label === "About Us") return false;
+      return true;
+    });
 
   return (
     <footer className="bg-[#fcf8f9] text-[#001836] border-t border-black/10">
