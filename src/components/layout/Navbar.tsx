@@ -131,6 +131,23 @@ export function Navbar() {
           aria-label="Mobile navigation"
         >
           <div className="mx-auto flex max-w-[1600px] flex-col gap-1">
+            <div className="mb-4">
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5"
+              >
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Bhakti Industries Logo" 
+                  width={48} 
+                  height={48} 
+                  className="h-10 w-auto object-contain"
+                  priority
+                  sizes="(max-width: 768px) 40px, 48px"
+                />
+              </Link>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.label}
